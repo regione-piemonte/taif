@@ -1,0 +1,1 @@
+> le icone all'interno dei pulsanti in stato disabled devono avere un riempimento del 30% (photoshop)

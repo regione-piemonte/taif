@@ -1,0 +1,42 @@
+/* mainMenu */
+/*.vertical div#mainMenu {border-bottom: 1px solid #D9E5EE;}	*/
+.vertical div#mainMenu h3 {position: absolute;}
+.vertical div#mainMenu ul{border: 1px solid #ccc;}
+.vertical div#mainMenu ul ul ul{font-size:1em; border:0;}
+
+/* 1° livello */
+.vertical div#mainMenu ul li {color:#FFFFFF; background: #0153a9; margin:0; border-top: 1px solid #D6D6D4; }
+.vertical div#mainMenu ul li.parent, .vertical div#mainMenu ul li.parent a:hover {background: url("im/1livelloOpen.gif") no-repeat scroll 10px 20px #0153a9;}
+ .vertical div#mainMenu ul li.parent a:hover span{background:#0153a9;}
+ .vertical div#mainMenu ul li.parent ul li.parent a:hover span{background:none;}
+
+.vertical div#mainMenu ul li#current a{color:#fff; background: url("im/1livello.gif") no-repeat scroll 10px 50% #0153a9; margin:0;}
+.vertical div#mainMenu ul li a:hover, .vertical div#mainMenu ul li#current a:hover{ background: url("im/1livello.gif") no-repeat scroll 10px 50% #0153a9; margin:0 }
+
+
+/*vertical*/
+/*.vertical #mainMenu ul li ul li { border-top: 0 none !important;}*/
+.vertical #mainMenu ul li.parent, .vertical #mainMenu ul li li { border-top:1px solid #fff!important;  cursor: pointer;}
+.vertical #mainMenu ul li.parent li span { padding: 3px 6px 3px 16px;}
+.vertical #mainMenu ul li li li a, .vertical #mainMenu ul li li li a:link, .vertical #mainMenu ul li li li a:visited, .vertical #mainMenu ul li li li a:active, .vertical #mainMenu ul li li li a:hover { background-image:none !important;}
+/*fine vertical*/
+
+/* 2° livello */
+.vertical div#mainMenu ul li ul li#current a, .vertical div#mainMenu ul li ul li ul li#current a{ background: url("im/1livello.gif") no-repeat scroll 10px 50% #bf5229; color:#fff;}
+.vertical div#mainMenu ul li ul li#current a:hover, .vertical div#mainMenu ul li ul li#current a:active{ background: url("im/1livello.gif") no-repeat scroll 10px 50% #bf5229; color:#fff;}
+
+.vertical div#mainMenu ul li.parent li a, .vertical div#mainMenu ul li.parent li a:active, .vertical div#mainMenu ul li.parent li a:visited, .vertical div#mainMenu ul li.parent li a:hover{background: #bfccdc; }
+.vertical div#mainMenu ul li li.parent a, .vertical div#mainMenu ul li li.parent a:active, .vertical div#mainMenu ul li li.parent a:visited, .vertical div#mainMenu ul li li.parent a:hover, .vertical div#mainMenu ul li ul li.parent span{background: url("im/1livelloOpenB.gif") no-repeat scroll 16px 8px #fff;}
+
+.vertical div#mainMenu ul li ul li#current {background: url("im/1livello_reverse.gif") no-repeat scroll 10px 50% #bf5229; color:#fff; list-style:none;  }
+.vertical div#mainMenu ul li span, .vertical div#mainMenu ul li a{border-bottom: 0px solid #fff;color:#fff}
+.vertical div#mainMenu ul li span{color:#fff; text-decoration:none;}
+
+/* colore link */
+.vertical div#mainMenu li a, .vertical div#mainMenu li a:link, .vertical div#mainMenu li a:visited, .vertical div#mainMenu li a:active, .vertical div#mainMenu li a:hover{text-decoration:none;color:#fff; background: url("im/1livello.gif") no-repeat scroll 10px 50% #0153a9;}
+.vertical div#mainMenu li ul li a, .vertical div#mainMenu li ul li a:link, .vertical div#mainMenu li ul li a:visited, .vertical div#mainMenu li ul li a:active, .vertical div#mainMenu li ul li a:hover, .vertical div#mainMenu ul li.parent ul li.parent span{text-decoration:none; color:#000; }
+.vertical div#mainMenu ul li a span, .vertical div#mainMenu ul li ul li a span{border:none;}
+ 
+/* rollover */
+.vertical div#mainMenu ul li.parent li a:hover, .vertical div#mainMenu li a:hover,.vertical div#mainMenu li a:hover span{ background-color:#F4F5F0;}
+

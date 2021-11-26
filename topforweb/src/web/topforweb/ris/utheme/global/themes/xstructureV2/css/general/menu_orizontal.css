@@ -1,0 +1,38 @@
+#menuPanel{ height:35px; display:block;}
+#p_mnuPanel .horizontal{ background:transparent;}
+
+#p_mnuPanel .horizontal #mainMenu {  background:#1B7AB4; min-height:38px; }
+#p_mnuPanel .horizontal #mainMenu ul {  position: absolute;  z-index: 80; list-style:none; top: 0;}
+
+#p_mnuPanel .horizontal #mainMenu ul li {border-right: 1px solid rgb(255, 255, 255); }
+#p_mnuPanel .horizontal #mainMenu ul li a, #p_mnuPanel .horizontal #mainMenu ul li a:link, #p_mnuPanel .horizontal #mainMenu ul li a:visited, #p_mnuPanel .horizontal #mainMenu ul li a:active, #p_mnuPanel .horizontal #mainMenu ul li a:hover, #p_mnuPanel .horizontal #mainMenu ul li span {color: #fff;  background:#1B7AB4; border-bottom:1px solid #E9EBEA;}
+
+#p_mnuPanel .horizontal #mainMenu ul li.parent ul.sf-js-enabled { border: 1px solid #fff;}
+
+#p_mnuPanel .horizontal #mainMenu ul li ul li {background:#F4F5F0; }
+
+#p_mnuPanel .horizontal #mainMenu ul li ul li a, #p_mnuPanel .horizontal #mainMenu ul li ul li a:link, #p_mnuPanel .horizontal #mainMenu ul li ul li a:visited, #p_mnuPanel .horizontal #mainMenu ul li ul li a:active, #p_mnuPanel .horizontal #mainMenu ul li ul li a:hover, #p_mnuPanel .horizontal #mainMenu ul li ul li span  { background:#F4F5F0; color:#333; }
+
+#p_mnuPanel .horizontal #mainMenu ul li ul li a:active, #p_mnuPanel .horizontal #mainMenu ul li ul li a:hover{ background:#F4F5F0; color:#333; }
+
+#p_mnuPanel .horizontal #mainMenu ul li ul li#current a, #p_mnuPanel .horizontal #mainMenu ul li ul li#current a:active, #p_mnuPanel .horizontal #mainMenu ul li ul li#current a:hover{ text-decoration:none;  background: #bf5229 url("im/1livello.gif") no-repeat scroll 10px 15px; color:#fff; }
+
+#p_mnuPanel .horizontal #mainMenu ul li ul li.parent span{background: #F4F5F0; }
+
+#p_mnuPanel .horizontal #mainMenu ul li ul li.parent ul li{ background:#E9EBEA; }
+#p_mnuPanel .horizontal #mainMenu ul li ul li.parent ul li#current{ background:#F9E772; }
+
+#p_mnuPanel .horizontal #mainMenu ul li ul li span{ background:#E9EBEA;}
+#p_mnuPanel .horizontal #mainMenu ul li ul li.parent ul li.parent span{ background:none !important;}
+#p_mnuPanel .horizontal #mainMenu ul li.parent span { padding-left:20px; background: #1B7AB4; color:#fff;}
+
+#p_mnuPanel .horizontal #mainMenu ul li ul li.parent span { background: url("im/1livelloOpenB_reverse.gif") no-repeat scroll 12px 15px #F4F5F0;  color:#000;}
+#p_mnuPanel .horizontal #mainMenu ul li ul li.sfHover span { background: url("im/1livelloOpenB.gif") no-repeat scroll 9px 15px #F4F5F0;}
+
+#p_mnuPanel .horizontal #mainMenu ul li a, #p_mnuPanel .horizontal #mainMenu ul li a:link, #p_mnuPanel .horizontal #mainMenu ul li a:visited, #p_mnuPanel .horizontal #mainMenu ul li a:active, #p_mnuPanel .horizontal #mainMenu ul li a:hover, #p_mnuPanel .horizontal #mainMenu ul li span {background: #1B7AB4; border-bottom: 0px solid rgb(233, 235, 234); color: rgb(255, 255, 255); }
+	
+@media screen and (max-width: 769px){
+#p_mnuPanel .horizontal #mainMenu ul {  position: relative; top:auto;}
+#p_mnuPanel .horizontal #mainMenu ul li  { float:none!important; width:100%;}
+#p_mnuPanel .horizontal #mainMenu ul li a, #p_mnuPanel .horizontal #mainMenu ul li a:link, #p_mnuPanel .horizontal #mainMenu ul li a:visited, #p_mnuPanel .horizontal #mainMenu ul li a:active,#p_mnuPanel .horizontal #mainMenu ul li a:hover, #p_mnuPanel .horizontal #mainMenu ul li span{ width: 100%!important;  display: block!important;}
+}

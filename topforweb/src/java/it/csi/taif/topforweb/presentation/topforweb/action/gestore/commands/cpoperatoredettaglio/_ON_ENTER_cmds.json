@@ -1,0 +1,39 @@
+#-------------------------------------------------------------------------------
+# Copyright CSI-Piemonte -2021
+# SPDX-License-Identifier: EUPL-1.2-or-later.
+#-------------------------------------------------------------------------------
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":false,
+	"targetsWidgets":["ptLuogoNascitaOperatore","ptNRsiMsa"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":true,
+	"targetsWidgets":["ptCodiceFiscaleOperatore","ptDataNascitaOperatore","ptComuneNascitaOperatore"],
+	"targetsMenuElement":[]
+}
+] 
+}
+,
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":true,
+	"targetsWidgets":["ptLuogoNascitaOperatore","ptNRsiMsa"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":false,
+	"targetsWidgets":["ptCodiceFiscaleOperatore","ptDataNascitaOperatore","ptComuneNascitaOperatore"],
+	"targetsMenuElement":[]
+}
+] 
+}
+,
+],
+	"esiti":["OK_ITA","OK_FRA","KO"],
+	"nomeMetodo":"executeInit",
+	"appDataToStore":[]
+}

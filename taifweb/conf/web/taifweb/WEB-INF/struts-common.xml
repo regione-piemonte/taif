@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="common" extends="jsp-package" namespace="/base/common">
+
+		
+<action name="CpDocumentazione" class="it.csi.taif.taifweb.presentation.taifweb.action.common.CpDocumentazioneAction">
+	<result name="input">/jsp/CpDocumentazione.jsp</result>
+	<result name="success">/jsp/CpDocumentazione.jsp</result>
+	
+	<result name="GO_TO_CpRiepilogo" type="chain">
+		<param name="actionName">CpRiepilogo</param>
+		<param name="namespace">/base/common</param>
+	</result>
+	<result name="GO_TO_cpHome" type="chain">
+		<param name="actionName">cpHome</param>
+		<param name="namespace">/base/home</param>
+	</result>
+	<result name="GO_TO_cpHomeGestore" type="chain">
+		<param name="actionName">cpHomeGestore</param>
+		<param name="namespace">/base/gestore</param>
+	</result>
+	<result name="GO_TO_BackPage" type="chain">
+		<param name="actionName">${backActionName}</param>
+		<param name="namespace">${backNamespace}</param>
+	</result>
+	
+	<result name="GO_TO_EX_visualizzaFile.do" type="redirect">
+		<param name="location">visualizzaFile.do</param>
+	</result>
+	<result name="SHOW_dpEliminaDocumentazione">/jsp/dialogpanels/CpDocumentazione_dpEliminaDocumentazione.jsp</result>
+</action>
+
+<action name="CpRiepilogo" class="it.csi.taif.taifweb.presentation.taifweb.action.common.CpRiepilogoAction">
+	<result name="input">/jsp/CpRiepilogo.jsp</result>
+	<result name="success">/jsp/CpRiepilogo.jsp</result>
+	
+	<result name="GO_TO_cpHome" type="chain">
+		<param name="actionName">cpHome</param>
+		<param name="namespace">/base/home</param>
+	</result>
+	<result name="GO_TO_cpElencoAziendeGestore" type="chain">
+		<param name="actionName">cpElencoAziendeGestore</param>
+		<param name="namespace">/base/gestore</param>
+	</result>
+	<result name="GO_TO_CpDocumentazione" type="chain">
+		<param name="actionName">CpDocumentazione</param>
+		<param name="namespace">/base/common</param>
+	</result>
+	<result name="GO_TO_BackPage" type="chain">
+		<param name="actionName">${backActionName}</param>
+		<param name="namespace">${backNamespace}</param>
+	</result>
+	
+</action>
+
+<action name="cpError" class="it.csi.taif.taifweb.presentation.taifweb.action.common.CpErrorAction">
+	<result name="input">/jsp/cpError.jsp</result>
+	<result name="success">/jsp/cpError.jsp</result>
+	
+	<result name="GO_TO_BackPage" type="chain">
+		<param name="actionName">${backActionName}</param>
+		<param name="namespace">${backNamespace}</param>
+	</result>
+	
+	<result name="GO_TO_EX_home" type="redirect">
+		<param name="location">http://www.csipiemonte.it</param>
+	</result>
+</action>
+
+		<!--PROTECTED REGION ID(R-285675323) ENABLED START-->
+		<!-- inserire qui la dichiarazione di azioni aggiuntive hand-written -->
+		
+		<action name="downloadDocumentoDomanda" class="it.csi.taif.taifweb.presentation.taifweb.action.common.DownloadDocumentoDomandaIscrizioneAction">
+            <result name="downloadFile" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="contentDisposition">${contentDisposition}</param>
+                <param name="inputName">inputStream</param>
+            </result>
+            <result name="ko" type="chain">CpDocumentazione</result>
+        </action>
+        
+        <action name="visualizzaFile" class="it.csi.taif.taifweb.presentation.taifweb.action.common.VisuallizaAllegatoAction">
+            <result name="success" type="stream">
+                <param name="inputName">inputStream</param>
+                <param name="contentType">application/octet-stream</param>
+                <param name="contentDisposition">${contentDisposition}</param>
+            </result>
+            <result name="error" type="chain">CpDocumentazione</result>
+        </action>
+		
+		<!--PROTECTED REGION END-->
+
+	</package>
+</struts>

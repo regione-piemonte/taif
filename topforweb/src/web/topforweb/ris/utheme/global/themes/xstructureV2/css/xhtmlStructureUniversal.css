@@ -1,0 +1,302 @@
+@import url(menu_vertical.css);
+@import url(menu_orizontal.css);
+@import url(../font/font-awesome-4.5.0/css/font-awesome.min.css);
+@import url(../font/font-awesome-4.7.0/css/font-awesome.min.css);
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('../font/opensans_regular/OpenSans-Regular-webfont.eot');
+    src: url('../font/opensans_regular/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/opensans_regular/OpenSans-Regular-webfont.woff') format('woff'),
+         url('../font/opensans_regular/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('../font/opensans_regular/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/* stili generali */
+body {font-family:open_sansregular; font-size:18px; margin: 0px; padding: 0px;}
+a:link, a:visited, a:hover, a:active {text-decoration:none;margin:0;padding:0;}
+a:hover {text-decoration:underline;}
+.nascosto, hr, .pageNavigation .separator, .export .separator, .wizardPanel .separator {position:absolute;left:-10000px;top:-10000px;width:0;height:0;overflow:hidden;clear:none;margin:0; padding:0;}
+.hidden{ display:none;}
+
+form {margin:0;padding:0;}
+h1, h3, h4, h5, p, ul, li, dl, a {margin:0;padding:0;}
+ul, ol {padding:0;}
+li, dl, dd {margin:0 0 3px 0;}
+dl {padding:0; margin-bottom:8px;}
+dd {padding:0; margin-bottom:3px;}
+acronym {border-bottom:1px dashed black;cursor:help;}
+h3 {font-size:1.5em;margin-bottom:8px}
+#mainMenu h3{ display:none;}
+h4 {font-size:1.2em;/*margin-top:8px;*/}
+h5 {font-size:1em;}
+/*table {font-size:1em;}*/
+input {margin:0;padding:0; }
+
+input[type="text"], select, textarea {font-family: Arial, Helvetica, sans-serif; font-size:15px; line-height: 32px; height: 32px; border-radius: 3px; border: 1px solid #ccc; padding-left: 5px;}
+select{ padding:7px 0 4px 1px; }
+select.selectMultiple{ height:auto;}
+
+p {margin-bottom:8px;} 
+img.ui-datepicker-trigger a{ border:0;}
+.tabSetPanelBlock .formPanelBlock .msgBoxPanelBlock p {padding-left:14px; padding-right:14px;} /* correzione pannello tab il cui testo era troppo attaccato (ai lati) al bordo del contenitore */
+#page {/*width:95%; min-width:990px;*/ margin: 0 auto;position:relative}
+#applicationArea{overflow:hidden}
+
+/* posizionamento dei singoli pannelli layout UDLRC */
+#westCenterWrapper, #westCenterEastWrapper, #centerEastWrapper{overflow:hidden;clear:both;}
+#westCenterWrapper #westPanel, #westCenterWrapper #westPanel, #westCenterEastWrapper #westPanel, #centerEastWrapper #eastPanel, #westCenterEastWrapper #eastPanel{float:left;width:19%}
+#westCenterWrapper #centerPanel, #centerEastWrapper #centerPanel{width:79%}
+#centerWrapper #centerPanel{width:100%!important; width:98%}	/* Modificato width a 100% per eliminare filetto verticale (causato dal fatto che il div copriva completamente la pagina*/
+#westCenterEastWrapper #centerPanel{width:62%}
+
+/* caratteristiche comuni a tutti i pannelli */
+#southPanel{clear:both;}
+#centerPanel{height:auto!important;height:409px;min-height:409px;text-align:left;float:left;}
+#centerPanel .wrapper{padding-left: 10px}
+
+.formPanelBlock, .commandPanelBlock{ display:block; padding:6px 0;    clear: both;}
+
+/* organizzazione contenuti */
+#centerPanel .floatWrapper{ float:none; overflow:hidden; padding:0!important;}
+.commandPanel .left input,.commandPanel .right input  {}
+#centerPanel .floatWrapper .floatLeft{float:left;padding:0!important;}
+#centerPanel .floatWrapper .floatRight {float:right;padding:0!important;}
+#centerPanel .floatWrapper .floatCenter {float:left;padding:0!important;}
+
+/* 1: tutti i pannelli => larghezze 33% , 33% , 33% */
+.formPanel .leftCenterRightWrapper .floatLeft {width: 33%;}
+.formPanel .leftCenterRightWrapper .floatCenter {width: 32.5%;}
+.formPanel .leftCenterRightWrapper .floatRight {width: 33%;}
+
+/* 2a: Sinistra e destra => larghezze 50% , 50% */
+.formPanel .leftRightWrapper .floatLeft {width: 49.5%;margin: 0 0 0 0;}
+.formPanel .leftRightWrapper .floatRight {width: 48%;	margin: 0 0 0 0;float: right;}
+
+/* 2b: sinistra e centro => larghezze 30% , 70% */
+.formPanel .leftCenterWrapper .floatLeft {width: 29.5%;margin: 0 0 0 0;}
+.formPanel .leftCenterWrapper .floatCenter {width: 68%;margin: 0 0 0 0;float: right;}
+
+/* 2c: centro e destra => larghezze 70% , 30% */
+.formPanel .centerRightWrapper .floatCenter {width: 68%;margin: 0 0 0 0;}
+.formPanel .centerRightWrapper .floatRight {width: 29.5%;margin: 0 0 0 0;float: right;}
+
+/* widgets */
+#centerPanel h3 {padding-top: 23px;margin: 0px 6px 0px 0px;}
+#centerPanel h4{padding:4px 0 0 0; padding-bottom:16px; /* <<- distanziare il titolo dal contenuto sottostante */}
+#centerPanel h5 {margin: 1px;margin-right: 6px;}
+#centerPanel h6 {margin: 1px;margin-right: 6px;}
+#centerPanel h7 {margin: 1px;margin-right: 6px;}
+
+/* pop-up nascosto */
+span.elenco_errori_invisibile {position:absolute;left:-10000px;top:-10000px;}
+
+/* pop-up visibile */
+.elenco_errori_visibile {margin:0;padding: 2px 8px 2px 8px;cursor:auto;width:auto;left:auto;top:auto;position:absolute;z-index:10000;}
+
+/* paginazione */
+.paging {width:99%;overflow: hidden;margin: 5px 0;}
+.paging .pagingLeft {float: left;width: 40%; }
+.pageNumbers{margin-right:33px;}
+.firstPage{padding-right: 15px;}
+.lastPage{padding-left:15px;}
+.pageNumbers a, .pageNumbers a:link, .pageNumbers a:active, .pageNumbers a:visited, .pageNumbers a:hover{padding:0 3px;text-decoration:none; }
+span.previousPage a, span.nextPage a, .pageNavigation a, .pageNavigation a:link, .pageNavigation a:active, .pageNavigation a:visited {text-decoration:underline;}
+span.previousPage a, span.previousPage a:link, span.previousPage a:active, span.previousPage a:visited, span.previousPage a:hover {padding-left:14px;margin-right:8px;}
+span.nextPage a, span.nextPage a:link, span.nextPage a:active, span.nextPage a:visited, span.nextPage a:hover {padding-right:14px;margin-left:8px;}
+
+/* messaggi */
+div.dialogPanel {padding:15px;padding-bottom:7px;margin-bottom:8px;}
+div.dialogPanel div.msgBoxPanel {margin-bottom:8px;text-align:left;}
+div.dialogPanel div.msgBoxPanel p {margin-bottom:3px; }
+
+/* messaggi in una pagina a se' */
+div.stdMessagePanel {margin-bottom:8px;text-align:left}
+.tabSetPanelBlock .formPanelBlock .stdMessagePanelBlock div.stdMessagePanel {margin-bottom:8px; margin-left:16px; margin-right:10px; text-align:left} /* considero il rientro, in caso il dialog sia contenuto dentro un tabsetpanel */
+div.stdMessagePanel ul {margin:0 0 0 20px;text-align:left;margin-top:8px;font-weight:normal}
+div.stdMessagePanel p {margin-bottom:3px;}
+div.feedOk, div.feedKo {margin:8px 8px 8px 0;padding:15px 25px;}
+div.feedSearch, div.feedOk, div.feedKo, #applicationError, .dialogPanel .info, .dialogPanel .warning, .dialogPanel .error{min-height:30px; height:auto!important; height:30px;padding:15px 25p; font-size: 1.1em;}
+.feedOk p, .feedKo p, .dialogPanel .info {margin-bottom:3px;}
+.stdMessagePanel ul {margin:0 30% 0 30%;text-align:left;margin-top:8px;}
+#applicationError{padding:15px 25px 15px; margin:23px 8px 8px 0;}
+ div.feedLoad {margin:8px 8px 8px 0;padding:15px;}
+/* inizio COMMAND PANEL */
+.commandPanel {margin:0 0 8px 0;position:relative;margin-top: 6px;width:99%;min-height: 30px; height:auto!important; height:30px; }
+
+.commandPanel .left {float:left; width: 33%;}
+.commandPanel .center {margin: 0 auto;text-align: center;  width: 30%;  float: left;}
+.commandPanel .right { float:right;width: 33%;text-align: right;}
+#applicationError_links .left, #applicationError_links .right{width: auto; }
+/* pulsanti di scarico excel, word */
+div.export{margin-bottom:16px; font-weight:bold;}
+div.export a, div.export a:link, div.export a:active, div.export a:visited {padding:5px; margin:0 4px 0 0; }
+.commandPanel input, table span.pulsante input {cursor:pointer; font-weight:bold; }
+
+
+/*contestualizzazione navigazione*/
+.navigation input, .navigation a,
+.navigation a:link, .navigation a:hover,
+.navigation a:active, .navigation a:visited {text-decoration:none; }
+.commandPanel input, .navigation input, .navigation a,
+.navigation a:link, .navigation a:hover,
+.navigation a:active, .navigation a:visited , table input.buttonWidget
+{margin:0px 0px 0px 0px; cursor: pointer; font-weight: bold;}
+
+/*contestualizzazione EVIDENZIATO*/
+div.export a span.xls, div.export a:link span.xls, div.export a:hover span.xls, div.export a:active span.xls, div.export a:visited span.xls,
+div.export a span.pdf, div.export a:link span.pdf, div.export a:hover span.pdf, div.export a:active span.pdf, div.export a:visited span.pdf {padding:0px 0px 0px 30px;}
+
+/* fine COMMAND PANEL */
+.tabSetPanel{ display:block; min-height:37px;border-bottom: 1px solid #ccc;    margin-bottom: 20px;}
+div.tabSetPanel ul { display:block;}
+div.tabSetPanel ul li {  margin: 0; display: inline; float: left;  margin-right: 3px;}
+div.tabSetPanel li input {background:#F1F1F1; color: #44484B; font-weight: normal; cursor:pointer; padding:9px 16px 6px 16px;  border: 1px solid #ccc; border-bottom: 0; border-radius:0; line-height:inherit; font-size:1em;background: #E6E6E6;}
+@-moz-document url-prefix() {
+div.tabSetPanel li input {padding:7px 20px 7px 20px; }
+}
+div.tabSetPanel li a, div.tabSetPanel li a:active, div.tabSetPanel li a:visited, div.tabSetPanel li a:hover, div.tabSetPanel li a:link {
+    background-color: #F1F1F1; border: 1px solid #ccc; color: #44484B;
+    font-weight: normal; display: block;  float: left;  height: auto !important; line-height: 2em; /*min-height: 36px;*/ padding: 0 20px; text-decoration:none; display: inline;}
+div.tabSetPanel li.active { border-bottom:0;}	
+div.tabSetPanel li span.activeItem { display: block; font-weight: normal; height: auto !important; line-height:2em; min-height: 37px; padding: 0 20px; background:#fff;border-bottom: 0 none; margin-top: 0;color:#000;}	
+.wizardPanelBlock{font-size: 1em;}
+
+
+/*div.wizardPanel {border-left: 1px solid #ccc; padding:0; margin: 0 8px 0 8px; display: block;min-height: 40px;}
+.wizardPanel ol li {display: block; float: left; font-weight: bold; height: 38px; margin: 0; padding: 0; border-top: 1px solid #ccc; background: url(im/globalPortal/bg_tab_n.jpg) repeat-x scroll 0 0 transparent; margin-bottom:0 !important;border-right: 1px solid #ccc;}
+
+.wizardPanel ol li a, .wizardPanel ol li a:active, .wizardPanel ol li a:visited, .wizardPanel ol li a:hover, .wizardPanel ol li a:link {
+    cursor: pointer;    font-size: 1em;    height: 38px;    margin: 0;      padding: 8px 8px 0 16px !important;	   width: auto !important; }
+div.wizardPanel li input, div.wizardPanel li a, div.wizardPanel li a:link, div.wizardPanel li a:active, div.wizardPanel li a:visited, div.wizardPanel li a:hover{font-weight:normal; text-decoration:none; color: #565455; display: block; font-weight: normal; }
+.wizardPanel input, .wizardPanel ol li a,  .wizardPanel ol li a:active,  .wizardPanel ol li a:visited,  .wizardPanel ol li a:hover,  .wizardPanel ol li a:link {background:none;}
+.wizardPanel ol li input, .wizardPanel ol li a,  .wizardPanel ol li a:active,  .wizardPanel ol li a:visited,  .wizardPanel ol li a:hover,  .wizardPanel ol li a:link {background: url(im/globalPortal/arrow_n_n.gif) no-repeat scroll left top transparent;border:none; line-height: 1.6em;}
+.wizardPanel ol li.active {background: #fff;}
+.wizardPanel ol li.active span.activeItem {float: left; padding:10px 14px 16px 24px !important; background: url(im/arrow_y_n.gif) no-repeat scroll left top #fff;line-height: 1.6em;}
+.wizardPanel ol li span.wizardItem {float: left; padding:10px 14px 16px 24px !important; background: url(im/globalPortal/arrow_n_n.gif) no-repeat scroll left top transparent; font-weight:normal;}*/
+
+
+div.wizardPanel ol {margin:0;padding:0;}
+div.wizardPanel li {    position: relative;
+    margin: 0;
+    display: inline-block;
+    padding: 6px 35px 7px 30px;
+    margin-right: -6px;
+    margin-bottom: 10px;
+    background: #727373; color:#fff;
+}
+.wizardPanel input {cursor: pointer; font-size: 1em; height:auto; margin: 0; padding:0 !important; width: auto !important;line-height:1em;border:0;background:none; color:#fff;}
+div.wizardPanel li.active {background-color: #0153a9;   color: #fff;}
+
+div.wizardPanel li:after  {
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: -22px;
+    font-family: "FontAwesome";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    font-size: 60px;
+    content: "\f054";
+    z-index: 500;
+}
+
+
+div.wizardPanel li:last-child:after {display:none;}
+div.wizardPanel li a { color:#fff;}
+
+
+/*.wizardPanel ol li input#tabswitcher1_stepFinale{border-right:1px solid #ccc;}*/
+div.wizardPanel span.separator { display:none;}
+.wizardPanelContent #p_step1, .wizardPanelContent #p_step2, .wizardPanelContent #p_step3, .wizardPanelContent #p_step4, .wizardPanelContent #p_step5, .wizardPanelContent #p_step6, .wizardPanelContent #p_step7, .wizardPanelContent #p_step8, .wizardPanelContent #p_step9, .wizardPanelContent #p_step10, #p_stepFinale, #p_step1, #step1_2{border:1px solid #0153a9; margin:0;border-top:1px solid #0153a9; padding:10px 8px;}
+.wizardPanelContent h4.wzpLabel{ margin-bottom:8px;}
+
+/* tree */
+ul.tree{ list-style:none; padding:3px 0px 0px 10px; margin:8px 8px 0 0;}
+ul.tree ul{ list-style:none; padding:0px 0px 0px 10px; margin:0 0 0 0;}
+ul.tree ul ul{ list-style:none; padding:0px 0px 0px 10px; margin:0 0 0 0;}
+ul.tree li {margin:0px; padding:0px; line-height: 5px;}
+ul.tree ul li{padding:0 0 2px 8px; margin:0px; }
+ul.tree ul li ul li { padding:10px 0 2px 10px;}
+li.treeRoot a, li.treeRoot a:link, li.treeRoot a:active, li.treeRoot a:visited, li.treeRoot a:hover{  padding:15px 20px 15px 17px; margin: 10px 0 0; display:inline-block; min-width:16px; white-space:nowrap;}
+li.treeRoot span{padding:20px 0 0 40px; white-space:nowrap;}
+li.treeDot a,li.treeDot a:link, li.treeDot a:active, li.treeDot a:visited, li.treeDot a:hover, li.treeDot span{padding: 13px 20px 15px 55px;  margin: 10px 0 0; white-space:nowrap;}
+li.treeDot input{ line-height: .9em; border:0;  background: #fff;
+background: -moz-linear-gradient(top, #fff 0%, #fff 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(100%,#fff)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #fff 0%,#fff 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #fff 0%,#fff 100%); /* Opera11.10+ */
+background: -ms-linear-gradient(top, #fff 0%,#fff 100%); /* IE10+ */
+background: linear-gradient(top, #fff 0%,#fff 100%); /* W3C *	*/ }
+.treeNode{padding:0; margin:0;cursor:pointer;}
+li.treeRoot div.multiSelNode{float:left; padding:18px 20px 0 0px; padding:5px 20px 0 0px\9; height:auto; height:20px\9;}
+div.multiSelNode input, .multiSelLeaf input{ border:0;}
+li.treeRoot div.multiSelLeaf{float:left; padding:18px 20px 0 0px; padding:5px 20px 0 0px\9; height:auto; height:20px\9;}
+div.boxSelectionType{border:1px solid #B1B1B1; background-color:#f7f7f7; width:200px; padding:5px; border-radius:6px}
+
+
+/* tabella dati */
+table.formTable {width:100%; border-collapse:collapse;/* border-bottom: 1px solid #B6B6B6 !important;*/}
+/* table.formTable, */ .tableWidget table.dataTable  {width:99%; border-collapse:collapse; margin-bottom:16px;border-bottom: 1px solid #ccc;}
+table.dataTable {border:1px solid #DBDBDB; border:none;}/*(L) bordo grigio tabella (quando no ExtJS) */
+table.dataTable th {border-top:none !important;}/*(L) no bordo superiore */
+table.formTable th, table.dataTable th, table.formTable td, table.dataTable td  {padding:15px 5px; border-top:none !important; border-bottom:none !important;}
+table.formTable th, table.dataTable th {text-align:left}
+table.formTable caption, table.dataTable caption{font-size: 1em;margin: 0;padding: 8px 12px; text-align:left;}
+
+/* tabella dati ricca ExtJS */
+.tableWidget .x-panel-body {border-bottom: 10px solid #dbdbdb !important; border-left: 10px solid #dbdbdb !important; border-right: 10px solid #dbdbdb !important; border-top: none!important;}
+
+h4.wpLabel a.toggle_handle, h4.fpLabel a.toggle_handle,
+h4.wpLabel a.toggle_handle:link, h4.fpLabel a.toggle_handle:link,
+h4.wpLabel a.toggle_handle:active, h4.fpLabel a.toggle_handle:active,
+h4.wpLabel a.toggle_handle:hover, h4.fpLabel a.toggle_handle:hover,
+h4.wpLabel a.toggle_handle:visited, h4.fpLabel a.toggle_handle:visited  {padding-left:18px;text-decoration:none;}
+h4 a.toggle_handle span.collapse,h4 a.toggle_handle span.espandi {padding: 2px 18px 1px 4px}
+.content_caption {padding:10px 15px;}
+.spaceTop {margin-top:16px;} /* elementi sotto a area caption */
+h4 span.ytogglepanel_handle{float:right;}
+
+/* tabella form */
+table.formTable th, table.formTable td {}
+table.formTable th {padding-right:10px;}
+table.formTable td.puls_inline input, table.formTable td.puls_inline select, 
+table.formTable td.puls_inline textarea {float:none}
+table .sortable {padding-right:15px}
+
+/* bugfix sulle celle di tabella ->> con testi lunghi non andavano a capo */
+.x-grid3-cell-inner, .x-grid3-hd-inner {white-space:normal!important;}
+#centerPanel .x-form-field-wrap .x-form-date-trigger{width:21px;border-bottom:1px solid #c8c8c8;}
+
+/* Pulsanti per layer switcher mappa geografica */
+div.mapViewWidget div[id^="layerswitcher"]{ position:relative; z-index: 1000; top: -485px; left: 60px;}
+div.mapViewWidget div[id^="layerswitcher"] div.x-toolbar{ border: none; margin: 5px 0; background: transparent; width:145px;}
+div.mapViewWidget div[id^="layerswitcher"] div.x-toolbar table.x-toolbar-ct{ width:10%; border: 1px solid #A8B1B8; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;background-color:#F5F5F5; }
+/* //Pulsanti per layer switcher mappa geografica */
+
+/* Stilizzazione dei campi di testo in stato disabled */
+.formPanel input[type="text"]:disabled,
+.formPanel textarea:disabled,
+.formPanel select:disabled
+{border:1px solid #DADADA; background: none #F3F3F3; color: #444E56; cursor:default;} 
+
+/* Orientamento gruppo di radiobutton */
+div.radiobuttons{white-space:nowrap}
+div.horizontal div{display:inline-block}
+div.horizontal div label{ margin-right:30px;}
+div.vertical div{display:block; min-height:38px;}
+@media screen and (max-width: 1023px){
+#westCenterWrapper #westPanel, #westCenterWrapper #westPanel, #westCenterEastWrapper #westPanel, #centerEastWrapper #eastPanel, #westCenterEastWrapper #eastPanel { float: none;  width: 99%;}
+#westCenterWrapper #centerPanel, #centerEastWrapper #centerPanel {  width: 99%;}
+#westCenterEastWrapper #centerPanel{width:99%;}
+}
+@media screen and (max-width: 481px){
+.commandPanel .left, .commandPanel .center, .commandPanel .right  {float:none; width: 100%;}
+#centerPanel .floatWrapper .floatLeft, #centerPanel .floatWrapper .floatCenter, #centerPanel .floatWrapper .floatRight { float: none; width:100%;}
+#westCenterEastWrapper #centerPanel { width: 100%;}
+#westCenterWrapper #westPanel, #westCenterWrapper #westPanel, #westCenterEastWrapper #westPanel, #centerEastWrapper #eastPanel, #westCenterEastWrapper #eastPanel {  float: none;}
+
+
+}

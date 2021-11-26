@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-autowire="autodetect">
+	<!-- bean di business logic -->
+	
+	<!-- bean di facade -->
+	<bean id="springBackEnd" class="it.csi.taif.taifweb.business.BackEndFacade">
+		<property name="CPBECpHome">
+			<ref bean="CPBECpHome"/>
+		</property>
+		<property name="CPBECpLogin">
+			<ref bean="CPBECpLogin"/>
+		</property>
+		<property name="CPBECpDomanda">
+			<ref bean="CPBECpDomanda"/>
+		</property>
+		<property name="CPBECpIstanzeTaglioPresentate">
+			<ref bean="CPBECpIstanzeTaglioPresentate"/>
+		</property>
+		<property name="CPBECpHomeGestore">
+			<ref bean="CPBECpHomeGestore"/>
+		</property>
+		<property name="CPBECpRicercaAziendaGestore">
+			<ref bean="CPBECpRicercaAziendaGestore"/>
+		</property>
+		<property name="CPBECpElencoAziendeGestore">
+			<ref bean="CPBECpElencoAziendeGestore"/>
+		</property>
+		<property name="CPBECpDocumentazione">
+			<ref bean="CPBECpDocumentazione"/>
+		</property>
+		<property name="CPBECpRiepilogo">
+			<ref bean="CPBECpRiepilogo"/>
+		</property>
+		<property name="CPBECpError">
+			<ref bean="CPBECpError"/>
+		</property>
+		<property name="CPBECpRicercaAccessoLibero">
+			<ref bean="CPBECpRicercaAccessoLibero"/>
+		</property>
+		<property name="CPBECpElencoAccessoLibero">
+			<ref bean="CPBECpElencoAccessoLibero"/>
+		</property>
+		<property name="CPBECpAziendaDettaglio">
+			<ref bean="CPBECpAziendaDettaglio"/>
+		</property>
+	</bean>
+	
+	<!-- bean relativi ai singoli content panel -->
+	<bean id="CPBECpHome" class="it.csi.taif.taifweb.business.home.CPBECpHome">
+	</bean>
+	<bean id="CPBECpLogin" class="it.csi.taif.taifweb.business.home.CPBECpLogin">
+	</bean>
+	<bean id="CPBECpDomanda" class="it.csi.taif.taifweb.business.domanda.CPBECpDomanda">
+	</bean>
+	<bean id="CPBECpIstanzeTaglioPresentate" class="it.csi.taif.taifweb.business.domanda.CPBECpIstanzeTaglioPresentate">
+	</bean>
+	<bean id="CPBECpHomeGestore" class="it.csi.taif.taifweb.business.gestore.CPBECpHomeGestore">
+	</bean>
+	<bean id="CPBECpRicercaAziendaGestore" class="it.csi.taif.taifweb.business.gestore.CPBECpRicercaAziendaGestore">
+	</bean>
+	<bean id="CPBECpElencoAziendeGestore" class="it.csi.taif.taifweb.business.gestore.CPBECpElencoAziendeGestore">
+	</bean>
+	<bean id="CPBECpDocumentazione" class="it.csi.taif.taifweb.business.common.CPBECpDocumentazione">
+	</bean>
+	<bean id="CPBECpRiepilogo" class="it.csi.taif.taifweb.business.common.CPBECpRiepilogo">
+	</bean>
+	<bean id="CPBECpError" class="it.csi.taif.taifweb.business.common.CPBECpError">
+	</bean>
+	<bean id="CPBECpRicercaAccessoLibero" class="it.csi.taif.taifweb.business.libero.CPBECpRicercaAccessoLibero">
+	</bean>
+	<bean id="CPBECpElencoAccessoLibero" class="it.csi.taif.taifweb.business.libero.CPBECpElencoAccessoLibero">
+	</bean>
+	<bean id="CPBECpAziendaDettaglio" class="it.csi.taif.taifweb.business.libero.CPBECpAziendaDettaglio">
+	</bean>
+	
+	
+	
+	<!-- helper per le funzioni di securizzazione -->
+	<bean id="springSecurityHelper" class="it.csi.taif.taifweb.business.SecurityHelper">
+		<!-- protocollo di interazione con il PEP (EJB|WS) utilizzato solo se la security non e' custom --> 
+		<property name="PDProtocol" value="@IRIDE_PD_PROTOCOL@" />
+	</bean>
+	
+	
+	
+	
+	<!--PROTECTED REGION ID(R585863764) ENABLED START-->
+	<!-- Inserire qui configurazioni aggiuntive da iniettare nel bean prinicipale -->
+
+
+
+	<bean id="dummyMgr" class="it.csi.taif.taifweb.business.manager.DummyMgr" />
+
+	<bean id="taifMgr" class="it.csi.taif.taifweb.business.manager.TaifMgr">
+		<property name="dbMgr" ref="dbMgr" />
+		<property name="msgMgr" ref="msgMgr" />
+	</bean>
+
+	<bean id="dbMgr" class="it.csi.taif.taifweb.business.manager.db.DbMgr">
+ 		<property name="txManager" ref ="txManager"/>
+     </bean>
+
+ 	<bean id="exportToExcel" class="it.csi.taif.taifweb.business.common.ExportToExcel">
+		 	 <property name="taifMgr" ref="taifMgr"/>
+		 	  <property name="pdfDbManager" ref="pdfDbManager"/>
+	</bean>
+	<bean id="dozerBeanMapper" class="org.dozer.DozerBeanMapper" />
+	
+	<bean id="serviceMgr" class="it.csi.taif.taifweb.business.manager.service.ServiceMgr">
+	    <property name="limmAmmEnteServiceHelper">
+            <ref bean="limmAmmEnteServiceHelper" />
+        </property>
+        <property name="aaepServiceHelper">
+            <ref bean="aaepServiceHelper" />
+        </property>
+        <property name="dbMgr">
+            <ref bean="dbMgr" />
+        </property>
+        <property name="actaServiceHelper">
+            <ref bean="actaServiceHelper" />
+        </property>
+        <property name="primpaforservHelper">
+            <ref bean="primpaforservHelper" />
+        </property>
+	</bean>
+	<bean id="msgMgr" class="it.csi.taif.taifweb.business.manager.message.MsgMgr" />
+	<bean id="validationMgr"
+		class="it.csi.taif.taifweb.business.manager.validation.ValidationMgr" />
+	<bean id="visibileOrdinFilter"
+		class="it.csi.taif.taifweb.business.dao.taifweb.filter.VisibileOrdinFilter" />
+	<bean id="materialeFilter"
+		class="it.csi.taif.taifweb.business.dao.taifweb.filter.MaterialeFilter" />
+	<bean id="categoriaMezzoFilter"
+		class="it.csi.taif.taifweb.business.dao.taifweb.filter.CategoriaMezzoFilter" />
+	<bean id="formaGiuridicaFilter"
+		class="it.csi.taif.taifweb.business.dao.taifweb.filter.FormaGiuridicaFilter" />
+	<bean  id="soggettoGestoreFilter"
+		class="it.csi.taif.taifweb.business.dao.taifweb.filter.SoggettoGestoreFilter" />
+	<bean id="aziendaVisibleFilter"
+		class="it.csi.taif.taifweb.business.dao.taifweb.filter.AziendaVisibleFilter" />
+	<bean id="specieFilter"
+		class="it.csi.taif.taifweb.business.dao.taifweb.filter.SpecieFilter" />
+	<bean id="provenienzaFilter"
+		class="it.csi.taif.taifweb.business.dao.taifweb.filter.ProvenienzaFilter" />
+	<bean id="assortimentoFilter"
+		class="it.csi.taif.taifweb.business.dao.taifweb.filter.AssortimentoFilter" />
+	<bean id="unitaMisuraFilter"
+		class="it.csi.taif.taifweb.business.dao.taifweb.filter.UnitaMisuraFilter" />
+	<bean id="tipoMezzoFilter"
+		class="it.csi.taif.taifweb.business.dao.taifweb.filter.TipoMezzoFilter" />	
+	<bean id="contrattoFilter"
+		class="it.csi.taif.taifweb.business.dao.taifweb.filter.ContrattoFilter" />	
+	<bean id="statoPraticaFilter"
+		class="it.csi.taif.taifweb.business.dao.taifweb.filter.StatoPraticaFilter" />	
+	<bean id="mansioneFilter"
+		class="it.csi.taif.taifweb.business.dao.taifweb.filter.MansioneFilter" />	
+	<bean id="inquadramentoFilter"
+		class="it.csi.taif.taifweb.business.dao.taifweb.filter.InquadramentoFilter" />
+	<bean id="corsoQualificaFilter"
+		class="it.csi.taif.taifweb.business.dao.taifweb.filter.CorsoQualificaFilter" />
+	<bean id="tipoAllegatoFilter"
+		class="it.csi.taif.taifweb.business.dao.taifweb.filter.TipoAllegatoFilter" />
+	<bean id="funzioneVisibleFilter"
+		class="it.csi.taif.taifweb.business.dao.taifweb.filter.FunzioneVisibleFilter" />
+	<bean id="lavoroPaFilter"
+		class="it.csi.taif.taifweb.business.dao.taifweb.filter.LavoroPaFilter" />
+	<bean id="configProfiloFilter"
+		class="it.csi.taif.taifweb.business.dao.taifweb.filter.ConfigProfiloFilter" />
+	<bean id="domandaIscrizioneLiguria"
+		class="it.csi.taif.taifweb.business.report.DomandaIscrizioneLiguria" />
+	<bean id="domandaIscrizionePiemonte"
+		class="it.csi.taif.taifweb.business.report.DomandaIscrizionePiemonte" />
+	<bean id="domandaIscrizioneValeAosta"
+		class="it.csi.taif.taifweb.business.report.DomandaIscrizioneValeAosta" />
+	<bean id="dichiarazioneSostitutivaPiemonte"
+		class="it.csi.taif.taifweb.business.report.DichiarazioneSostitutivaPiemonte" />
+	<bean id="dichiarazioneSostitutivaLiguria"
+		class="it.csi.taif.taifweb.business.report.DichiarazioneSostitutivaLiguria" />
+	<bean id="dichiarazioneSostitutivaAosta"
+		class="it.csi.taif.taifweb.business.report.DichiarazioneSostitutivaAosta" />
+	<bean id="attestazioneConfermaLiguria"
+		class="it.csi.taif.taifweb.business.report.AttestazioneConfermaLiguria" />
+	<bean id="attestazioneConfermaPiemonte"
+		class="it.csi.taif.taifweb.business.report.AttestazioneConfermaPiemonte" />
+	<bean id="attestazioneConfermaAosta"
+		class="it.csi.taif.taifweb.business.report.AttestazioneConfermaAosta" />
+	<bean id="inscriptionAnnuaireInformaRhonesAlpes"
+		class="it.csi.taif.taifweb.business.report.InscriptionAnnuaireInformaRhonesAlpes" />
+	<bean id="inscriptionAnnuaireInformaProvence"
+		class="it.csi.taif.taifweb.business.report.InscriptionAnnuaireInformaProvence" />
+	<bean id="schedaAziendaSezioneCinque"
+		class="it.csi.taif.taifweb.business.report.SchedaAziendaSezioneCinque" />
+	<bean id="schedaAziendaSezioneQuatro"
+		class="it.csi.taif.taifweb.business.report.SchedaAziendaSezioneQuatro" />
+		<bean id="schedaAziendaSezioneTre"
+	class="it.csi.taif.taifweb.business.report.SchedaAziendaSezioneTre" />
+		<bean id="schedaAziendaSezioneDue"
+	class="it.csi.taif.taifweb.business.report.SchedaAziendaSezioneDue" />
+		<bean id="schedaAziendaSezioneUno"
+	class="it.csi.taif.taifweb.business.report.SchedaAziendaSezioneUno" />
+		<bean id="schedaAziendaSezioneSei"
+	class="it.csi.taif.taifweb.business.report.SchedaAziendaSezioneSei" />
+	<bean id="schedaAzienda"
+	class="it.csi.taif.taifweb.business.report.SchedaAzienda" />
+		<bean id="schedaAziendaSezioneTreFrancese"
+	class="it.csi.taif.taifweb.business.report.SchedaAziendaSezioneTreFrancese" />
+		<bean id="schedaAziendaSezioneCinqueFrancese"
+	class="it.csi.taif.taifweb.business.report.SchedaAziendaSezioneCinqueFrancese" />
+			<bean id="schedaAziendaSezioneSeiFrancese"
+	class="it.csi.taif.taifweb.business.report.SchedaAziendaSezioneSeiFrancese" />
+		<bean id="aziendaImportata"
+	class="it.csi.taif.taifweb.dto.domanda.ImportAziendaAAEP" />
+	  
+	<bean id="pdfDbManager"  class="it.csi.taif.taifweb.business.report.PdfDbManager">
+		<property name="dbMgr" ref="dbMgr" />
+		<property name="msgMgr" ref="msgMgr" />
+	</bean>   
+	
+	
+
+	<bean id="abstractServiceHelper" abstract="true">
+		<property name="msgMgr" ref="msgMgr" />
+	</bean>
+	
+	<bean id="apiManagerServiceHelper" 
+     	class="it.csi.taif.taifweb.business.helper.ApiManagerServiceHelper" 
+     	parent="abstractServiceHelper">
+     	<constructor-arg index="0" value="@taif.token.url@" />
+        <property name="dbMgr" ref="dbMgr" />
+    </bean>
+	
+	 <bean id="limmAmmEnteServiceHelper" 
+     	class="it.csi.taif.taifweb.business.helper.LimmAmmEnteServiceHelper" 
+     	parent="abstractServiceHelper">
+        <constructor-arg index="0" value="@limamm.ente.api.url@"></constructor-arg>
+        <property name="apiManagerServiceHelper" ref="apiManagerServiceHelper" />
+    </bean>
+    
+    <bean id="aaepServiceHelper" 
+     	class="it.csi.taif.taifweb.business.helper.AaepServiceHelper" 
+     	parent="abstractServiceHelper">
+        <constructor-arg index="0" value="@aaep.api.url@"></constructor-arg>
+        <property name="apiManagerServiceHelper" ref="apiManagerServiceHelper" />
+    </bean>
+    
+    <bean id="indexServiceHelper"
+    	class="it.csi.taif.taifweb.business.helper.IndexServiceHelper"
+    	parent="abstractServiceHelper">
+    	<constructor-arg index="0" value="@index.ws.url@"/>
+    </bean>
+     
+    <bean id="actaServiceHelper" 
+    	class="it.csi.taif.taifweb.business.helper.ActaServiceHelper" 
+    	parent="abstractServiceHelper">
+    	<constructor-arg index="0" value="@acta.backoffice.api.url@"></constructor-arg>
+    	<constructor-arg index="1" value="@acta.management.api.url@"></constructor-arg>
+    	<constructor-arg index="2" value="@acta.multifiling.api.url@"></constructor-arg>
+    	<constructor-arg index="3" value="@acta.navigation.api.url@"></constructor-arg>
+    	<constructor-arg index="4" value="@acta.object.api.url@"></constructor-arg>
+    	<constructor-arg index="5" value="@acta.officialbook.api.url@"></constructor-arg>
+    	<constructor-arg index="6" value="@acta.relationships.api.url@"></constructor-arg>
+    	<constructor-arg index="7" value="@acta.document.api.url@"></constructor-arg>
+    	<constructor-arg index="8" value="@acta.repository.api.url@"></constructor-arg>
+    	<constructor-arg index="9" value="@acta.sms.api.url@"></constructor-arg>
+    	<constructor-arg index="10" value="@acta.subjectregistry.api.url@"></constructor-arg>
+    	<property name="apiManagerServiceHelper" ref="apiManagerServiceHelper" />
+    </bean>
+    
+    <bean id="primpaforservHelper"
+    	class="it.csi.taif.taifweb.business.helper.PrimpaforservHelper"
+    	parent="abstractServiceHelper">
+    	<constructor-arg index="0" value="@primpaforserv.ws.url@"/>
+    </bean>
+	
+	<!--PROTECTED REGION END-->
+
+</beans>

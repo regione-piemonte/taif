@@ -1,0 +1,85 @@
+#-------------------------------------------------------------------------------
+# Copyright CSI-Piemonte -2021
+# SPDX-License-Identifier: EUPL-1.2-or-later.
+#-------------------------------------------------------------------------------
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpSchedaAzienda",
+	"contentPanelName":"CpRiepilogo",
+	"itemName": "fpSchedaAzienda"}
+,{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpRiepilogoStatoDomanda",
+	"contentPanelName":"CpRiepilogo",
+	"itemName": null}
+,{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpRiepilogoMessaggio",
+	"contentPanelName":"CpRiepilogo",
+	"itemName": "fpRiepilogoMessaggio"}
+,{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpRiepilogoTabellaStati",
+	"contentPanelName":"CpRiepilogo",
+	"itemName": null}
+,{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.VisibilityCommand" ,
+	"show":true,
+	"targetsWidgets":["ptDsStatoDomanda"],
+	"targetsMenuElement":[]
+}
+] 
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpSchedaAzienda",
+	"contentPanelName":"CpRiepilogo",
+	"itemName": null}
+,{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpRiepilogoStatoDomanda",
+	"contentPanelName":"CpRiepilogo",
+	"itemName": "fpRiepilogoStatoDomanda"}
+,{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpRiepilogoMessaggio",
+	"contentPanelName":"CpRiepilogo",
+	"itemName": "fpRiepilogoMessaggio"}
+,{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpRiepilogoTabellaStati",
+	"contentPanelName":"CpRiepilogo",
+	"itemName": null}
+,{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.VisibilityCommand" ,
+	"show":true,
+	"targetsWidgets":["ptDsStatoDomanda"],
+	"targetsMenuElement":[]
+}
+] 
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpSchedaAzienda",
+	"contentPanelName":"CpRiepilogo",
+	"itemName": "fpSchedaAzienda"}
+,{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpRiepilogoStatoDomanda",
+	"contentPanelName":"CpRiepilogo",
+	"itemName": "fpRiepilogoStatoDomanda"}
+,{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpRiepilogoMessaggio",
+	"contentPanelName":"CpRiepilogo",
+	"itemName": "fpRiepilogoMessaggio"}
+,{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpRiepilogoTabellaStati",
+	"contentPanelName":"CpRiepilogo",
+	"itemName": null}
+,{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.VisibilityCommand" ,
+	"show":true,
+	"targetsWidgets":["ptDsStatoDomanda"],
+	"targetsMenuElement":[]
+}
+] 
+}
+],
+	"esiti":["Ok_Scheda","Ok_Wizard","Ok_SchedaWizard"],
+	"nomeMetodo":"chiudiTabellaStati",
+	"appDataToStore":[]
+}

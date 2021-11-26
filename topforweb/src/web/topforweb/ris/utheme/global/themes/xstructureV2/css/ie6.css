@@ -1,0 +1,93 @@
+/* YUI Reset CSS - contiene delle regole che neutralizzano il foglio di stile di default dei browser. */
+/*
+Copyright (c) 2009, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.7.0
+*/
+html{color:#000;}
+body{z-index:0; overflow:hidden;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}
+del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}
+abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}
+sub{vertical-align:baseline;}
+legend{color:#000;}
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+input,button,textarea,select{*font-size:100%;outline:none; border:none; background-color:#fff; }
+input{border:1px solid #8F8F8F;}
+textarea{border: 1px solid #b7b7b7; overflow:auto;} /*(L) di default IE ha le scrollbar sempre visibili - il bordo non era visibile */
+
+/* correzione bachi */
+#contentPanel{clear:both}
+#westCenterWrapper #centerPanel, #centerEastWrapper #centerPanel{clear: right;}	/* !! QUESTO PER EVITARE CHE IL BLOCCO SLITTI SOTTO IL MENU DI SX !! */
+
+div.export a, div.export a:link, div.export a:hover, div.export a:active, div.export a:visited {padding:4px 5px;}
+div.wizardPanel input, .wizardPanel ol li a,  .wizardPanel ol li a:active,  .wizardPanel ol li a:visited,  .wizardPanel ol li a:hover,  .wizardPanel ol li a:link {/*padding:0 2px 0 10px;*/ padding:5px 2px 5px 5px;}
+div.wizardPanel li input{padding:0; margin:0; white-space: nowrap; line-height:2.2em;}
+div.wizardPanel li a{white-space: nowrap;}/*(L) correzione: spezzava il testo e andava a capo malamente*/
+div.wizardPanel li.active span{ line-height:2.6em; padding:8px 12px 6px 12px; }/*(L) per rendere lo span "attivo" delle stesse dimensioni degli altri non attivi*/
+div.wizardPanel li span.wizardItem {padding:8px 12px 6px;}/*(L)*/
+div.wizardPanel li a, div.wizardPanel li a:link, div.wizardPanel li a:active, div.wizardPanel li a:visited, div.wizardPanel li a:hover/*, div.wizardPanel li.active span*/ {min-height:1.2em; padding:8px 12px 6px;}
+
+#centerPanel h3 {margin: 0;padding: 0; padding-top: 23px; background-color:#fff; border:none}
+
+/* mappa */
+.mapViewWidget{background-color:#fff;display:inline;}
+.error{position:relative}
+.radio{border:none}
+
+/* correzione bachi css di ext */
+a.x-menu-item, a:link.x-menu-item, a:active.x-menu-item, a:visited.x-menu-item , a:hover.x-menu-item {padding: 3px 21px 3px 27px;}
+
+/* tabSetPanel  */
+div.tabSetPanel{ width:100%;}
+div.tabSetPanel ul {padding-bottom:10px;}
+div.tabSetPanel ul li{padding-top:11px; margin-right:2px; }
+div.tabSetPanel ul li input{height:14px;}
+
+input.checkbox{ background-color: transparent; border:none} /*(L) per eliminare il bianco di sfondo e la bordatura messi da IE6 di default */
+input.radio{ background-color: transparent;} /*(L) per eliminare il bianco di sfondo messo da IE di default */
+
+/* Rollover sui bottoni */
+input.buttonWidget{ /* background-color: #FFDF9A; color:#000000; */ height:24px; cursor:pointer;}
+input.buttonWidgetHover{ /* 	background-color: #FFDF9A; */ color:#000000; height:24px; }
+
+input.save{background:url(im/save.jpg) no-repeat scroll 0 4px #FFDF9A; }
+input.cancel{background-color:#fff; color:#e90111;text-decoration:underline; border:none;}
+
+.commandPanel input, table input.buttonWidget{padding:0;}
+.commandPanel input, .navigation input, .navigation a, .navigation a:link, .navigation a:hover, .navigation a:active, .navigation a:visited , table input.buttonWidget, .commandPanel  .save {border: none;}
+div.export a, div.export a:link, div.export a:active, div.export a:visited, div.export a:hover {padding:2px 4px; margin:0 4px 0 0; }
+
+/* fix tree view */
+li.treeRoot a, li.treeRoot a:link, li.treeRoot a:active, li.treeRoot a:visited, li.treeRoot a:hover{background:transparent url(im/folder.gif) 0 50% no-repeat; text-decoration:none; float:left; width:16px; height:16px; margin:0; padding:0; clear: left;}
+input.treeNode{ text-align:left; background-color:#fff; /* padding:0 0 0 22px; */ clear: right;}
+li.treeRoot span{margin:0 0 0 20px; width:150px; float:left;}
+
+/* fix tree view (terzo livello) */
+li.treeDot a:link, li.treeDot a:hover, li.treeDot a:visited{width:auto; padding-left:18px; background: url("general/im/page.gif") no-repeat scroll 0 50% transparent; text-decoration: none;}
+li.treeDot{border:none;}
+
+#centerPanel h3, #centerPanel h4, #centerPanel h5, #centerPanel h6, #centerPanel .formPanel{position:relative}
+#centerPanel #applicationError_links  a.buttonWidget:hover, .navigation a:hover, .buttonWidget:hover, .buttonWidgetHover, div.export a:hover {background-color: #FFDF9A; color:#000; border: none;}  /* siccome il rollover sui pulsanti fatti con "INPUT" non funziona in IE6, li disattivo, per coerenza di layout, anche su quelli fatti con "A HREF" */
+
+/* Footer di portale */
+#portalFooter, form{clear:both}
+#portalFooterTop{height:28px;}
+
+/* dato che IE6 non è in grado di renderizzare la trasparenza nelle immagini PNG, utilizzo il formato GIF */
+#portalHeader h1{background:transparent url(im/globalPortal/logo.jpg) 12px 1px no-repeat; min-height:48px; height:auto!important; height:48px;}
+/* #sx{position:absolute; top:0px; left:15px; width:188px; background:transparent url(im/globalPortal/logo_sire.gif) no-repeat;min-height:50px; height:auto!important;height:50px;} */
+
+/* fix per tenere il nome del servizio a destra dell'application header -  altrimenti IE6 lo manda su 2 righe */
+/* div#applicationHeader{ position:absolute; width:100%; text-align:right;} */
+
+ul li#current a{ font-weight:bold;}	/* grassetto alla voce corrente di menu */
+
+div.breadCrumbPanel{position:relative; clear:right;} /* fix: le briciole di pane NON si vedevano. */
+
+/* div.mapViewWidget div#layerswitcher_mapMappa div.x-toolbar { border: none; margin: 5px 0; background: transparent; width:103px;} */ /* layer switcher */

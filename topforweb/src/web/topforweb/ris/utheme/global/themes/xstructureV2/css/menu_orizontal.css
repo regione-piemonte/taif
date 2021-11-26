@@ -1,0 +1,28 @@
+#menuPanel{ height:35px; display:block;}
+#p_mnuPanel .horizontal{display:block; width:100%;  min-height: 30px;}
+
+#p_mnuPanel .horizontal #mainMenu { display: block;  position: relative;  width: 100%; }
+#p_mnuPanel .horizontal #mainMenu ul {  position: absolute;  z-index: 80; list-style:none; top: 0;}
+
+#p_mnuPanel .horizontal #mainMenu ul li { float:left; position:relative; z-index: 90;  cursor: pointer; padding: 0;}
+#p_mnuPanel .horizontal #mainMenu ul li a, #p_mnuPanel .horizontal #mainMenu ul li a:link, #p_mnuPanel .horizontal #mainMenu ul li a:visited, #p_mnuPanel .horizontal #mainMenu ul li a:active, #p_mnuPanel .horizontal #mainMenu ul li a:hover, #p_mnuPanel .horizontal #mainMenu ul li span { padding:6px 8px; line-height: 2.2em;}
+
+#p_mnuPanel .horizontal #mainMenu ul li ul li.parent {  position:relative; }
+#p_mnuPanel .horizontal #mainMenu ul li.parent ul.sf-js-enabled { display:block; list-style:none; position:inherit !important; margin: 0; padding: 0; }
+
+#p_mnuPanel .horizontal #mainMenu ul li ul { display:block; list-style:none;position:absolute;}
+#p_mnuPanel .horizontal #mainMenu ul li ul li { float:none; display:block;}
+
+#p_mnuPanel .horizontal #mainMenu ul li ul li ul li { margin-left:16px;}
+
+#p_mnuPanel .horizontal #mainMenu ul li ul li a, #p_mnuPanel .horizontal #mainMenu ul li ul li a:link, #p_mnuPanel .horizontal #mainMenu ul li ul li a:visited, #p_mnuPanel .horizontal #mainMenu ul li ul li a:active, #p_mnuPanel .horizontal #mainMenu ul li ul li a:hover, #p_mnuPanel .horizontal #mainMenu ul li ul li span {text-decoration:none; padding:0px 10px 0px 25px !important; display:block; }
+#p_mnuPanel .horizontal #mainMenu ul li ul li a:active, #p_mnuPanel .horizontal #mainMenu ul li ul li a:hover{ text-decoration:none; padding:0px 10px 0px 25px !important; display:block;}
+
+#p_mnuPanel .horizontal #mainMenu ul li ul li#current a, #p_mnuPanel .horizontal #mainMenu ul li ul li#current a:active, #p_mnuPanel .horizontal #mainMenu ul li ul li#current a:hover{ text-decoration:none;  padding:0px 10px 0px 25px !important; display:block;}
+
+#p_mnuPanel .horizontal #mainMenu ul li ul li.parent ul li{ display:block;}
+#p_mnuPanel .horizontal #mainMenu ul li ul li.parent ul li#current{display:block;}
+
+#p_mnuPanel .horizontal #mainMenu ul li ul li.parent ul li.parent span{ background:none !important;}
+
+#p_mnuPanel .horizontal #mainMenu ul li a, #p_mnuPanel .horizontal #mainMenu ul li a:link, #p_mnuPanel .horizontal #mainMenu ul li a:visited, #p_mnuPanel .horizontal #mainMenu ul li a:active, #p_mnuPanel .horizontal #mainMenu ul li a:hover, #p_mnuPanel .horizontal #mainMenu ul li span { line-height: 2.2em;  padding: 6px 8px;}

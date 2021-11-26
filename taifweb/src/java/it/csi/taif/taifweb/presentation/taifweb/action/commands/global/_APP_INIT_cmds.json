@@ -1,0 +1,65 @@
+#-------------------------------------------------------------------------------
+# Copyright CSI-Piemonte -2021
+# SPDX-License-Identifier: EUPL-1.2-or-later.
+#-------------------------------------------------------------------------------
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.JumpCommand" ,
+	"name": "cpRicercaAccessoLibero", 
+	"pushCurrent":false
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.JumpCommand" ,
+	"name": "cpRicercaAccessoLibero", 
+	"pushCurrent":false
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.JumpCommand" ,
+	"name": "cpHome", 
+	"pushCurrent":false
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.JumpCommand" ,
+	"name": "cpLogin", 
+	"pushCurrent":false
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.JumpCommand" ,
+	"name": "cpHome", 
+	"pushCurrent":false
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.JumpCommand" ,
+	"name": "cpLogin", 
+	"pushCurrent":false
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.JumpCommand" ,
+	"name": "cpHomeGestore", 
+	"pushCurrent":false
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.JumpCommand" ,
+	"name": "cpLogin", 
+	"pushCurrent":false
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.JumpCommand" ,
+	"name": "cpError", 
+	"pushCurrent":false
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.JumpCommand" ,
+	"name": "cpError", 
+	"pushCurrent":false
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.JumpCommand" ,
+	"name": "cpError", 
+	"pushCurrent":false
+}
+],
+	"esiti":["liberoIT","liberoNO_IT","aziendaIT","aziendaNO_IT","professionistaIT","professionistaNO_IT","gestoreIT","gestoreNO_IT","gestoreKO","azienzaKO","professionistaKO"],
+	"nomeMetodo":"identificaProfilo",
+	"appDataToStore":["appDatatipologia","appDatacurrentUser"]
+}

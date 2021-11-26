@@ -1,0 +1,58 @@
+#-------------------------------------------------------------------------------
+# Copyright CSI-Piemonte -2021
+# SPDX-License-Identifier: EUPL-1.2-or-later.
+#-------------------------------------------------------------------------------
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.OnOffCommand" ,
+	"enable":false,
+	"targetsWidgets":["tInserimentoCodiceFiscale","tInserimentoCognome","tInserimentoNome","cbStatoSchedaInserimento"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":false,
+	"targetsWidgets":["btnCercaOperatoreAnagraficaIt","tfInserimentoOperatoreNrsiMsa","btnCercaOperatoreFr","tComuneEsteroResidenza","tComuneNascitaEstero","cbComuneNascitaOperatore"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":true,
+	"targetsWidgets":["cbComuneResidenzaOperatore","tInserimentoCodiceFiscale"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.JumpCommand" ,
+	"name": "cpInserimentoOperatore", 
+	"pushCurrent":false
+}
+] 
+}
+,
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.OnOffCommand" ,
+	"enable":false,
+	"targetsWidgets":["tInserimentoNome","tfInserimentoOperatoreNrsiMsa","tInserimentoCognome","cbStatoSchedaInserimento"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":false,
+	"targetsWidgets":["btnCercaOperatoreAnagraficaIt","btnCercaOperatoreFr","tInserimentoCodiceFiscale","cbComuneNascitaOperatore","tComuneNascitaEstero","tComuneEsteroResidenza"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":true,
+	"targetsWidgets":["tfInserimentoOperatoreNrsiMsa","tComuneEsteroResidenza"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.JumpCommand" ,
+	"name": "cpInserimentoOperatore", 
+	"pushCurrent":false
+}
+] 
+}
+,
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.NOPCommand" }
+],
+	"esiti":["OK_OPERATORE_IT_operatorExists","OK_OPERATORE_FR_operatorExists","KO"],
+	"nomeMetodo":"modificaOperatore",
+	"appDataToStore":[]
+}

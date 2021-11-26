@@ -1,0 +1,245 @@
+#-------------------------------------------------------------------------------
+# Copyright CSI-Piemonte -2021
+# SPDX-License-Identifier: EUPL-1.2-or-later.
+#-------------------------------------------------------------------------------
+<!DOCTYPE html> 
+<html  lang="it" xml:lang="it">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<title>Demo per albo transfrontalieri</title>
+		
+		<link rel="stylesheet" type="text/css" href="/ris/utheme/global/themes/xstructureV2/css/globalPortal.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="/ris/utheme/global/themes/xstructureV2/css/xhtmlStructureUniversal.css" media="screen" />
+		
+		<link rel="stylesheet" type="text/css" href="/ris/utheme/global/themes/xstructureV2/css/general/theme.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="/ris/utheme/general/taifweb/css/taifweb.css" media="screen" />
+		
+		<link rel="stylesheet" type="text/css" href="/ris/utheme/global/themes/xstructureV2/css/corner/corner.css" media="screen" />
+		<!--[if lte IE 6]>
+		<link rel="stylesheet" type="text/css" href="/ris/utheme/global/themes/xstructureV2/css/ie6.css" media="screen" />
+		<![endif]-->
+		<!--[if IE 7]>
+		<link rel="stylesheet" type="text/css" href="/ris/utheme/global/themes/xstructureV2/css/ie7.css" media="screen" />
+		<![endif]-->
+		<!-- funzioni e definizioni javascript -->
+		<script type="text/javascript" src="/taifweb/ris/js/jsFunctions.js"></script>
+			
+		
+
+
+	
+<!-- inserimento risorse extjs -->
+<link rel="stylesheet" type="text/css" href="/ris/utheme/global/themes/jqlibsthemeV2/base/jquery.ui.all.css" />
+<link rel="stylesheet" type="text/css" href="/ris/utheme/global/themes/jqlibsthemeV2/css/general/css/xtheme-general.css" />
+<script type="text/javascript" src="/ris/utheme/global/jslib/jquery/1.10.2/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="/ris/utheme/global/jslib/jqueryUI/1.10.4/ui/jquery.ui.core.js"></script>
+<script type="text/javascript" src="/ris/utheme/global/jslib/jqueryUI/1.10.4/ui/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="/ris/utheme/global/jslib/jqueryUI/1.10.4/ui/jquery.ui.mouse.js"></script>
+<script type="text/javascript" src="/ris/utheme/global/jslib/jqueryUI/1.10.4/ui/jquery.ui.position.js"></script>
+<script type="text/javascript" src="/ris/utheme/global/jslib/jqueryUI/1.10.4/ui/jquery.ui.menu.js"></script>
+<script type="text/javascript" src="/ris/utheme/global/jslib/jqueryUI/1.10.4/ui/jquery.ui.datepicker.js"></script>
+<script type="text/javascript" src="/ris/utheme/global/jslib/jqueryUI/1.10.4/ui/jquery.ui.autocomplete.js"></script>
+<script type="text/javascript" src="/ris/utheme/global/jslib/jqueryUI/1.10.4/ui/jquery.ui.tooltip.js"></script>
+<script type="text/javascript" src="/ris/utheme/global/jslib/jqueryUI/1.10.4/ui/jquery.ui.button.js"></script>
+<script type="text/javascript" src="/ris/utheme/global/jslib/jqueryUI/1.10.4/ui/jquery.ui.dialog.js"></script>
+<script type="text/javascript" src="/ris/utheme/global/jslib/jqueryUI/1.10.4/ui/jquery.ui.draggable.js"></script>
+<script type="text/javascript" src="/ris/utheme/global/jslib/jqueryUI/1.10.4/ui/jquery.ui.droppable.js"></script>
+<script type="text/javascript" src="/ris/utheme/global/jslib/jqueryUI/1.10.4/ui/jquery.ui.resizable.js"></script>
+<script type="text/javascript" src="/ris/utheme/global/jslib/ckeditor/3.6.4/ckeditor.js"></script>
+<link rel="stylesheet" type="text/css" href="/ris/utheme/global/jslib/jqcsienricher/1.1.latest/ajaxify-tag/css/ajaxify.css" />
+<script type="text/javascript" src="/ris/utheme/global/jslib/jqcsienricher/1.1.latest/oojsutils/oojsutils.js"></script>
+<script type="text/javascript" src="/ris/utheme/global/jslib/jqcsienricher/1.1.latest/enricher/enricher.js"></script>
+<script type="text/javascript" src="/ris/utheme/global/jslib/jqcsienricher/1.1.latest/ajaxify-tag/ajaxifyTag.js"></script>
+<script type="text/javascript" src="/ris/utheme/global/jslib/jqcsienricher/1.1.latest/plugins/blockui/jquery.blockUI.js"></script>
+<script type="text/javascript" src="/ris/utheme/global/jslib/jqcsienricher/1.1.latest/plugins/keyfilter/jquery.keyfilter.js"></script>
+<script type="text/javascript" src="/ris/utheme/global/jslib/jqcsienricher/1.1.latest/plugins/jqtooltip/jqtooltip.js"></script>
+<script type="text/javascript" src="/ris/utheme/global/jslib/jqcsienricher/1.1.latest/plugins/jqmenu/sf/superfish.click.csi.js"></script>
+<script type="text/javascript" src="/ris/utheme/global/jslib/jqcsienricher/1.1.latest/plugins/jqmenu/jqmenu.js"></script>
+<script type="text/javascript" src="/ris/utheme/global/jslib/jqcsienricher/1.1.latest/plugins/jqpanel/jqpanel.js"></script>
+<script type="text/javascript" src="/ris/utheme/global/jslib/jqcsienricher/1.1.latest/plugins/ytoggle/ytoggle.js"></script>
+<script type="text/javascript" src="/ris/utheme/global/jslib/jqcsienricher/1.1.latest/plugins/jqbutton/jqbutton.js"></script>
+<script type="text/javascript" src="/ris/utheme/global/jslib/jqcsienricher/1.1.latest/plugins/jqbutton/jqbutton.init.js"></script>
+<script type="text/javascript" src="/ris/utheme/global/jslib/jqcsienricher/1.1.latest/plugins/ui-dialogahah/ui-dialogahah.js"></script>
+<script type="text/javascript" src="/ris/utheme/global/jslib/jqcsienricher/1.1.latest/plugins/ionrangeslider/ion.rangeSlider.js"></script>
+<script type="text/javascript" src="/ris/utheme/global/themes/jqlibsthemeV2/js/style.js"></script>
+<script type="text/javascript" src="/taifweb/ris/js/localLibs.js"></script>
+<script type="text/javascript" src="/ris/utheme/general/taifweb/js/localStyle.js"></script>
+<script type="text/javascript" src="/taifweb/ris/js/enrichments/cpHome.js"></script>
+
+
+	</head>
+	<body>
+		
+		<noscript>
+			<meta http-equiv="refresh" content="0;url=/taifweb/base/javascriptError.do"  />
+		</noscript>
+
+		<!-- PAGE (OBBLIGATORIO) -->
+		<div id="page">
+
+			<!-- HEADER di PORTALE (con remincl) (facoltativo) -->
+			
+<div id="portalHeader">
+								
+    <noscript class="alert_js">
+    <p>ATTENZIONE! Il browser in uso non supporta le applicazioni Javascript.<br />
+    Per usufruire in maniera completa di alcuni servizi presenti in RuparPiemonte,
+    potrebbe essere necessario l&acute;utilizzo dei Javascript.</p></noscript>
+	
+</div>
+
+
+			<!-- fine HEADER di PORTALE (con remincl) (facoltativo) -->
+
+			<!-- APPICATION AREA (OBBLIGATORIO) -->
+			<div id="applicationArea">
+
+				<!-- HEADER di APPLICATIVO (con remincl) (facoltativo) -->
+				
+<div id="applicationHeader">			
+	<h1><a href="http://www.sistemapiemonte.it/"><span class="hidden">Sistemapiemonte</span></a></h1><h2>Albo delle Imprese Forestali Transfrontaliero
+	<a href="/ris/utheme/general/transaifoweb/help.shtml" class="aprihelp" title=" - Attenzione: questo link si apre in una nuova finestra"><span class="hidden">help</span></a>
+	</h2> 
+</div>
+<div id="contPath"> 
+  <div id="path">
+  sei in: <a href="http://www.sistemapiemonte.it">sistema piemonte</a><span class="connessionePath">,&nbsp;</span> Territorio <span class="connessionePath">,&nbsp;</span>
+  <span class="selezione"><acronym title="Albo delle Imprese Forestali Transfrontaliero">AIFO</acronym></span>
+  </div>
+</div>
+				
+
+
+				<!-- fine HEADER di APPLICATIVO (con remincl) (facoltativo) -->
+
+<!-- FINE HEADER -->
+
+
+
+
+
+
+<!-- appmoduleId:base/home -->
+<!-- pageId:cpHome -->
+
+<form action="/taifweb/base/home/cpHome.do" id="cpHome" method="post" name="cpHome">
+            <!-- ####################### PANNELLO CONTENUTI ###################### -->
+            <div id="contentPanel">
+                <!-- ================ UDLRC Layout UP PANEL ================ -->
+                <div id="northPanel">
+                    <div class="wrapper">
+                        <div class="formPanelBlock" id="p_fpHomeUserInfo">
+                            <!-- startFragment:p_fpHomeUserInfo -->
+                            <div class="userInfoPanelBlock" id="p_uipHome">
+                                <!-- startFragment:p_uipHome -->
+                                <!-- endFragment:p_uipHome -->
+                            </div>
+                            <h4>Albo Imprese Forestali / Annuaire d&rsquo;entreprises foresti&egrave;res</h4>
+                            <table style="width: 100%;">
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 90%;">Accesso libero/ Acc&egrave;s libre<br></td>
+                                        <td style="width: 5%; text-align: center;"><a href="https://tst-secure.sistemapiemonte.it/taifweb?tipoAccesso=7">IT</a></td>
+                                        <td style="width: 5%; text-align: center;"><a href="https://tst-secure.sistemapiemonte.it/taifweb?tipoAccesso=8">FR</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 90%;">Accesso riservato per le Aziende<br></td>
+                                        <td style="width: 5%; text-align: center;"><a href="https://tst-secure.sistemapiemonte.it/taifweb?tipoAccesso=1">IT</a></td>
+                                        <td style="width: 5%; text-align: center;"><a href="https://tst-secure.sistemapiemonte.it/taifweb?tipoAccesso=2">FR</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 90%;">Accesso riservato per i Professionisti<br></td>
+                                        <td style="width: 5%; text-align: center;"><a href="https://tst-secure.sistemapiemonte.it/taifweb?tipoAccesso=3">IT</a></td>
+                                        <td style="width: 5%; text-align: center;"><a href="https://tst-secure.sistemapiemonte.it/taifweb?tipoAccesso=4">FR</a></td>
+                                    </tr>
+                     
+                                    <tr>
+                                        <td style="width: 90%;">Accesso riservato per i Gestori/Acc&egrave;s r&eacute;serv&eacute; aux gestionnaires</td>
+                                        <td style="width: 5%; text-align: center;"><a href="https://tst-secure.sistemapiemonte.it/taifweb?tipoAccesso=5">IT</a></td>
+                                        <td style="width: 5%; text-align: center;"><a href="https://tst-secure.sistemapiemonte.it/taifweb?tipoAccesso=6">FR</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+							<div class="widgetsPanel"><br></div>
+							 <div class="widgetsPanel" id="wpNuovaAzienda">
+							 <h4>Elenco operatori forestali / Liste des op&eacute;rateurs foresti&egrave;res</h4></div>
+                                    <table style="width: 100%;">
+                                        <tbody>
+                                            <tr>
+                                                <td style="width: 90%;">Accesso libero/ Acc&egrave;s libre<br></td>
+                                                <td style="width: 5%; text-align: center;">IT</td>
+                                                <td style="width: 5%; text-align: center;">FR</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 90%;">Operatori forestali<br></td>
+                                                <td style="width: 5%; text-align: center;">IT</td>
+                                                <td style="width: 5%; text-align: center;">FR</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 90%;">Agenzie formative<br></td>
+                                                <td style="width: 5%; text-align: center;">IT</td>
+                                                <td style="width: 5%; text-align: center;">FR</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 90%;">Accesso riservato per i Gestori/Acc&egrave;s r&eacute;serv&eacute; aux gestionnaires<br></td>
+                                                <td style="width: 5%; text-align: center;">IT</td>
+                                                <td style="width: 5%; text-align: center;">FR</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+							
+                            <!-- endFragment:p_fpHomeUserInfo -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #################### FINE PANNELLO CONTENUTI #################### -->
+        </form>
+
+
+
+
+
+
+	
+
+
+
+	
+		
+<!-- footer (con remincl) -->
+			</div>
+			<!-- FINE APPICATION AREA (OBBLIGATORIO) -->
+
+
+
+<div id="portalFooter">
+<div class="contFooter">
+	<div class="csi">
+	<a href="http://www.csipiemonte.it" title="CSI Piemonte - Attenzione: questo link si apre in una nuova finestra" class="apriesterno"><span class="logoCsi">CSI Piemonte</span></a>
+    </div>
+<div class="span9">
+	Regione Piemonte - Partita Iva 02843860012 - Codice fiscale 80087670016 - <a href="/cms/privati/accessibilita" title="Accessibilita'">Accessibilit&agrave;</a> - <a href="/cms/privati/privacy" title="Privacy">Privacy</a> -&nbsp;<a href="/cms/privati/cookies-policy" title="Cookie policy">Cookie policy</a>
+    </div>
+</div>
+ <p class="text-right"><a href="#top" id="back-top">Torna su <i class="fa fa-chevron-up" aria-hidden="true"></i></a></p>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//]]> 
+</script>
+<script type="text/javascript" src="/ris/js/ga_sp.js"></script><!-- TEST -->
+
+
+		</div>
+		<!-- FINE PAGE (OBBLIGATORIO) -->
+	</body>
+</html>
+
+
+
+

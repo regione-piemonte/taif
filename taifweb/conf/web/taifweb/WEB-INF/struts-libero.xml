@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="libero" extends="jsp-package" namespace="/base/libero">
+
+		
+<action name="cpRicercaAccessoLibero" class="it.csi.taif.taifweb.presentation.taifweb.action.libero.CpRicercaAccessoLiberoAction">
+	<result name="input">/jsp/cpRicercaAccessoLibero.jsp</result>
+	<result name="success">/jsp/cpRicercaAccessoLibero.jsp</result>
+	
+	<result name="GO_TO_cpElencoAccessoLibero" type="chain">
+		<param name="actionName">cpElencoAccessoLibero</param>
+		<param name="namespace">/base/libero</param>
+	</result>
+	<result name="GO_TO_BackPage" type="chain">
+		<param name="actionName">${backActionName}</param>
+		<param name="namespace">${backNamespace}</param>
+	</result>
+	
+</action>
+
+<action name="cpElencoAccessoLibero" class="it.csi.taif.taifweb.presentation.taifweb.action.libero.CpElencoAccessoLiberoAction">
+	<result name="input">/jsp/cpElencoAccessoLibero.jsp</result>
+	<result name="success">/jsp/cpElencoAccessoLibero.jsp</result>
+	
+	<result name="GO_TO_cpAziendaDettaglio" type="chain">
+		<param name="actionName">cpAziendaDettaglio</param>
+		<param name="namespace">/base/libero</param>
+	</result>
+	<result name="GO_TO_cpRicercaAccessoLibero" type="chain">
+		<param name="actionName">cpRicercaAccessoLibero</param>
+		<param name="namespace">/base/libero</param>
+	</result>
+	<result name="GO_TO_cpElencoAccessoLibero" type="chain">
+		<param name="actionName">cpElencoAccessoLibero</param>
+		<param name="namespace">/base/libero</param>
+	</result>
+	<result name="GO_TO_BackPage" type="chain">
+		<param name="actionName">${backActionName}</param>
+		<param name="namespace">${backNamespace}</param>
+	</result>
+	
+	<result name="GO_TO_EX_exportRicercaLibera.do" type="redirect">
+		<param name="location">exportRicercaLibera.do</param>
+	</result>
+</action>
+
+<action name="cpAziendaDettaglio" class="it.csi.taif.taifweb.presentation.taifweb.action.libero.CpAziendaDettaglioAction">
+	<result name="input">/jsp/cpAziendaDettaglio.jsp</result>
+	<result name="success">/jsp/cpAziendaDettaglio.jsp</result>
+	
+	<result name="GO_TO_cpElencoAccessoLibero" type="chain">
+		<param name="actionName">cpElencoAccessoLibero</param>
+		<param name="namespace">/base/libero</param>
+	</result>
+	<result name="GO_TO_BackPage" type="chain">
+		<param name="actionName">${backActionName}</param>
+		<param name="namespace">${backNamespace}</param>
+	</result>
+	
+</action>
+
+		<!--PROTECTED REGION ID(R1667501463) ENABLED START-->
+		<action name="exportRicercaLibera" class="it.csi.taif.taifweb.presentation.taifweb.action.gestore.ExportRicercaGestoreAction">
+        	<param name="tipoExport">RIDOTTO</param>
+            <result name="downloadFile" type="stream">
+                <param name="contentType">${contentType}</param>
+                <param name="contentDisposition">${contentDisposition}</param>
+                <param name="inputName">inputStream</param>
+                
+            </result>
+            <result name="ko" type="chain">cpElencoAccessoLibero</result>
+        </action>
+		<!--PROTECTED REGION END-->
+
+	</package>
+</struts>

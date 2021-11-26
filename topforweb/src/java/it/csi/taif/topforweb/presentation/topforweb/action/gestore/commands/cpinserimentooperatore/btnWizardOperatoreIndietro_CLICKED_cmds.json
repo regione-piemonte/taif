@@ -1,0 +1,28 @@
+#-------------------------------------------------------------------------------
+# Copyright CSI-Piemonte -2021
+# SPDX-License-Identifier: EUPL-1.2-or-later.
+#-------------------------------------------------------------------------------
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.JumpCommand" ,
+	"name": "cpHome", 
+	"pushCurrent":false
+}
+,
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.NOPCommand" }
+,
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.NOPCommand" }
+,
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.NOPCommand" }
+,
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.JumpCommand" ,
+	"name": "", 
+	"pushCurrent":false
+}
+,
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.NOPCommand" }
+],
+	"esiti":["CpInserimentoOperatore_wzpOperatore_fpWizardDatiAnagraficiOperatore","CpInserimentoOperatore_wzpOperatore_fpWizardCorsiFinanziatiRegioneOperatore","CpInserimentoOperatore_wzpOperatore_fpWizardAltriCorsiOperatore","CpInserimentoOperatore_wzpOperatore_fpWizardQualificheOperatore","Ok","Ko"],
+	"nomeMetodo":"goBack",
+	"appDataToStore":[]
+}

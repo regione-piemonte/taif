@@ -1,0 +1,37 @@
+/* YUI Reset CSS - contiene delle regole che neutralizzano il foglio di stile di default dei browser. */
+/*
+Copyright (c) 2009, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.7.0
+*/
+html{color:#000;}
+body{z-index:0; overflow:hidden;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}
+del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}
+abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}
+sub{vertical-align:baseline;}
+legend{color:#000;}
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+input,button,textarea,select{*font-size:100%;outline:none; border:none; background-color:#fff; }
+input{border: 1px solid #8F8F8F; clear:both}
+input.checkbox{ background-color: transparent; border:none;} /*(L) per eliminare il bianco di sfondo messo da IE di default */
+input.radio{ background-color: transparent; border:none;} /*(L) per eliminare il bianco di sfondo messo da IE di default */
+textarea{border: 1px solid #b7b7b7; overflow:auto;}
+
+.tabSetPanel ul li {float: left !important; display:inline; margin-bottom:7px;padding:4px 10px;}
+div.userInfoPanel {background-color:#19477B;} /*(L) fix per background che non veniva colorato */
+div#applicationHeader h2{padding-bottom:5px;} /*(L) fix per eliminare il "gradino" tra i due elementi di testata affiancati == aumentato padding-bottom da 3 a 5*/
+.tabSetPanel ul {padding-bottom:10px;}
+.tabSetPanel ul li{padding-top:11px; margin-right:2px;}
+
+/* FIX ALBERO x IE6 e 7 */
+li.treeRoot a, li.treeRoot a:link, li.treeRoot a:active, li.treeRoot a:visited, li.treeRoot a:hover{background:transparent url(im/folder.gif) 0 50% no-repeat; text-decoration:none; float:left; width:16px; height:16px; margin:0; padding:0; clear: left;}
+input.treeNode{ text-align:left; background-color:#fff; padding:0; margin:0 0 0 5px; clear: right;}
+li.treeRoot span{margin:0 0 0 20px; width:150px; float:left;}
+
+/* COMMENTO PER TEST ANT */

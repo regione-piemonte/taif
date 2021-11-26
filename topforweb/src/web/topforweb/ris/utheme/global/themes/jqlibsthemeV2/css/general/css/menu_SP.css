@@ -1,0 +1,103 @@
+
+/**** inizio SOVRASCRITTURA SP menu_SP.css (senza js) ****/
+
+/*ul.sf-js-enabled li {border-top:3px solid #fff;}*/
+ul.sf-js-enabled li li, ul.sf-js-enabled li li li {border-top:0px solid #fff}
+
+ul.sf-js-enabled a, 
+ul.sf-js-enabled a:link, 
+ul.sf-js-enabled a:active, 
+ul.sf-js-enabled a:hover, 
+ul.sf-js-enabled a:visited,  
+ul.sf-js-enabled span {padding: 0.3em 1em 0.3em 0.6em;}
+
+ul.sf-js-enabled ul li a, 
+ul.sf-js-enabled ul li a:link, 
+ul.sf-js-enabled ul li a:active, 
+ul.sf-js-enabled ul li a:hover, 
+ul.sf-js-enabled ul li a:visited,  
+ul.sf-js-enabled ul li span {padding: 0.4em 1em 0.4em 0.3em;}
+
+ul.sf-js-enabled li li#current span, 
+ul.sf-js-enabled li li span.parent, 
+ul.sf-js-enabled li li a, 
+ul.sf-js-enabled li li a:link, 
+ul.sf-js-enabled li li a:active, 
+ul.sf-js-enabled li li a:hover, 
+ul.sf-js-enabled li li a:visited {padding-left: 20px;}
+
+ul.sf-js-enabled li li li#current span, 
+ul.sf-js-enabled li li li span.parent, 
+ul.sf-js-enabled li li li a, 
+ul.sf-js-enabled li li li a:link, 
+ul.sf-js-enabled li li li a:active, 
+ul.sf-js-enabled li li li a:hover, 
+ul.sf-js-enabled li li li a:visited {padding-left: 35px;}
+
+ul.sf-js-enabled li span,
+ul.sf-js-enabled li span.parent,
+ul.sf-js-enabled li.opened li#current span, 
+ul.sf-js-enabled a, 
+ul.sf-js-enabled a:link, 
+ul.sf-js-enabled a:active, 
+ul.sf-js-enabled a:hover, 
+ul.sf-js-enabled a:visited {
+    font-weight: bold;
+}
+
+ul.sf-js-enabled li, ul.sf-js-enabled li span.parent {background: none #0153A9;/*background: url("/ris/resources/global/css/im/puls_menu.gif") repeat-x scroll 0 0 #1A4B74;*/}
+
+ul.sf-js-enabled li#current {background: none #0B416C;/*background: url("/ris/resources/global/css/im/puls_menu_attivo.gif") repeat-x scroll 0 0 #327CB9;*/}
+
+ul.sf-js-enabled li li {background-color: #E9EBEA;background-image:none;}
+
+ul.sf-js-enabled li li span.parent, ul.sf-js-enabled li li li, ul.sf-js-enabled div.content_menu {background-color: #E9EBEA;background-image:none;}
+
+ul.sf-js-enabled li a:hover {background-color: #1E4D78;background-image:none;}
+
+ul.sf-js-enabled li li a:hover, ul.sf-js-enabled li li#current,
+ul.sf-js-enabled li li li a:hover, ul.sf-js-enabled li li li#current {background-color: #ccc;background-image:none;}
+
+ul.sf-js-enabled li.home a, 
+ul.sf-js-enabled li.home a:link, 
+ul.sf-js-enabled li.home a:active, 
+ul.sf-js-enabled li.home a:visited {background: none #0153A9;/*background: url("/ris/resources/global/css/im/puls_menu.gif") repeat-x scroll 0 0 #1A4B74;*/}
+ul.sf-js-enabled li.home a:hover, 
+ul.sf-js-enabled li#current.home span {background-image:none;background-color:#0B416C;/*background-color:#1E4D78;*/}
+
+ul.sf-js-enabled li.opened li#current span, ul.sf-js-enabled a, ul.sf-js-enabled a:link, ul.sf-js-enabled a:active, ul.sf-js-enabled a:hover, ul.sf-js-enabled a:visited {
+    font-weight: bold;
+}
+ul.sf-js-enabled li li span.parent, ul.sf-js-enabled li li a, ul.sf-js-enabled li li a:link, ul.sf-js-enabled li li a:active, ul.sf-js-enabled li li a:hover, ul.sf-js-enabled li li a:visited {
+    font-size: 1em;
+	font-weight: bold;
+}
+ul.sf-js-enabled li li span,
+ul.sf-js-enabled li li li span, ul.sf-js-enabled li li li a, ul.sf-js-enabled li li li a:link, ul.sf-js-enabled li li li a:active, ul.sf-js-enabled li li li a:hover, ul.sf-js-enabled li li li a:visited {
+    font-weight: bold;
+}
+ul.sf-js-enabled li li li span.parent {
+    font-size: 1em;
+}
+ul.sf-js-enabled li li#current span,
+ul.sf-js-enabled li li li#current span {font-size: 1.1em;}
+
+
+ul.sf-js-enabled li span.parent,
+ul.sf-js-enabled li.opened span,
+ul.sf-js-enabled li a, ul.sf-js-enabled li a:link, ul.sf-js-enabled li a:active, ul.sf-js-enabled li a:visited, ul.sf-js-enabled li li a:hover,
+ul.sf-js-enabled li.opened span,
+ul.sf-js-enabled li#current span,
+ul.sf-js-enabled li a:hover {color:#fff}
+
+ul.sf-js-enabled li li#current span,
+ul.sf-js-enabled li li a, ul.sf-js-enabled li li a:link, ul.sf-js-enabled li li a:active,
+ul.sf-js-enabled li li a:visited,
+ul.sf-js-enabled li li span.parent,
+ul.sf-js-enabled li li li a, ul.sf-js-enabled li li li a:link, ul.sf-js-enabled li li li a:active, ul.sf-js-enabled li li li a:visited {color:#000;}
+
+ul.sf-js-enabled li li a:hover,
+ul.sf-js-enabled li li li a:hover {color:#333}
+
+
+/**** fine SOVRASCRITTURA SP menu (senza js) ****/

@@ -1,0 +1,17 @@
+#-------------------------------------------------------------------------------
+# Copyright CSI-Piemonte -2021
+# SPDX-License-Identifier: EUPL-1.2-or-later.
+#-------------------------------------------------------------------------------
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.JumpExtCommand" ,
+	"locationCode":"home",
+	"runtimeUrlProviderAppData":"",
+	"staticUrl":"http://www.csipiemonte.it",
+	"binaryStream":false 
+}
+],
+	"esiti":["home"],
+	"nomeMetodo":"goToHome",
+	"appDataToStore":[]
+}

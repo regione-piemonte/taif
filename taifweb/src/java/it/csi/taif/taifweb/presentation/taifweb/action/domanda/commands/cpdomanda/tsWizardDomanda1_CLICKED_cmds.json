@@ -1,0 +1,40 @@
+#-------------------------------------------------------------------------------
+# Copyright CSI-Piemonte -2021
+# SPDX-License-Identifier: EUPL-1.2-or-later.
+#-------------------------------------------------------------------------------
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.NOPCommand" }
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.VisibilityCommand" ,
+	"show":true,
+	"targetsWidgets":["cmbDatiAnagraficiTitolareRappresentanteLegaleComuneNascita"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.VisibilityCommand" ,
+	"show":false,
+	"targetsWidgets":["tfDatiAnagraficiTitolareRappresentanteLegaleComuneNascitaNoIta"],
+	"targetsMenuElement":[]
+}
+] 
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.VisibilityCommand" ,
+	"show":false,
+	"targetsWidgets":["cmbDatiAnagraficiTitolareRappresentanteLegaleComuneNascita"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.VisibilityCommand" ,
+	"show":true,
+	"targetsWidgets":["tfDatiAnagraficiTitolareRappresentanteLegaleComuneNascitaNoIta"],
+	"targetsMenuElement":[]
+}
+] 
+}
+],
+	"esiti":["Ok","IT","NO_IT"],
+	"nomeMetodo":"executeSwitchWizardDomanda1",
+	"appDataToStore":[]
+}

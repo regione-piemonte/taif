@@ -1,0 +1,13 @@
+/*mainMenu #menuPanel*/
+.vertical div#mainMenu {margin:0px 13px 30px 13px;padding: 25px 0px 0px 0px; }	
+.vertical div#mainMenu h3 {position: absolute;top: -10000px;left: -10000px;}
+
+.vertical div#mainMenu li.parent span, .vertical div#mainMenu li a:link, .vertical div#mainMenu li a:visited, .vertical div#mainMenu li a:active, .vertical div#mainMenu li a:hover{display:block;padding:15px 4px 16px 26px;}
+.vertical div#mainMenu ul li a span, .vertical div#mainMenu ul li ul li a span, .vertical div#mainMenu ul li.parent a span{padding:0;}
+/****secondo/terzo/quarto livello**/
+
+.vertical div#mainMenu ul li.parent li a, .vertical div#mainMenu ul li.parent li a:active, .vertical div#mainMenu ul li.parent li a:visited, .vertical div#mainMenu ul li.parent li a:hover, .vertical div#mainMenu ul li.parent li span{ padding-left:30px;}
+.vertical div#mainMenu ul li.parent li a span, .vertical div#mainMenu ul li ul li.parent a span{padding-left:0; background:none}
+div#mainMenu ul li.parent li.parent li a, div#mainMenu ul li.parent li.parent li a:active, div#mainMenu ul li.parent li.parent li a:visited, div#mainMenu ul li.parent li.parent li a:hover{padding-left:38px;}
+div#mainMenu ul li.parent li.parent li.parent li a, div#mainMenu ul li.parent li.parent li.parent li a:active, div#mainMenu ul li.parent li.parent li.parent li a:visited, div#mainMenu ul li.parent li.parent li.parent li a:hover{padding-left:53px;}
+

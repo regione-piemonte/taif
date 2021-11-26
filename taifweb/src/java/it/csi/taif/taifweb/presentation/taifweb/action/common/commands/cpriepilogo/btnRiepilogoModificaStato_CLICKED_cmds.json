@@ -1,0 +1,25 @@
+#-------------------------------------------------------------------------------
+# Copyright CSI-Piemonte -2021
+# SPDX-License-Identifier: EUPL-1.2-or-later.
+#-------------------------------------------------------------------------------
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.VisibilityCommand" ,
+	"show":false,
+	"targetsWidgets":["ptDsStatoDomanda","btnRiepilogoModificaStato"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpRiepilogoTabellaStati",
+	"contentPanelName":"CpRiepilogo",
+	"itemName": "fpRiepilogoTabellaStati"}
+] 
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.NOPCommand" }
+],
+	"esiti":["Ok","Ko"],
+	"nomeMetodo":"openModificaStato",
+	"appDataToStore":[]
+}

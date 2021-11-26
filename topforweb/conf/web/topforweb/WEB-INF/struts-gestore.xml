@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="gestore" extends="jsp-package" namespace="/base/gestore">
+
+		
+<action name="cpRicercaOperatoreForestaleGestore" class="it.csi.taif.topforweb.presentation.topforweb.action.gestore.CpRicercaOperatoreForestaleGestoreAction">
+	<result name="input">/jsp/cpRicercaOperatoreForestaleGestore.jsp</result>
+	<result name="success">/jsp/cpRicercaOperatoreForestaleGestore.jsp</result>
+	
+	<result name="GO_TO_cpHome" type="chain">
+		<param name="actionName">cpHome</param>
+		<param name="namespace">/base/home</param>
+	</result>
+	<result name="GO_TO_cpElencoOperatori" type="chain">
+		<param name="actionName">cpElencoOperatori</param>
+		<param name="namespace">/base/gestore</param>
+	</result>
+	<result name="GO_TO_BackPage" type="chain">
+		<param name="actionName">${backActionName}</param>
+		<param name="namespace">${backNamespace}</param>
+	</result>
+	
+</action>
+
+<action name="cpElencoOperatori" class="it.csi.taif.topforweb.presentation.topforweb.action.gestore.CpElencoOperatoriAction">
+	<result name="input">/jsp/cpElencoOperatori.jsp</result>
+	<result name="success">/jsp/cpElencoOperatori.jsp</result>
+	
+	<result name="GO_TO_cpOperatoreDettaglio" type="chain">
+		<param name="actionName">cpOperatoreDettaglio</param>
+		<param name="namespace">/base/gestore</param>
+	</result>
+	<result name="GO_TO_cpRicercaOperatoreForestaleGestore" type="chain">
+		<param name="actionName">cpRicercaOperatoreForestaleGestore</param>
+		<param name="namespace">/base/gestore</param>
+	</result>
+	<result name="GO_TO_cpElencoOperatori" type="chain">
+		<param name="actionName">cpElencoOperatori</param>
+		<param name="namespace">/base/gestore</param>
+	</result>
+	<result name="GO_TO_BackPage" type="chain">
+		<param name="actionName">${backActionName}</param>
+		<param name="namespace">${backNamespace}</param>
+	</result>
+	
+	<result name="GO_TO_EX_exportRicerca.do" type="redirect">
+		<param name="location">exportRicerca.do</param>
+	</result>
+	<result name="GO_TO_EX_exportRicercaLibera.do" type="redirect">
+		<param name="location">exportRicercaLibera.do</param>
+	</result>
+	<result name="GO_TO_EX_exportRicercaLibera.do" type="redirect">
+		<param name="location">exportRicercaLibera.do</param>
+	</result>
+</action>
+
+<action name="cpOperatoreDettaglio" class="it.csi.taif.topforweb.presentation.topforweb.action.gestore.CpOperatoreDettaglioAction">
+	<result name="input">/jsp/cpOperatoreDettaglio.jsp</result>
+	<result name="success">/jsp/cpOperatoreDettaglio.jsp</result>
+	
+	<result name="GO_TO_cpInserimentoOperatore" type="chain">
+		<param name="actionName">cpInserimentoOperatore</param>
+		<param name="namespace">/base/gestore</param>
+	</result>
+	<result name="GO_TO_cpOperatoreDettaglio" type="chain">
+		<param name="actionName">cpOperatoreDettaglio</param>
+		<param name="namespace">/base/gestore</param>
+	</result>
+	<result name="GO_TO_cpElencoOperatori" type="chain">
+		<param name="actionName">cpElencoOperatori</param>
+		<param name="namespace">/base/gestore</param>
+	</result>
+	<result name="GO_TO_cpRicercaOperatoreForestaleGestore" type="chain">
+		<param name="actionName">cpRicercaOperatoreForestaleGestore</param>
+		<param name="namespace">/base/gestore</param>
+	</result>
+	<result name="GO_TO_BackPage" type="chain">
+		<param name="actionName">${backActionName}</param>
+		<param name="namespace">${backNamespace}</param>
+	</result>
+	
+</action>
+
+<action name="cpInserimentoOperatore" class="it.csi.taif.topforweb.presentation.topforweb.action.gestore.CpInserimentoOperatoreAction">
+	<result name="input">/jsp/cpInserimentoOperatore.jsp</result>
+	<result name="success">/jsp/cpInserimentoOperatore.jsp</result>
+	
+	<result name="GO_TO_cpInserimentoOperatore" type="chain">
+		<param name="actionName">cpInserimentoOperatore</param>
+		<param name="namespace">/base/gestore</param>
+	</result>
+	<result name="GO_TO_cpElencoOperatori" type="chain">
+		<param name="actionName">cpElencoOperatori</param>
+		<param name="namespace">/base/gestore</param>
+	</result>
+	<result name="GO_TO_cpHome" type="chain">
+		<param name="actionName">cpHome</param>
+		<param name="namespace">/base/home</param>
+	</result>
+	<result name="GO_TO_" type="chain">
+		<param name="actionName"></param>
+		<param name="namespace">/base</param>
+	</result>
+	<result name="GO_TO_BackPage" type="chain">
+		<param name="actionName">${backActionName}</param>
+		<param name="namespace">${backNamespace}</param>
+	</result>
+	
+</action>
+
+		<!--PROTECTED REGION ID(R1900830379) ENABLED START-->
+		<!-- inserire qui la dichiarazione di azioni aggiuntive hand-written -->
+		
+		<action name="visualizzaFile" class="it.csi.taif.topforweb.presentation.topforweb.action.gestore.VisualizzaAllegatoAction">
+            <result name="success" type="stream">
+                <param name="inputName">inputStream</param>
+                <param name="contentType">application/octet-stream</param>
+                <param name="contentDisposition">${contentDisposition}</param>
+            </result>
+        </action>
+        
+        <action name="exportRicerca" class="it.csi.taif.topforweb.presentation.topforweb.action.gestore.ExportRicercaOperatoreAction">
+            <param name="tipoExport">NORMALE</param>
+            <result name="downloadFile" type="stream">
+                <param name="contentType">${contentType}</param>
+                <param name="contentDisposition">${contentDisposition}</param>
+                <param name="inputName">inputStream</param>
+            </result>
+            <result name="ko" type="chain">cpElencoOperatori</result>
+        </action>
+        
+        <action name="exportRicercaLibera" class="it.csi.taif.topforweb.presentation.topforweb.action.gestore.ExportRicercaOperatoreAction">
+        	<param name="tipoExport">RIDOTTO</param>
+            <result name="downloadFile" type="stream">
+                <param name="contentType">${contentType}</param>
+                <param name="contentDisposition">${contentDisposition}</param>
+                <param name="inputName">inputStream</param>
+                
+            </result>
+            <result name="ko" type="chain">cpElencoAccessoLibero</result>
+        </action>
+        
+        <action name="downloadDocumentoDomanda" class="it.csi.taif.topforweb.presentation.topforweb.action.common.DownloadDocumentoAttestatoAction">
+            <result name="downloadFile" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="contentDisposition">${contentDisposition}</param>
+                <param name="inputName">inputStream</param>
+            </result>
+            <result name="ko" type="chain">CpDocumentazione</result>
+        </action>
+        
+         <action name="downloadDocumentoDettaglio" class="it.csi.taif.topforweb.presentation.topforweb.action.gestore.DownloadAttestatoDettaglioAction">
+            <result name="downloadFile" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="contentDisposition">${contentDisposition}</param>
+                <param name="inputName">inputStream</param>
+            </result>
+            <result name="ko" type="chain">CpDocumentazione</result>
+        </action>
+        
+		<!--PROTECTED REGION END-->
+
+	</package>
+</struts>

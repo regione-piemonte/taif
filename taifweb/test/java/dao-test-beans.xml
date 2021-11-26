@@ -1,0 +1,1488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+       
+    <!-- ApplicationContext -->
+	<bean name="applicationContextManager"
+		class="it.csi.util.beanlocatorfactory.SpringApplicationContextManager" />   
+	
+	<bean id="myDataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="org.postgresql.Driver" />
+		<property name="url" value="jdbc:postgresql://tst-territorio-vdb01.territorio.csi.it:5432/PGISOLATST" />
+		<property name="username" value="taif" />
+		<property name="password" value="mypass" />
+	</bean>
+
+
+	<!--PROTECTED REGION END -->
+
+	<bean id="namedJdbcTemplate"
+		class="it.csi.taif.taifweb.business.dao.util.NamedParameterJdbcTemplateWithQueryDebug">
+		<constructor-arg ref="myDataSource" />
+	</bean>
+
+	<bean id="simpleCache_TaifDFormaGiuridicaDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+	<bean id="simpleCache_TaifDTitoloStudioDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+
+	<bean id="simpleCache_TaifDTipoSedeAziendaDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+	<bean id="simpleCache_TaifDTipoAttivitaDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+	<bean id="simpleCache_TaifDTipoLavoroPaDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+
+	<bean id="simpleCache_TaifDSpecieDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+	<bean id="simpleCache_TaifDProvDestinDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+
+
+	<bean id="simpleCache_TaifDUnitaDiMisuraDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+
+
+
+	<bean id="simpleCache_TaifDFunzioneDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+	<bean id="simpleCache_TaifDTipoDpiDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+
+	<bean id="simpleCache_TaifDTipoMezzoDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+
+	<bean id="simpleCache_TaifDTrazioneDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+	<bean id="simpleCache_TaifDAlimentazioneDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+	<bean id="simpleCache_TaifDTipoCarrelloDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+
+	<bean id="simpleCache_TaifDRuoloDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+	<bean id="simpleCache_TaifDTipoContrattoDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+	<bean id="simpleCache_TaifDTipoInquadramentoDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+	<bean id="simpleCache_TaifDTipoMansioneDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+
+
+
+
+	<bean id="simpleCache_TaifDStatoPraticaDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+
+	<bean id="simpleCache_TaifDUnitaFormativaDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+
+
+
+	<bean id="simpleCache_TaifDTipoQualificaDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+
+	<bean id="simpleCache_TaifDAmbitoFormativoDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+	<bean id="simpleCache_TaifDAssociazioneDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+	<bean id="simpleCache_TaifDCategoriaImpresaDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+	<bean id="simpleCache_TaifDEstensioneFileDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+	<bean id="simpleCache_TaifDNazioneDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+	<bean id="simpleCache_TaifDStatoOpfoDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+	<bean id="simpleCache_TaifDTipoCertificazioneDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+	<bean id="simpleCache_TaifDTipoStrutturaDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+	<bean id="simpleCache_TaifCnfAttribAmmessoDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+
+
+
+
+	<bean id="simpleCache_TaifDMaterialeDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+
+
+
+
+
+
+
+
+	<bean id="simpleCache_TaifCnfParamApimgrDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+	<bean id="simpleCache_TaifCnfTipoAllegatoDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+
+
+	<bean id="simpleCache_TaifCnfEstensAmmDao" class="it.csi.taif.taifweb.business.dao.util.SimpleCache">
+		<constructor-arg value="1440"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+	</bean>
+
+
+
+
+
+	<bean id="taifDAttivitaAtecoApeDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_ATTIVITA_ATECO_APE</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDAttivitaAtecoApeDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDAttivitaAtecoApeDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+		<property name="incrementer" ref="taifDAttivitaAtecoApeDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDFormaGiuridicaDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_FORMA_GIURIDICA</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDFormaGiuridicaDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDFormaGiuridicaDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifDFormaGiuridicaDao" />
+
+		<property name="incrementer" ref="taifDFormaGiuridicaDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDTitoloStudioDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_TITOLO_STUDIO</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDTitoloStudioDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDTitoloStudioDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifDTitoloStudioDao" />
+
+		<property name="incrementer" ref="taifDTitoloStudioDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifTCorsoDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_T_CORSO</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifTCorsoDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifTCorsoDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+		<property name="incrementer" ref="taifTCorsoDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDTipoSedeAziendaDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_TIPO_SEDE_AZIENDA</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDTipoSedeAziendaDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDTipoSedeAziendaDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifDTipoSedeAziendaDao" />
+
+		<property name="incrementer" ref="taifDTipoSedeAziendaDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDTipoAttivitaDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_TIPO_ATTIVITA</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDTipoAttivitaDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDTipoAttivitaDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifDTipoAttivitaDao" />
+
+		<property name="incrementer" ref="taifDTipoAttivitaDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDTipoLavoroPaDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_TIPO_LAVORO_PA</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDTipoLavoroPaDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDTipoLavoroPaDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifDTipoLavoroPaDao" />
+
+		<property name="incrementer" ref="taifDTipoLavoroPaDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifTLavoroPaDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_T_LAVORO_PA</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifTLavoroPaDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifTLavoroPaDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+		<property name="incrementer" ref="taifTLavoroPaDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDSpecieDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_SPECIE</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDSpecieDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDSpecieDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifDSpecieDao" />
+
+		<property name="incrementer" ref="taifDSpecieDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDProvDestinDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_PROV_DESTIN</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDProvDestinDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDProvDestinDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifDProvDestinDao" />
+
+		<property name="incrementer" ref="taifDProvDestinDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifTCommercializzazioneDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_T_COMMERCIALIZZAZIONE</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifTCommercializzazioneDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifTCommercializzazioneDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+		<property name="incrementer" ref="taifTCommercializzazioneDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDAssortimentoDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_ASSORTIMENTO</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDAssortimentoDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDAssortimentoDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+		<property name="incrementer" ref="taifDAssortimentoDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDUnitaDiMisuraDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_UNITA_MISURA</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDUnitaDiMisuraDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDUnitaDiMisuraDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifDUnitaDiMisuraDao" />
+
+		<property name="incrementer" ref="taifDUnitaDiMisuraDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifTAttivitaSvoltaDettDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifTAttivitaSvoltaDettDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+	</bean>
+
+
+	<bean id="taifRAttivDetMaterialeDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifRAttivDetMaterialeDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+	</bean>
+
+
+	<bean id="taifTAziendaDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_T_AZIENDA</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifTAziendaDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifTAziendaDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+		<property name="incrementer" ref="taifTAziendaDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDFunzioneDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_FUNZIONE</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDFunzioneDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDFunzioneDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifDFunzioneDao" />
+
+		<property name="incrementer" ref="taifDFunzioneDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDTipoDpiDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_TIPO_DPI</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDTipoDpiDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDTipoDpiDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifDTipoDpiDao" />
+
+		<property name="incrementer" ref="taifDTipoDpiDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifTDpiDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_T_DPI</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifTDpiDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifTDpiDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+		<property name="incrementer" ref="taifTDpiDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDTipoMezzoDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_TIPO_MEZZO</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDTipoMezzoDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDTipoMezzoDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifDTipoMezzoDao" />
+
+		<property name="incrementer" ref="taifDTipoMezzoDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDCategoriaMezzoDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_CATEGORIA_MEZZO</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDCategoriaMezzoDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDCategoriaMezzoDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+		<property name="incrementer" ref="taifDCategoriaMezzoDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDTrazioneDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_TRAZIONE</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDTrazioneDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDTrazioneDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifDTrazioneDao" />
+
+		<property name="incrementer" ref="taifDTrazioneDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDAlimentazioneDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_ALIMENTAZIONE</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDAlimentazioneDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDAlimentazioneDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifDAlimentazioneDao" />
+
+		<property name="incrementer" ref="taifDAlimentazioneDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDTipoCarrelloDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_TIPO_CARRELLO</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDTipoCarrelloDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDTipoCarrelloDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifDTipoCarrelloDao" />
+
+		<property name="incrementer" ref="taifDTipoCarrelloDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifTPersonaDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_T_PERSONA</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifTPersonaDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifTPersonaDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+		<property name="incrementer" ref="taifTPersonaDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDRuoloDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_RUOLO</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDRuoloDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDRuoloDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifDRuoloDao" />
+
+		<property name="incrementer" ref="taifDRuoloDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDTipoContrattoDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_TIPO_CONTRATTO</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDTipoContrattoDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDTipoContrattoDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifDTipoContrattoDao" />
+
+		<property name="incrementer" ref="taifDTipoContrattoDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDTipoInquadramentoDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_TIPO_INQUADRAMENTO</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDTipoInquadramentoDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDTipoInquadramentoDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifDTipoInquadramentoDao" />
+
+		<property name="incrementer" ref="taifDTipoInquadramentoDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDTipoMansioneDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_TIPO_MANSIONE</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDTipoMansioneDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDTipoMansioneDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifDTipoMansioneDao" />
+
+		<property name="incrementer" ref="taifDTipoMansioneDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifRPersonaAziendaDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifRPersonaAziendaDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+	</bean>
+
+
+	<bean id="taifRAziendaFrTipoContrDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifRAziendaFrTipoContrDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+	</bean>
+
+
+	<bean id="taifRAziendaFrTipoMansDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifRAziendaFrTipoMansDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+	</bean>
+
+
+	<bean id="taifTPraticaDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_T_PRATICA</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifTPraticaDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifTPraticaDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+		<property name="incrementer" ref="taifTPraticaDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDStatoPraticaDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_SSTATO_PRATICA</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDStatoPraticaDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDStatoPraticaDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifDStatoPraticaDao" />
+
+		<property name="incrementer" ref="taifDStatoPraticaDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifTStoricoStatoDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifTStoricoStatoDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+	</bean>
+
+
+	<bean id="taifDUnitaFormativaDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_UNITA_FORMATIVA</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDUnitaFormativaDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDUnitaFormativaDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifDUnitaFormativaDao" />
+
+		<property name="incrementer" ref="taifDUnitaFormativaDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifTAgenziaFormativaDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_T_AGENZIA_FORMATIVA</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifTAgenziaFormativaDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifTAgenziaFormativaDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+		<property name="incrementer" ref="taifTAgenziaFormativaDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifROpfoCorsoDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifROpfoCorsoDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+	</bean>
+
+
+	<bean id="taifTAllegatoDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_T_ALLEGATO</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifTAllegatoDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifTAllegatoDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+		<property name="incrementer" ref="taifTAllegatoDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDTipoQualificaDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_TIPO_QUALIFICA</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDTipoQualificaDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDTipoQualificaDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifDTipoQualificaDao" />
+
+		<property name="incrementer" ref="taifDTipoQualificaDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifTRiconoscimentoDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_T_RICONOSCIMENTO</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifTRiconoscimentoDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifTRiconoscimentoDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+		<property name="incrementer" ref="taifTRiconoscimentoDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDAmbitoFormativoDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_AMBITO_FORMATIVO</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDAmbitoFormativoDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDAmbitoFormativoDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifDAmbitoFormativoDao" />
+
+		<property name="incrementer" ref="taifDAmbitoFormativoDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDAssociazioneDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_ASSOCIAZIONE</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDAssociazioneDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDAssociazioneDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifDAssociazioneDao" />
+
+		<property name="incrementer" ref="taifDAssociazioneDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDCategoriaImpresaDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_CATEGORIA_IMPRESA</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDCategoriaImpresaDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDCategoriaImpresaDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifDCategoriaImpresaDao" />
+
+		<property name="incrementer" ref="taifDCategoriaImpresaDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDEstensioneFileDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_ESTENSIONE_FILE</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDEstensioneFileDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDEstensioneFileDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifDEstensioneFileDao" />
+
+		<property name="incrementer" ref="taifDEstensioneFileDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDNazioneDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_NAZIONE</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDNazioneDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDNazioneDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifDNazioneDao" />
+
+		<property name="incrementer" ref="taifDNazioneDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDStatoOpfoDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_STATO_OPFO</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDStatoOpfoDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDStatoOpfoDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifDStatoOpfoDao" />
+
+		<property name="incrementer" ref="taifDStatoOpfoDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDTipoCertificazioneDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_TIPO_CERTIFICAZIONE</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDTipoCertificazioneDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDTipoCertificazioneDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifDTipoCertificazioneDao" />
+
+		<property name="incrementer" ref="taifDTipoCertificazioneDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDTipoStrutturaDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_TIPO_STRUTTURA</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDTipoStrutturaDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDTipoStrutturaDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifDTipoStrutturaDao" />
+
+		<property name="incrementer" ref="taifDTipoStrutturaDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifCnfAttribAmmessoDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifCnfAttribAmmessoDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifCnfAttribAmmessoDao" />
+
+	</bean>
+
+
+	<bean id="taifCnfConfigUtenteDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_CNF_CONFIG_UTENTE</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifCnfConfigUtenteDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifCnfConfigUtenteDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+		<property name="incrementer" ref="taifCnfConfigUtenteDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifTSedeAziendaDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_T_SEDE_AZIENDA</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifTSedeAziendaDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifTSedeAziendaDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+		<property name="incrementer" ref="taifTSedeAziendaDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifTQualificaDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_T_QUALIFICA</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifTQualificaDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifTQualificaDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+		<property name="incrementer" ref="taifTQualificaDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifTCertificazioneDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_T_CERTIFICAZIONE</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifTCertificazioneDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifTCertificazioneDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+		<property name="incrementer" ref="taifTCertificazioneDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifDMaterialeDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_D_MATERIALE</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifDMaterialeDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifDMaterialeDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifDMaterialeDao" />
+
+		<property name="incrementer" ref="taifDMaterialeDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifTAttivitaSvoltaDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_T_ATTIVITA_SVOLTA</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifTAttivitaSvoltaDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifTAttivitaSvoltaDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+		<property name="incrementer" ref="taifTAttivitaSvoltaDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifTStrutturaDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_T_STRUTTURA</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifTStrutturaDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifTStrutturaDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+		<property name="incrementer" ref="taifTStrutturaDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifTMezzoDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_T_MEZZO</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifTMezzoDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifTMezzoDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+		<property name="incrementer" ref="taifTMezzoDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifRAziendaCategImpresaDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifRAziendaCategImpresaDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+	</bean>
+
+
+	<bean id="taifRAziendaAssociazioneDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifRAziendaAssociazioneDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+	</bean>
+
+
+	<bean id="taifApplSchedaOkDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifApplSchedaOkDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+	</bean>
+
+
+	<bean id="taifTSoggettoGestoreDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifTSoggettoGestoreDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+	</bean>
+
+
+	<bean id="taifCnfProfiloUtenteDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_CNF_PROFILO_UTENTE</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifCnfProfiloUtenteDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifCnfProfiloUtenteDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+		<property name="incrementer" ref="taifCnfProfiloUtenteDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifCnfParamApimgrDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifCnfParamApimgrDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifCnfParamApimgrDao" />
+
+	</bean>
+
+
+	<bean id="taifCnfTipoAllegatoDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifCnfTipoAllegatoDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifCnfTipoAllegatoDao" />
+
+	</bean>
+
+
+	<bean id="taifRTrazTipoMezzoDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifRTrazTipoMezzoDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+	</bean>
+
+
+	<bean id="taifTOpfoDaoIncrementer"
+		class="org.springframework.jdbc.support.incrementer.PostgreSQLSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_TAIF_T_OPFO</value>
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean id="taifTOpfoDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifTOpfoDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+
+		<property name="incrementer" ref="taifTOpfoDaoIncrementer" />
+	</bean>
+
+
+	<bean id="taifCnfEstensAmmDao"
+		class="it.csi.taif.taifweb.business.dao.taifweb.dao.impl.TaifCnfEstensAmmDaoImpl">
+		<property name="jdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="cache" ref="simpleCache_TaifCnfEstensAmmDao" />
+
+	</bean>
+
+	<bean id="abstractServiceHelper" abstract="true">
+		<property name="msgMgr" ref="msgMgr" />
+	</bean>
+
+	<bean id="msgMgr" class="it.csi.taif.taifweb.business.manager.message.MsgMgr" />
+
+	<bean id="dbMgr" class="it.csi.taif.taifweb.business.manager.db.DbMgr">
+	</bean>
+
+	<bean id="apiManagerServiceHelper"
+		class="it.csi.taif.taifweb.business.helper.ApiManagerServiceHelper"
+		parent="abstractServiceHelper">
+		<constructor-arg index="0"
+			value="https://tst-api-ent.ecosis.csi.it/api/token" />
+		<property name="dbMgr" ref="dbMgr" />
+	</bean>
+
+	<bean id="limmAmmEnteServiceHelper"
+		class="it.csi.taif.taifweb.business.helper.LimmAmmEnteServiceHelper"
+		parent="abstractServiceHelper">
+		<constructor-arg index="0"
+			value="http://tst-api-ent.ecosis.csi.it:80/api/territorio_svista_limamm_ente/2.0"></constructor-arg>
+		<property name="apiManagerServiceHelper" ref="apiManagerServiceHelper" />
+	</bean>
+
+	<bean id="aaepServiceHelper" class="it.csi.taif.taifweb.business.helper.AaepServiceHelper"
+		parent="abstractServiceHelper">
+		<constructor-arg index="0"
+			value="http://tst-api-ent.ecosis.csi.it:80/api/aaepsv_wsfad_wsi/1.0"></constructor-arg>
+		<property name="apiManagerServiceHelper" ref="apiManagerServiceHelper" />
+	</bean>
+
+	<bean id="indexServiceHelper" class="it.csi.taif.taifweb.business.helper.IndexServiceHelper"
+		parent="abstractServiceHelper">
+		<constructor-arg index="0"
+			value="http://tst-applogic-nmsf2e.csi.it/ecmenginews-exp01/services/EcmEngineManagement?wsdl" />
+	</bean>
+
+	<bean id="actaServiceHelper" class="it.csi.taif.taifweb.business.helper.ActaServiceHelper"
+		parent="abstractServiceHelper">
+		<constructor-arg index="0"
+			value="http://tst-api-ent.ecosis.csi.it:80/api/DOC_ACTA_backoffice-T/1.0"></constructor-arg>
+		<constructor-arg index="1"
+			value="http://tst-api-ent.ecosis.csi.it:80/api/DOC_ACTA_management-T/1.0"></constructor-arg>
+		<constructor-arg index="2"
+			value="http://tst-api-ent.ecosis.csi.it:80/api/DOC_ACTA_multifilling-T/1.0"></constructor-arg>
+		<constructor-arg index="3"
+			value="http://tst-api-ent.ecosis.csi.it:80/api/DOC_ACTA_navigation-T/1.0"></constructor-arg>
+		<constructor-arg index="4"
+			value="http://tst-api-ent.ecosis.csi.it:80/api/DOC_ACTA_object-T/1.0"></constructor-arg>
+		<constructor-arg index="5"
+			value="http://tst-api-ent.ecosis.csi.it:80/api/DOC_ACTA_officialbook-T/1.0"></constructor-arg>
+		<constructor-arg index="6"
+			value="http://tst-api-ent.ecosis.csi.it:80/api/DOC_ACTA_relationships-T/1.0"></constructor-arg>
+		<constructor-arg index="7"
+			value="http://tst-api-ent.ecosis.csi.it:80/api/DOC_ACTA_document-T/1.0"></constructor-arg>
+		<constructor-arg index="8"
+			value="http://tst-api-ent.ecosis.csi.it:80/api/DOC_ACTA_repository-T/1.0"></constructor-arg>
+		<constructor-arg index="9"
+			value="http://tst-api-ent.ecosis.csi.it:80/api/DOC_ACTA_sms-T/1.0"></constructor-arg>
+		<constructor-arg index="10"
+			value="http://tst-api-ent.ecosis.csi.it:80/api/DOC_ACTA_subjectRegistry-T/1.0"></constructor-arg>
+		<property name="apiManagerServiceHelper" ref="apiManagerServiceHelper" />
+	</bean>
+
+</beans>
+

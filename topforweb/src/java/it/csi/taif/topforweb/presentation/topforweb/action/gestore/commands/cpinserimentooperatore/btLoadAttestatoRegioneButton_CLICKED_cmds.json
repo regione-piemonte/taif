@@ -1,0 +1,18 @@
+#-------------------------------------------------------------------------------
+# Copyright CSI-Piemonte -2021
+# SPDX-License-Identifier: EUPL-1.2-or-later.
+#-------------------------------------------------------------------------------
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.NOPCommand" }
+,
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.NOPCommand" }
+,
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.NOPCommand" }
+,
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.NOPCommand" }
+],
+	"esiti":["OK_ALLEGATI_NON_PRESENTI","KO","FORMATO_KO","OK_ALLEGATI_PRESENTI"],
+	"nomeMetodo":"loadAttestatoCorsiFinanziatiRegione",
+	"appDataToStore":[]
+}

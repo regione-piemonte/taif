@@ -1,0 +1,26 @@
+#-------------------------------------------------------------------------------
+# Copyright CSI-Piemonte -2021
+# SPDX-License-Identifier: EUPL-1.2-or-later.
+#-------------------------------------------------------------------------------
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpAttrezzatureMacchineRimorchiFr",
+	"contentPanelName":"CpDomanda",
+	"itemName": "fpAttrezzatureMacchinaElencoRimorchiFr"}
+] 
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpAttrezzatureMacchineRimorchiFr",
+	"contentPanelName":"CpDomanda",
+	"itemName": null}
+] 
+}
+],
+	"esiti":["open","close"],
+	"nomeMetodo":"openAttrezzatureMacchinaRimorchiFr",
+	"appDataToStore":[]
+}

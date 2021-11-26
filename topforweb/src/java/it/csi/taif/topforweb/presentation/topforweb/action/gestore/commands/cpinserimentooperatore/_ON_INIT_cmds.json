@@ -1,0 +1,140 @@
+#-------------------------------------------------------------------------------
+# Copyright CSI-Piemonte -2021
+# SPDX-License-Identifier: EUPL-1.2-or-later.
+#-------------------------------------------------------------------------------
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.OnOffCommand" ,
+	"enable":false,
+	"targetsWidgets":["tInserimentoCodiceFiscale","tInserimentoCognome","tInserimentoNome"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":false,
+	"targetsWidgets":["btnCercaOperatoreAnagraficaIt","tfInserimentoOperatoreNrsiMsa","btnCercaOperatoreFr","tComuneNascitaEstero","tComuneEsteroResidenza","cbComuneNascitaOperatore"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":true,
+	"targetsWidgets":["tInserimentoCodiceFiscale","tInserimentoCognome","tInserimentoNome","cbComuneResidenzaOperatore"],
+	"targetsMenuElement":[]
+}
+] 
+}
+,
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.OnOffCommand" ,
+	"enable":false,
+	"targetsWidgets":[],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":false,
+	"targetsWidgets":["btnCercaOperatoreAnagraficaIt","tfInserimentoOperatoreNrsiMsa","btnCercaOperatoreFr","tComuneNascitaEstero","cbComuneNascitaOperatore","tComuneEsteroResidenza"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":true,
+	"targetsWidgets":["tInserimentoCognome","tInserimentoNome","tInserimentoCodiceFiscale","cbComuneResidenzaOperatore"],
+	"targetsMenuElement":[]
+}
+] 
+}
+,
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.OnOffCommand" ,
+	"enable":false,
+	"targetsWidgets":["tInserimentoNome","tfInserimentoOperatoreNrsiMsa","tInserimentoCognome"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":false,
+	"targetsWidgets":["btnCercaOperatoreAnagraficaIt","btnCercaOperatoreFr","tInserimentoCodiceFiscale","cbComuneNascitaOperatore","tComuneNascitaEstero","cbComuneResidenzaOperatore"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":true,
+	"targetsWidgets":["tInserimentoNome","tfInserimentoOperatoreNrsiMsa","tInserimentoCognome","tComuneEsteroResidenza"],
+	"targetsMenuElement":[]
+}
+] 
+}
+,
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.OnOffCommand" ,
+	"enable":false,
+	"targetsWidgets":[],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":false,
+	"targetsWidgets":["btnCercaOperatoreAnagraficaIt","btnCercaOperatoreFr","tInserimentoCodiceFiscale","cbComuneNascitaOperatore","tComuneNascitaEstero","cbComuneResidenzaOperatore"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":true,
+	"targetsWidgets":["tInserimentoCognome","tInserimentoNome","tfInserimentoOperatoreNrsiMsa","tComuneEsteroResidenza"],
+	"targetsMenuElement":[]
+}
+] 
+}
+,
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.OnOffCommand" ,
+	"enable":true,
+	"targetsWidgets":["tInserimentoCodiceFiscale","tInserimentoCognome","tInserimentoNome","calInserimentoDataNascita","cbStatoNascitaOperatore","cbComuneNascitaOperatore"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":false,
+	"targetsWidgets":["tfInserimentoOperatoreNrsiMsa","btnCercaOperatoreFr"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":true,
+	"targetsWidgets":["tInserimentoCodiceFiscale","tInserimentoCognome","tInserimentoNome","calInserimentoDataNascita","cbStatoNascitaOperatore","cbComuneNascitaOperatore","btnCercaOperatoreAnagraficaIt"],
+	"targetsMenuElement":[]
+}
+] 
+}
+,
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.OnOffCommand" ,
+	"enable":true,
+	"targetsWidgets":["tInserimentoCognome","tInserimentoNome","calInserimentoDataNascita","cbStatoNascitaOperatore","cbComuneNascitaOperatore","tfInserimentoOperatoreNrsiMsa"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":false,
+	"targetsWidgets":["btnCercaOperatoreAnagraficaIt","tInserimentoCodiceFiscale"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":true,
+	"targetsWidgets":["tInserimentoCognome","tInserimentoNome","calInserimentoDataNascita","cbStatoNascitaOperatore","cbComuneNascitaOperatore","tfInserimentoOperatoreNrsiMsa","btnCercaOperatoreFr"],
+	"targetsMenuElement":[]
+}
+] 
+}
+,
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.NOPCommand" }
+,
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.OnOffCommand" ,
+	"enable":true,
+	"targetsWidgets":["cbStatoOperatoreRicerca","cbStatoSchedaRicerca","tInserimentoCodiceFiscale","btnCercaOperatoreAnagraficaIt","tfInserimentoOperatoreNrsiMsa","btnCercaOperatoreFr","tInserimentoCognome","tInserimentoNome","calInserimentoDataNascita","cbStatoNascitaOperatore","cbComuneNascitaOperatore","cbComuneResidenzaOperatore"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":true,
+	"targetsWidgets":["tInserimentoCodiceFiscale","tInserimentoCognome","tInserimentoNome","calInserimentoDataNascita","cbStatoNascitaOperatore","cbComuneNascitaOperatore","btnCercaOperatoreAnagraficaIt","tfInserimentoOperatoreNrsiMsa","btnCercaOperatoreFr","cbComuneResidenzaOperatore","tInserimentoIndirizzo","tInserimentoCivico"],
+	"targetsMenuElement":[]
+}
+] 
+}
+],
+	"esiti":["operatoreIT_operatorExists","operatoreIT_operatorNoExists","operatoreNO_IT_operatorExists","operatoreNO_IT_operatorNoExists","gestoreIT","gestoreNO_IT","KO","superadmin"],
+	"nomeMetodo":"executeInit",
+	"appDataToStore":[]
+}

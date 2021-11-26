@@ -1,0 +1,26 @@
+#-------------------------------------------------------------------------------
+# Copyright CSI-Piemonte -2021
+# SPDX-License-Identifier: EUPL-1.2-or-later.
+#-------------------------------------------------------------------------------
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpDatiSocioEconomiciAltriAlbi",
+	"contentPanelName":"CpDomanda",
+	"itemName": "fpDatiSocioEconomiciAltriAlbi"}
+] 
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpDatiSocioEconomiciAltriAlbi",
+	"contentPanelName":"CpDomanda",
+	"itemName": null}
+] 
+}
+],
+	"esiti":["SI","NO"],
+	"nomeMetodo":"expandAltriAlbiDatiSocioEconomici",
+	"appDataToStore":[]
+}

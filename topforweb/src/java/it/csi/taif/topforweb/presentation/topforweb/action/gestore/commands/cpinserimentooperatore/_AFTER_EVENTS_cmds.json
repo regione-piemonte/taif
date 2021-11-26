@@ -1,0 +1,38 @@
+#-------------------------------------------------------------------------------
+# Copyright CSI-Piemonte -2021
+# SPDX-License-Identifier: EUPL-1.2-or-later.
+#-------------------------------------------------------------------------------
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":false,
+	"targetsWidgets":["tComuneNascitaEstero","tComuneEsteroResidenza"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":true,
+	"targetsWidgets":["cbComuneNascitaOperatore","cbComuneResidenzaOperatore"],
+	"targetsMenuElement":[]
+}
+] 
+}
+,
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":false,
+	"targetsWidgets":["cbComuneNascitaOperatore","cbComuneResidenzaOperatore"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":true,
+	"targetsWidgets":["tComuneNascitaEstero","tComuneEsteroResidenza"],
+	"targetsMenuElement":[]
+}
+] 
+}
+],
+	"esiti":["italia","estero"],
+	"nomeMetodo":"onLoadStatoNascita",
+	"appDataToStore":[]
+}

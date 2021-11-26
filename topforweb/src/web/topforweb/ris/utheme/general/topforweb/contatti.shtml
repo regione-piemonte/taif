@@ -1,0 +1,19 @@
+<div id="dlgDialog1" class="dialogPanel">
+  <div class="msgBoxPanelBlock" id="p_msgInfo">
+    <!-- startFragment:p_msgInfo -->
+    <div id="msgInfo" class="msgBoxPanel info">
+	 <p>Collabora al progetto, invia i tuoi suggerimenti e le tue segnalazioni alla casella di posta <a href="maito:Progetto.IPA@csi.it">Progetto.IPA@csi.it</a></p>
+    </div>
+    <!-- endFragment:p_msgInfo -->
+  </div>
+  <div class="commandPanelBlock" id="p_pCmdDialog">
+    <!-- startFragment:p_pCmdDialog -->
+    <div id="pCmdDialog" class="commandPanel functional">
+      <div class="button left">
+        <!-- widget bAnnulla -->
+        <input type="submit" class="buttonWidget" value="stampa" name="" id="" />
+      </div>
+    </div>
+    <!-- endFragment:p_pCmdDialog -->
+  </div>
+</div>

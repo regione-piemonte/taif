@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-autowire="autodetect">
+	<!-- bean di business logic -->
+	
+	<!-- bean di facade -->
+	<bean id="springBackEnd" class="it.csi.taif.topforweb.business.BackEndFacade">
+		<property name="CPBECpHome">
+			<ref bean="CPBECpHome"/>
+		</property>
+		<property name="CPBECpLogin">
+			<ref bean="CPBECpLogin"/>
+		</property>
+		<property name="CPBECpError">
+			<ref bean="CPBECpError"/>
+		</property>
+		<property name="CPBECpRicercaOperatoreForestaleGestore">
+			<ref bean="CPBECpRicercaOperatoreForestaleGestore"/>
+		</property>
+		<property name="CPBECpElencoOperatori">
+			<ref bean="CPBECpElencoOperatori"/>
+		</property>
+		<property name="CPBECpOperatoreDettaglio">
+			<ref bean="CPBECpOperatoreDettaglio"/>
+		</property>
+		<property name="CPBECpInserimentoOperatore">
+			<ref bean="CPBECpInserimentoOperatore"/>
+		</property>
+	</bean>
+	
+	<!-- bean relativi ai singoli content panel -->
+	<bean id="CPBECpHome" class="it.csi.taif.topforweb.business.home.CPBECpHome">
+	</bean>
+	<bean id="CPBECpLogin" class="it.csi.taif.topforweb.business.home.CPBECpLogin">
+	</bean>
+	<bean id="CPBECpError" class="it.csi.taif.topforweb.business.common.CPBECpError">
+	</bean>
+	<bean id="CPBECpRicercaOperatoreForestaleGestore" class="it.csi.taif.topforweb.business.gestore.CPBECpRicercaOperatoreForestaleGestore">
+	</bean>
+	<bean id="CPBECpElencoOperatori" class="it.csi.taif.topforweb.business.gestore.CPBECpElencoOperatori">
+	</bean>
+	<bean id="CPBECpOperatoreDettaglio" class="it.csi.taif.topforweb.business.gestore.CPBECpOperatoreDettaglio">
+	</bean>
+	<bean id="CPBECpInserimentoOperatore" class="it.csi.taif.topforweb.business.gestore.CPBECpInserimentoOperatore">
+	</bean>
+	
+	
+	
+	<!-- helper per le funzioni di securizzazione -->
+	<bean id="springSecurityHelper" class="it.csi.taif.topforweb.business.SecurityHelper">
+		<!-- protocollo di interazione con il PEP (EJB|WS) utilizzato solo se la security non e' custom --> 
+		<property name="PDProtocol" value="@IRIDE_PD_PROTOCOL@" />
+	</bean>
+	
+	
+	
+	
+	<!--PROTECTED REGION ID(R585863764) ENABLED START-->
+			<!-- Inserire qui configurazioni aggiuntive da iniettare nel bean prinicipale -->
+
+
+
+	<bean id="dummyMgr" class="it.csi.taif.topforweb.business.manager.DummyMgr" />
+
+	<bean id="topForMgr" class="it.csi.taif.topforweb.business.manager.TopForMgr"> 
+		<property name="dbMgr" ref="dbMgr" />
+		<property name="msgMgr" ref="msgMgr" />
+	</bean>
+
+	<bean id="dbMgr" class="it.csi.taif.topforweb.business.manager.db.DbMgr">
+ 		<property name="txManager" ref ="txManager"/>
+     </bean>
+
+ 	<bean id="exportToExcel" class="it.csi.taif.topforweb.business.common.ExportElencoOperatoriToExcel">
+		 	 <property name="topForMgr" ref="topForMgr"/>
+	</bean>
+	<bean id="dozerBeanMapper" class="org.dozer.DozerBeanMapper" />
+	
+	
+	<bean id="serviceMgr" class="it.csi.taif.topforweb.business.manager.service.ServiceMgr">
+	    <property name="limmAmmEnteServiceHelper">
+            <ref bean="limmAmmEnteServiceHelper" />
+        </property>
+        <property name="aaepServiceHelper">
+            <ref bean="aaepServiceHelper" />
+        </property>
+        <property name="dbMgr">
+            <ref bean="dbMgr" />
+        </property>  
+        
+	</bean>
+	<bean id="msgMgr" class="it.csi.taif.topforweb.business.manager.message.MsgMgr" />
+	<bean id="validationMgr"
+		class="it.csi.taif.topforweb.business.manager.validation.ValidationMgr" />
+	<bean id="visibileOrdinFilter"
+		class="it.csi.taif.topforweb.business.dao.topfor.filter.VisibileOrdinFilter" />
+	<bean  id="soggettoGestoreFilter"
+		class="it.csi.taif.topforweb.business.dao.topfor.filter.SoggettoGestoreVisibleOrdinFilter" />
+		<bean  id="soggettoGestoreVisibleOrdinFilter"
+		class="it.csi.taif.topforweb.business.dao.topfor.filter.SoggettoGestoreFilter" />
+	<bean id="funzioneVisibleFilter"
+		class="it.csi.taif.topforweb.business.dao.topfor.filter.FunzioneVisibleFilter" />
+	<bean id="configProfiloFilter"
+		class="it.csi.taif.topforweb.business.dao.topfor.filter.ConfigProfiloFilter" />
+	<bean id="agenziaFormativaFilter"
+		class="it.csi.taif.topforweb.business.dao.topfor.filter.AgenziaFormativaFilter" />
+		<bean id="unitaFormativaFilter"
+		class="it.csi.taif.topforweb.business.dao.topfor.filter.UnitaFormativaFilter" />
+	<bean id="corsoProfessionaleFilter"
+		class="it.csi.taif.topforweb.business.dao.topfor.filter.CorsoProfessionaleFilter" />
+		<bean id="personaFilter"
+		class="it.csi.taif.topforweb.business.dao.topfor.filter.PersonaFilter" />
+	<bean id="corsoFormazioneFilter"
+		class="it.csi.taif.topforweb.business.dao.topfor.filter.CorsoFormazioneFilter" />
+	<bean id="attestazioneFrequenzaConProfitto"
+		class="it.csi.taif.topforweb.business.report.AttestazioneFrequenzaConProfitto" />
+		 
+	<bean id="abstractServiceHelper" abstract="true">
+		<property name="msgMgr" ref="msgMgr" />
+	</bean>
+	
+	<bean id="apiManagerServiceHelper" 
+     	class="it.csi.taif.topforweb.business.helper.ApiManagerServiceHelper" 
+     	parent="abstractServiceHelper">
+     	<constructor-arg index="0" value="@taif.token.url@" />
+        <property name="dbMgr" ref="dbMgr" />
+    </bean>
+	
+	 <bean id="limmAmmEnteServiceHelper"
+     	class="it.csi.taif.topforweb.business.helper.LimmAmmEnteServiceHelper" 
+     	parent="abstractServiceHelper">
+        <constructor-arg index="0" value="@limamm.ente.api.url@"></constructor-arg>
+        <property name="apiManagerServiceHelper" ref="apiManagerServiceHelper" />
+    </bean>
+    
+    <bean id="aaepServiceHelper" 
+     	class="it.csi.taif.topforweb.business.helper.AaepServiceHelper" 
+     	parent="abstractServiceHelper">
+        <constructor-arg index="0" value="@aaep.api.url@"></constructor-arg>
+        <property name="apiManagerServiceHelper" ref="apiManagerServiceHelper" />
+    </bean>
+    
+    <bean id="indexServiceHelper"
+    	class="it.csi.taif.topforweb.business.helper.IndexServiceHelper"
+    	parent="abstractServiceHelper">
+    	<constructor-arg index="0" value="@index.ws.url@"/> 
+    </bean>
+
+	<!--PROTECTED REGION END-->
+
+</beans>

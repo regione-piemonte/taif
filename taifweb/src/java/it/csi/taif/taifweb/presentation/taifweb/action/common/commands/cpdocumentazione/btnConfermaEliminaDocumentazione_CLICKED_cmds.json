@@ -1,0 +1,61 @@
+#-------------------------------------------------------------------------------
+# Copyright CSI-Piemonte -2021
+# SPDX-License-Identifier: EUPL-1.2-or-later.
+#-------------------------------------------------------------------------------
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.NOPCommand" }
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.OnOffCommand" ,
+	"enable":true,
+	"targetsWidgets":["cbTipoFirma"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.OnOffCommand" ,
+	"enable":false,
+	"targetsWidgets":["btnDocumentazioneInvio"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpElencoAllegatiFirmati",
+	"contentPanelName":"CpDocumentazione",
+	"itemName": null}
+] 
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.OnOffCommand" ,
+	"enable":false,
+	"targetsWidgets":["cbTipoFirma","btnDocumentazioneInvio"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpElencoAllegatiFirmati",
+	"contentPanelName":"CpDocumentazione",
+	"itemName": "fpElencoAllegatiFirmati"}
+] 
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.OnOffCommand" ,
+	"enable":false,
+	"targetsWidgets":["cbTipoFirma"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.OnOffCommand" ,
+	"enable":true,
+	"targetsWidgets":["btnDocumentazioneInvio"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpElencoAllegatiFirmati",
+	"contentPanelName":"CpDocumentazione",
+	"itemName": "fpElencoAllegatiFirmati"}
+] 
+}
+],
+	"esiti":["KO","OK_ALLEGATI_NON_PRESENTI","OK_ALLEGATI_PRESENTI","OK_ALLEGATI_OBBLIGATORI_PRESENTI"],
+	"nomeMetodo":"eliminaDocumento",
+	"appDataToStore":[]
+}

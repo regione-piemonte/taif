@@ -1,0 +1,76 @@
+/*banner di portale*/
+div#applicationHeader, div#contentPanel, div#path { margin: 0 auto;  width: auto;  font-weight: normal;}
+
+/*titolo sistemapiemonte*/
+#portalHeader {color: #FFFFFF; display: block; margin: 0; overflow: hidden;padding: 0;position: relative;width: 100%;}
+div#applicationHeader h1 {background: url(/ris/utheme/global/themes/xstructureV2/css/im/logo_sp.jpg) 0 50% no-repeat; line-height: 1.8em;  font-size: 27px; height: auto !important; min-height: 49px;  padding: 0 0 0 50px;    float: left;}
+
+#portalHeader h1{color: #0153A9;display: block;font-size: 28px;font-weight: bold;left:0; margin: 0; padding: 0; position: static;top: 0;width: 100%; z-index:1;}
+#portalHeader .header {background: none repeat scroll 0 0 #d3d3d3;color: #0153A9;overflow: hidden;padding: 2px 20px 2px 80px;width:100%;}
+
+/*due tab privati e pa*/
+.menupaprivati, .menupaprivati ul, .menupaprivati ul.pull-right{ padding:0; margin:0; clear:none;}
+.menupaprivati ul.pull-right{ margin-right:10px;}
+.menupaprivati ul.pull-right li{ display:inline; margin-right:3px;}
+.menupaprivati ul.pull-right li a{ color:#fff; font-weight:bold; font-size:14px; text-transform:uppercase; display:inline-block; height:20px; background:#bf5229; padding: 13px 15px; margin-top:12px; text-decoration:none;}
+.menupaprivati ul.pull-right li a:hover { text-decoration: underline;}
+.menupaprivati ul.pull-right li#servizi_privati a{background:#d3d3d3; color: #0153A9;}
+
+/*cos'ши sistemapiemonte + cerca*/
+.menuTopSx{ margin-bottom:0; padding-left:80px!important;}
+.menuTopSx li{ display:inline;}
+.menuTopSx li a{ display:inline-block; margin-top:27px; padding:0px; color:#000;padding-left:6px; font-weight: normal; font-size: 1.1em; text-decoration:none;}
+.menuTopSx li a.pipe_dx{ border-right:1px solid #000; padding-right:6px;}
+.pull-right {float: right;}
+.pull-left {float: left;}
+
+div#portalHeader { background:none; margin-bottom:0; }
+div#portalFooter {border-left:4px solid #fff;border-right:4px solid #fff;border-bottom:4px solid #fff;margin:0 auto;}
+
+/***msg javascript disattivati****/
+#avvisoJavascript {width:760px;border:2px dashed #900;text-align:center;margin:6px auto;padding:0 0 0 -380px; background-color:#fff}
+#avvisoJavascript p{color:#000; text-align:center;padding:6px 10px;}
+#avvisoJavascript p strong {font-weight:bold}
+
+
+/*footer*/
+div#portalFooter {
+    background-color: rgb(30, 53, 77);
+    border: 0 none;
+    color: rgb(255, 255, 255);
+    font-size: 0.95em;
+    height: auto !important;
+    margin: 0 auto;
+    min-height: 0;
+    overflow: hidden !important;
+    padding: 0;
+    width: 100%;
+}
+div.contFooter {
+    height: auto !important;
+    margin: 0 auto;
+    overflow: hidden !important;
+    padding: 0;
+    width: 90%;
+}
+div#portalFooter .span9 {
+    background-color: rgba(0, 0, 0, 0);
+    background-image: none;
+    color: rgb(255, 255, 255);
+    display: block;
+    height: auto !important;
+    margin-bottom: 0;
+    overflow: hidden;
+    padding: 20px 80px;
+    text-align: center;
+    width: 74.468085099%;
+	}
+div#portalFooter .csi { display: block; font-size: 1.1em; padding-top: 20px;  vertical-align: middle; width: 23.404255317%;}
+
+div#portalFooter .csi a.apriesterno, div#portalFooter .csi a.apriesterno:active, div#portalFooter .csi a.apriesterno:link {
+    background: url("im/logocsi.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);  float: left;  height: 60px;  min-height: 60px;   width: 140px;}
+div#portalFooter a { color:#fff;  font-weight: normal;}
+div#portalFooter .csi span.logoCsi {  display: none;}
+
+.text-right { text-align: right; padding-right: 30px;}
+/* /footer */

@@ -1,0 +1,68 @@
+#-------------------------------------------------------------------------------
+# Copyright CSI-Piemonte -2021
+# SPDX-License-Identifier: EUPL-1.2-or-later.
+#-------------------------------------------------------------------------------
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":false,
+	"targetsWidgets":["ptNRsiMsa","ptLuogoNascitaOperatore"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":true,
+	"targetsWidgets":["ptCodiceFiscaleOperatore","ptDataNascitaOperatore","ptComuneNascitaOperatore","btnModificaSchedaOperatore","btnEliminaSchedaOperatore"],
+	"targetsMenuElement":[]
+}
+] 
+}
+,
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":false,
+	"targetsWidgets":["ptCodiceFiscaleOperatore","ptDataNascitaOperatore"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":true,
+	"targetsWidgets":["ptNRsiMsa","ptLuogoNascitaOperatore","btnModificaSchedaOperatore","btnEliminaSchedaOperatore"],
+	"targetsMenuElement":[]
+}
+] 
+}
+,
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":false,
+	"targetsWidgets":["ptNRsiMsa","ptLuogoNascitaOperatore","btnModificaSchedaOperatore","btnEliminaSchedaOperatore"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":true,
+	"targetsWidgets":["ptCodiceFiscaleOperatore","ptDataNascitaOperatore","ptComuneNascitaOperatore"],
+	"targetsMenuElement":[]
+}
+] 
+}
+,
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":false,
+	"targetsWidgets":["ptCodiceFiscaleOperatore","ptDataNascitaOperatore","btnModificaSchedaOperatore","btnEliminaSchedaOperatore"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":true,
+	"targetsWidgets":["ptNRsiMsa","ptLuogoNascitaOperatore"],
+	"targetsMenuElement":[]
+}
+] 
+}
+,
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.NOPCommand" }
+],
+	"esiti":["OK_GESTORE_OP_IT","OK_GESTORE_OP_FR","OK_LIBERO_OP_IT","OK_LIBERO_OP_FR","KO"],
+	"nomeMetodo":"executeInit",
+	"appDataToStore":[]
+}

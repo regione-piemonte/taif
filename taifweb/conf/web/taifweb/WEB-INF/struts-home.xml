@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="home" extends="jsp-package" namespace="/base/home">
+
+		
+<action name="cpHome" class="it.csi.taif.taifweb.presentation.taifweb.action.home.CpHomeAction">
+	<result name="input">/jsp/cpHome.jsp</result>
+	<result name="success">/jsp/cpHome.jsp</result>
+	
+	<result name="GO_TO_CpDomanda" type="chain">
+		<param name="actionName">CpDomanda</param>
+		<param name="namespace">/base/domanda</param>
+	</result>
+	<result name="GO_TO_CpRiepilogo" type="chain">
+		<param name="actionName">CpRiepilogo</param>
+		<param name="namespace">/base/common</param>
+	</result>
+	<result name="GO_TO_BackPage" type="chain">
+		<param name="actionName">${backActionName}</param>
+		<param name="namespace">${backNamespace}</param>
+	</result>
+	
+	<result name="GO_TO_EX_homeIT" type="redirect">
+		<param name="location">cpHome.do?request_locale=it</param>
+	</result>
+	<result name="GO_TO_EX_homeFR" type="redirect">
+		<param name="location">cpHome.do?request_locale=fr</param>
+	</result>
+	<result name="SHOW_dpConfermaEliminaDomanda">/jsp/dialogpanels/cpHome_dpConfermaEliminaDomanda.jsp</result>
+</action>
+
+<action name="cpLogin" class="it.csi.taif.taifweb.presentation.taifweb.action.home.CpLoginAction">
+	<result name="input">/jsp/cpLogin.jsp</result>
+	<result name="success">/jsp/cpLogin.jsp</result>
+	
+	<result name="GO_TO_cpHome" type="chain">
+		<param name="actionName">cpHome</param>
+		<param name="namespace">/base/home</param>
+	</result>
+	<result name="GO_TO_cpHomeGestore" type="chain">
+		<param name="actionName">cpHomeGestore</param>
+		<param name="namespace">/base/gestore</param>
+	</result>
+	<result name="GO_TO_BackPage" type="chain">
+		<param name="actionName">${backActionName}</param>
+		<param name="namespace">${backNamespace}</param>
+	</result>
+	
+</action>
+
+		<!--PROTECTED REGION ID(R-873624071) ENABLED START-->
+		<!-- inserire qui la dichiarazione di azioni aggiuntive hand-written -->
+		<action name="sceltaAlbo" class="it.csi.taif.taifweb.presentation.taifweb.action.home.SceltaAlboAction">
+            <result name="success" type="chain">
+				<param name="actionName">CpDomanda</param>
+				<param name="namespace">/base/domanda</param>
+			</result>
+            <result name="ko" type="chain">cpHome</result>
+        </action>
+		<!--PROTECTED REGION END-->
+
+	</package>
+</struts>

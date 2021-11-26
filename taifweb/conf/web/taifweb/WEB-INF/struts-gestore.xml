@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="gestore" extends="jsp-package" namespace="/base/gestore">
+
+		
+<action name="cpHomeGestore" class="it.csi.taif.taifweb.presentation.taifweb.action.gestore.CpHomeGestoreAction">
+	<result name="input">/jsp/cpHomeGestore.jsp</result>
+	<result name="success">/jsp/cpHomeGestore.jsp</result>
+	
+	<result name="GO_TO_BackPage" type="chain">
+		<param name="actionName">${backActionName}</param>
+		<param name="namespace">${backNamespace}</param>
+	</result>
+	
+</action>
+
+<action name="cpRicercaAziendaGestore" class="it.csi.taif.taifweb.presentation.taifweb.action.gestore.CpRicercaAziendaGestoreAction">
+	<result name="input">/jsp/cpRicercaAziendaGestore.jsp</result>
+	<result name="success">/jsp/cpRicercaAziendaGestore.jsp</result>
+	
+	<result name="GO_TO_cpElencoAziendeGestore" type="chain">
+		<param name="actionName">cpElencoAziendeGestore</param>
+		<param name="namespace">/base/gestore</param>
+	</result>
+	<result name="GO_TO_BackPage" type="chain">
+		<param name="actionName">${backActionName}</param>
+		<param name="namespace">${backNamespace}</param>
+	</result>
+	
+</action>
+
+<action name="cpElencoAziendeGestore" class="it.csi.taif.taifweb.presentation.taifweb.action.gestore.CpElencoAziendeGestoreAction">
+	<result name="input">/jsp/cpElencoAziendeGestore.jsp</result>
+	<result name="success">/jsp/cpElencoAziendeGestore.jsp</result>
+	
+	<result name="GO_TO_CpRiepilogo" type="chain">
+		<param name="actionName">CpRiepilogo</param>
+		<param name="namespace">/base/common</param>
+	</result>
+	<result name="GO_TO_cpRicercaAziendaGestore" type="chain">
+		<param name="actionName">cpRicercaAziendaGestore</param>
+		<param name="namespace">/base/gestore</param>
+	</result>
+	<result name="GO_TO_cpElencoAziendeGestore" type="chain">
+		<param name="actionName">cpElencoAziendeGestore</param>
+		<param name="namespace">/base/gestore</param>
+	</result>
+	<result name="GO_TO_BackPage" type="chain">
+		<param name="actionName">${backActionName}</param>
+		<param name="namespace">${backNamespace}</param>
+	</result>
+	
+	<result name="GO_TO_EX_exportRicerca.do" type="redirect">
+		<param name="location">exportRicerca.do</param>
+	</result>
+	<result name="SHOW_dpConfermaEliminaAziendaGestore">/jsp/dialogpanels/cpElencoAziendeGestore_dpConfermaEliminaAziendaGestore.jsp</result>
+</action>
+
+		<!--PROTECTED REGION ID(R1900830379) ENABLED START-->
+		<action name="exportRicerca" class="it.csi.taif.taifweb.presentation.taifweb.action.gestore.ExportRicercaGestoreAction">
+			<param name="tipoExport">NORMALE</param>
+            <result name="downloadFile" type="stream">
+                <param name="contentType">${contentType}</param>
+                <param name="contentDisposition">${contentDisposition}</param>
+                <param name="inputName">inputStream</param>
+            </result>
+            <result name="ko" type="chain">cpElencoAziendeGestore</result>
+        </action>
+        
+        <action name="exportRicercaLibera" class="it.csi.taif.taifweb.presentation.taifweb.action.gestore.ExportRicercaGestoreAction">
+        	<param name="tipoExport">RIDOTTO</param>
+            <result name="downloadFile" type="stream">
+                <param name="contentType">${contentType}</param>
+                <param name="contentDisposition">${contentDisposition}</param>
+                <param name="inputName">inputStream</param>
+                
+            </result>
+            <result name="ko" type="chain">cpElencoAziendeGestore</result>
+        </action>
+		<!--PROTECTED REGION END-->
+
+	</package>
+</struts>

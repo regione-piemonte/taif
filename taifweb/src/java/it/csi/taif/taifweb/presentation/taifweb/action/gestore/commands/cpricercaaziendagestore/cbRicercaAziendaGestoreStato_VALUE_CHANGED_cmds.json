@@ -1,0 +1,22 @@
+#-------------------------------------------------------------------------------
+# Copyright CSI-Piemonte -2021
+# SPDX-License-Identifier: EUPL-1.2-or-later.
+#-------------------------------------------------------------------------------
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.VisibilityCommand" ,
+	"show":true,
+	"targetsWidgets":["cbRicercaAziendaGestoreSottostato"],
+	"targetsMenuElement":[]
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.VisibilityCommand" ,
+	"show":false,
+	"targetsWidgets":["cbRicercaAziendaGestoreSottostato"],
+	"targetsMenuElement":[]
+}
+],
+	"esiti":["OK","KO"],
+	"nomeMetodo":"loadSottoStatoPratica",
+	"appDataToStore":[]
+}

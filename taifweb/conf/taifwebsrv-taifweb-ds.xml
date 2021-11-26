@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources>
+	<datasource jta="false" jndi-name="@@JNDI.NAME.DS@@" pool-name="taifDS" enabled="true" use-ccm="false" use-java-context="true">
+ 		<connection-url>@@CONNECTION.URL@@</connection-url>
+    	<driver-class>org.postgresql.Driver</driver-class>
+        <driver>postgresql</driver>
+        <security>
+        	<user-name>@@USER.DB@@</user-name>
+    		<password>@@PASSWORD.DB@@</password>
+        </security>
+    </datasource>
+</datasources>

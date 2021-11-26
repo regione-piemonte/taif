@@ -1,0 +1,50 @@
+#-------------------------------------------------------------------------------
+# Copyright CSI-Piemonte -2021
+# SPDX-License-Identifier: EUPL-1.2-or-later.
+#-------------------------------------------------------------------------------
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.OnOffCommand" ,
+	"enable":false,
+	"targetsWidgets":["tInserimentoNome","tInserimentoCognome","cbStatoSchedaInserimento"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":false,
+	"targetsWidgets":["btnCercaOperatoreAnagraficaIt","tInserimentoCodiceFiscale","cbComuneNascitaOperatore","tComuneNascitaEstero","tComuneEsteroResidenza"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":true,
+	"targetsWidgets":["tfInserimentoOperatoreNrsiMsa","tComuneEsteroResidenza","btnWizardOperatoreIndietro","btnWizardOperatoreSalva","btnWizardOperatoreProsegui","btnCercaOperatoreFr"],
+	"targetsMenuElement":[]
+}
+] 
+}
+,
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.OnOffCommand" ,
+	"enable":false,
+	"targetsWidgets":["cbStatoSchedaInserimento"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":false,
+	"targetsWidgets":["btnCercaOperatoreAnagraficaIt","tInserimentoCodiceFiscale","cbComuneNascitaOperatore","tComuneNascitaEstero","cbComuneResidenzaOperatore"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.VisibilityCommand" ,
+	"show":true,
+	"targetsWidgets":["tfInserimentoOperatoreNrsiMsa","tComuneEsteroResidenza","btnCercaOperatoreFr","btnWizardOperatoreIndietro","btnWizardOperatoreSalva","btnWizardOperatoreProsegui"],
+	"targetsMenuElement":[]
+}
+] 
+}
+,
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.NOPCommand" }
+],
+	"esiti":["OK_OPERATORE_FR_operatorExists","OK_OPERATORE_FR_operatorNoExists","Ko"],
+	"nomeMetodo":"ricercaOperatoreInAnagraficaFr",
+	"appDataToStore":[]
+}

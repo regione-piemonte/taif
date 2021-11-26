@@ -1,0 +1,20 @@
+#-------------------------------------------------------------------------------
+# Copyright CSI-Piemonte -2021
+# SPDX-License-Identifier: EUPL-1.2-or-later.
+#-------------------------------------------------------------------------------
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.security.ComplexUISecConstraint",
+  "constrainedBehavior": 2,
+  "defaultState": true,
+  "nomeContainer": "CpDomanda",
+  "nomeWidget": "tblStruttureCapannoni",
+  "constraints": [
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.security.DummyUISecConstraint",
+  "constrainedBehavior": 2,
+  "defaultState": true,
+  "nomeContainer": "CpDomanda",
+  "nomeWidget": "tblStruttureCapannoni",
+  "fixedValue": true
+}
+
+  ]
+}

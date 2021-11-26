@@ -1,0 +1,21 @@
+#-------------------------------------------------------------------------------
+# Copyright CSI-Piemonte -2021
+# SPDX-License-Identifier: EUPL-1.2-or-later.
+#-------------------------------------------------------------------------------
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.JumpExtCommand" ,
+	"locationCode":"visualizzaFile.do",
+	"runtimeUrlProviderAppData":"",
+	"staticUrl":"visualizzaFile.do",
+	"binaryStream":false 
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ShowDialogCommand" ,
+	"name":"dpEliminaDocumentazione"
+}
+],
+	"esiti":["VIEW","DELETE"],
+	"nomeMetodo":"onTableClick",
+	"appDataToStore":[]
+}

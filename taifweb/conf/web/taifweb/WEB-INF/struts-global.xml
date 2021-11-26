@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.objectFactory" value="org.apache.struts2.spring.StrutsSpringObjectFactory" />
+	<constant name="struts.ui.theme" value="csi" />
+	<constant name="struts.action.extension" value="do" />
+	
+	<constant name="struts.i18n.reload" value="false" />
+	<constant name="struts.custom.i18n.resources" value="globalMessages
+			,it/csi/taif/taifweb/presentation/taifweb/action/home/CpHomeAction
+			,it/csi/taif/taifweb/presentation/taifweb/action/home/CpLoginAction
+			,it/csi/taif/taifweb/presentation/taifweb/action/domanda/CpDomandaAction
+			,it/csi/taif/taifweb/presentation/taifweb/action/domanda/CpIstanzeTaglioPresentateAction
+			,it/csi/taif/taifweb/presentation/taifweb/action/gestore/CpHomeGestoreAction
+			,it/csi/taif/taifweb/presentation/taifweb/action/gestore/CpRicercaAziendaGestoreAction
+			,it/csi/taif/taifweb/presentation/taifweb/action/gestore/CpElencoAziendeGestoreAction
+			,it/csi/taif/taifweb/presentation/taifweb/action/common/CpDocumentazioneAction
+			,it/csi/taif/taifweb/presentation/taifweb/action/common/CpRiepilogoAction
+			,it/csi/taif/taifweb/presentation/taifweb/action/common/CpErrorAction
+			,it/csi/taif/taifweb/presentation/taifweb/action/libero/CpRicercaAccessoLiberoAction
+			,it/csi/taif/taifweb/presentation/taifweb/action/libero/CpElencoAccessoLiberoAction
+			,it/csi/taif/taifweb/presentation/taifweb/action/libero/CpAziendaDettaglioAction
+	" />
+	<constant name="struts.multipart.parser" value="org.apache.struts2.dispatcher.multipart.JakartaMultiPartRequest" />
+	<!-- costanti per il fileUpload interceptor: settare solo se necessarie -->
+	<constant name="struts.multipart.maxSize" value="1073741824" />
+	<!--<constant name="struts.multipart.saveDir" value="/tmp" />-->
+
+
+	<!-- jsp-package: TUTTI I PACKAGE DEVONO DERIVARE DA QUESTO -->
+	<package name="jsp-package" extends="struts-default">
+		<interceptors>
+			<interceptor name="tableSelection" class="it.csi.taif.taifweb.presentation.taifweb.interceptor.TableSelectionInterceptor"/>
+			<interceptor name="methodProtection" class="it.csi.taif.taifweb.presentation.taifweb.interceptor.MethodProtectionInterceptor">
+				<param name="excludeMethods">execute,localLogout,ssoLogout</param>
+			</interceptor>
+			<!-- l'esclusione dei parametri serve per evitare una XSS vulnerability -->
+			<interceptor name="paramsInterceptor" class="it.csi.taif.taifweb.presentation.taifweb.interceptor.ParametersInterceptor">
+				<param name="excludeParams">actionMessages,actionErrors,fieldErrors</param>
+			</interceptor>
+
+			<interceptor-stack name="jsp-stack">
+				<interceptor-ref name="exception" />
+				<interceptor-ref name="i18n" />
+				<interceptor-ref name="chain" />
+				<interceptor-ref name="servletConfig" />
+			 	<interceptor-ref name="scopedModelDriven"/> 
+				<interceptor-ref name="modelDriven"/>
+				<interceptor-ref name="checkbox" />
+				<interceptor-ref name="tableSelection" />
+				<interceptor-ref name="staticParams" />
+				<interceptor-ref name="fileUpload"/>
+				<!-- richiamare gli interceptor token e tokenSession dopo di questo -->
+				<interceptor-ref name="paramsInterceptor" />
+				<interceptor-ref name="conversionError"/>
+				<interceptor-ref name="prepare" />
+				<interceptor-ref name="validation" />
+				<interceptor-ref name="workflow" />
+				<interceptor-ref name="methodProtection" />
+			</interceptor-stack>
+			
+	
+		</interceptors>
+
+		<default-interceptor-ref name="jsp-stack"/>
+
+		<!-- gestione globale delle eccezioni e altri result globalmente validi -->
+		<global-results>
+		
+			<result name="BACK_TO_HOME" type="chain">
+			   <param name="actionName">HomePage</param>
+			    <param name="namespace">/secure</param>
+			</result>
+		
+			<result name="errorRuntime">/jsp/error/applicationError.jsp</result>
+			<!-- result per la restituizione di dati alle compoenenti rich U.I -->
+			<result name="provideData" type="stream">
+  				<param name="contentType">text/plain;charset=UTF-8</param>
+  				<param name="inputName">dataProviderStream</param>
+  				<param name="bufferSize">1024</param>
+  				<param name="allowCaching">false</param>
+			</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="errorRuntime" exception="java.lang.RuntimeException"/>
+		</global-exception-mappings>
+
+	</package>
+
+
+	<!-- DEFAULT PACKAGE (ELEMENTI COMUNI A TUTTO L'APPLICATIVO) -->
+	<package name="default" extends="jsp-package" namespace="/base">
+		<action name="notFoundError">
+			<result>/jsp/error/notFound.jsp</result>
+		</action>
+		<action name="fatalError">
+			<result>/jsp/error/fatalError.jsp</result>
+		</action>
+		<action name="sessionExpired">
+			<result>/jsp/error/sessionExpired.jsp</result>
+		</action>
+		<action name="javascriptError">
+			<result>/jsp/error/javascriptError.jsp</result>
+		</action>
+	</package>
+
+
+	<!-- SECURE PACKAGE -->
+	<package name="secure" extends="jsp-package" namespace="/secure">
+	
+		<action name="Login" class="it.csi.taif.taifweb.presentation.taifweb.action.LoginAction">
+			<result name="success" type="chain">
+			   <param name="actionName">HomePage</param>
+			   <param name="namespace">/secure</param>
+			</result>
+		</action>
+		
+		<!-- HOME PAGE -->
+		<action name="HomePage" class="it.csi.taif.taifweb.presentation.taifweb.action.HomeAction">
+			<result name="GO_TO_cpRicercaAccessoLibero" type="chain">
+			    <param name="actionName">cpRicercaAccessoLibero</param>
+			    <param name="namespace">/base/libero</param>
+			</result>
+			<result name="GO_TO_cpHome" type="chain">
+			    <param name="actionName">cpHome</param>
+			    <param name="namespace">/base/home</param>
+			</result>
+			<result name="GO_TO_cpLogin" type="chain">
+			    <param name="actionName">cpLogin</param>
+			    <param name="namespace">/base/home</param>
+			</result>
+			<result name="GO_TO_cpHomeGestore" type="chain">
+			    <param name="actionName">cpHomeGestore</param>
+			    <param name="namespace">/base/gestore</param>
+			</result>
+			<result name="GO_TO_cpError" type="chain">
+			    <param name="actionName">cpError</param>
+			    <param name="namespace">/base/common</param>
+			</result>
+		</action>
+
+
+		<!-- LOGOUT (LOCAL/SSO) -->
+		<action name="Logout" class="it.csi.taif.taifweb.presentation.taifweb.action.LogoutAction">
+			<result name="confirmLogout">/jsp/error/confirmLogout.jsp</result>
+			<result name="SSO_LOGOUT" type="redirect">
+				<param name="location">@LOGOUT_URL@</param>
+			</result>
+			<result name="LOCAL_LOGOUT" type="redirect">
+				<param name="location">@LOCAL_LOGOUT_URL@</param>
+			</result>
+		</action>
+
+		<!-- MENU -->
+		<action name="goToMenuNuovaDomandaFromMenu" class="it.csi.taif.taifweb.presentation.taifweb.action.MenuAction" method="goToMenuNuovaDomanda">
+			<result name="GO_TO_cpHome" type="chain">
+				<param name="actionName">cpHome</param>
+				<param name="namespace">/base/home</param>
+			</result>
+			<result name="GO_TO_cpHomeGestore" type="chain">
+				<param name="actionName">cpHomeGestore</param>
+				<param name="namespace">/base/gestore</param>
+			</result>
+		</action>
+
+		<action name="goToMenuTueDomandeFromMenu" class="it.csi.taif.taifweb.presentation.taifweb.action.MenuAction" method="goToMenuTueDomande">
+			<result name="GO_TO_cpHome" type="chain">
+				<param name="actionName">cpHome</param>
+				<param name="namespace">/base/home</param>
+			</result>
+			<result name="GO_TO_cpHomeGestore" type="chain">
+				<param name="actionName">cpHomeGestore</param>
+				<param name="namespace">/base/gestore</param>
+			</result>
+		</action>
+
+	</package>
+
+</struts>

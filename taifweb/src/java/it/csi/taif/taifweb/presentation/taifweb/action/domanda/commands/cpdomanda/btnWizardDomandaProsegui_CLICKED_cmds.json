@@ -1,0 +1,155 @@
+#-------------------------------------------------------------------------------
+# Copyright CSI-Piemonte -2021
+# SPDX-License-Identifier: EUPL-1.2-or-later.
+#-------------------------------------------------------------------------------
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"wzpDomanda",
+	"contentPanelName":"CpDomanda",
+	"itemName": "fpWizard1DatiAnagrafici"}
+,{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"wzpDomandaDatiAnagrafici",
+	"contentPanelName":"CpDomanda",
+	"itemName": "fpWizardDatiAnagraficiSub1"}
+] 
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"wzpDomanda",
+	"contentPanelName":"CpDomanda",
+	"itemName": "fpWizard1DatiAnagrafici"}
+,{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"wzpDomandaDatiAnagrafici",
+	"contentPanelName":"CpDomanda",
+	"itemName": "fpWizardDatiAnagraficiSub2"}
+] 
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"wzpDomanda",
+	"contentPanelName":"CpDomanda",
+	"itemName": "fpWizard2DatiSocioEconomici"}
+,{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"wzpDomandaDatiSocioEconomici",
+	"contentPanelName":"CpDomanda",
+	"itemName": "fpWizardDatiSocioEconomiciSub1"}
+] 
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"wzpDomanda",
+	"contentPanelName":"CpDomanda",
+	"itemName": "fpWizard2DatiSocioEconomici"}
+,{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"wzpDomandaDatiSocioEconomici",
+	"contentPanelName":"CpDomanda",
+	"itemName": "fpWizardDatiSocioEconomiciSub2"}
+] 
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"wzpDomanda",
+	"contentPanelName":"CpDomanda",
+	"itemName": "fpWizard3Attivita"}
+,{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"wzpDomandaAttivita",
+	"contentPanelName":"CpDomanda",
+	"itemName": "fpWizardAttivitaSub1"}
+] 
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"wzpDomanda",
+	"contentPanelName":"CpDomanda",
+	"itemName": "fpWizard3Attivita"}
+,{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"wzpDomandaAttivita",
+	"contentPanelName":"CpDomanda",
+	"itemName": "fpWizardAttivitaSub2"}
+] 
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"wzpDomanda",
+	"contentPanelName":"CpDomanda",
+	"itemName": "fpWizard3Attivita"}
+,{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"wzpDomandaAttivita",
+	"contentPanelName":"CpDomanda",
+	"itemName": "fpWizardAttivitaSub3"}
+] 
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"wzpDomanda",
+	"contentPanelName":"CpDomanda",
+	"itemName": "fpWizard4Strutture"}
+] 
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"wzpDomanda",
+	"contentPanelName":"CpDomanda",
+	"itemName": "fpWizard5Attrezzature"}
+,{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"wzpDomandaAttrezzatture",
+	"contentPanelName":"CpDomanda",
+	"itemName": "fpWizardAttrezzatureSub1"}
+] 
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"wzpDomanda",
+	"contentPanelName":"CpDomanda",
+	"itemName": "fpWizard5Attrezzature"}
+,{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"wzpDomandaAttrezzatture",
+	"contentPanelName":"CpDomanda",
+	"itemName": "pWizardAttrezzatureSub2"}
+] 
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"wzpDomanda",
+	"contentPanelName":"CpDomanda",
+	"itemName": "fpWizard6Personale"}
+] 
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.JumpCommand" ,
+	"name": "cpHome", 
+	"pushCurrent":false
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.JumpCommand" ,
+	"name": "CpRiepilogo", 
+	"pushCurrent":false
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.NOPCommand" }
+],
+	"esiti":["Ok","Ko"],
+	"nomeMetodo":"goToRiepilogo",
+	"appDataToStore":[]
+}
+,
+{ "class": "it.csi.taif.taifweb.presentation.taifweb.action.NOPCommand" }
+],
+	"esiti":["CpDomanda_wzpDomandaDatiAnagrafici_fpWizardDatiAnagraficiSub1","CpDomanda_wzpDomandaDatiAnagrafici_fpWizardDatiAnagraficiSub2","CpDomanda_wzpDomandaDatiSocioEconomici_fpWizardDatiSocioEconomiciSub1","CpDomanda_wzpDomandaDatiSocioEconomici_fpWizardDatiSocioEconomiciSub2","CpDomanda_wzpDomandaAttivita_fpWizardAttivitaSub1","CpDomanda_wzpDomandaAttivita_fpWizardAttivitaSub2","CpDomanda_wzpDomandaAttivita_fpWizardAttivitaSub3","CpDomanda_wzpDomanda_fpWizard4Strutture","CpDomanda_wzpDomandaAttrezzatture_pWizardAttrezzatureSub1","CpDomanda_wzpDomandaAttrezzatture_pWizardAttrezzatureSub2","CpDomanda_wzpDomanda_fpWizard6Personale","Ok","Next","Ko"],
+	"nomeMetodo":"salvaProsegui",
+	"appDataToStore":[]
+}

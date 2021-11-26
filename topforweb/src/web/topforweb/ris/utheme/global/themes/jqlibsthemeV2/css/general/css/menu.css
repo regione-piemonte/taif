@@ -1,0 +1,105 @@
+
+/**** INIZIO menu.css (senza js) ****/
+.vertical div#mainMenu li{margin-top: 0; }
+ul.sf-js-enabled, ul.sf-js-enabled * {
+	margin:0;
+	padding:0;
+	list-style:		none;
+}
+ul.sf-js-enabled {
+		line-height:	1em;
+}
+ul.sf-js-enabled ul {}
+ul.sf-js-enabled ul li {
+	width:			99,7%;width: 100%;
+}
+ul.sf-js-enabled a, ul.sf-js-enabled a:link, ul.sf-js-enabled a:active, ul.sf-js-enabled a:hover, ul.sf-js-enabled a:visited, 
+ul.sf-js-enabled span {
+	display:		block!important;
+}
+ul.sf-js-enabled a, ul.sf-js-enabled a:link, ul.sf-js-enabled a:active, ul.sf-js-enabled a:hover, ul.sf-js-enabled a:visited,  
+ul.sf-js-enabled span {
+	padding: .30em 1em .30em 1.3em;
+	text-decoration:none;
+}
+
+ul.sf-js-enabled li li#current span,
+ul.sf-js-enabled li li span.parent, 
+ul.sf-js-enabled li li a, 
+ul.sf-js-enabled li li a:link, 
+ul.sf-js-enabled li li a:active,
+ul.sf-js-enabled li li a:hover,  
+ul.sf-js-enabled li li a:visited {padding-left: 30px;}
+ul.sf-js-enabled li li li#current span,
+ul.sf-js-enabled li li li span.parent, 
+ul.sf-js-enabled li li li a, 
+ul.sf-js-enabled li li li a:link, 
+ul.sf-js-enabled li li li a:active,
+ul.sf-js-enabled li li li a:hover, 
+ul.sf-js-enabled li li li a:visited {padding-left: 45px;}
+
+ul.sf-navbar, ul.sf-navdrop {margin:15px} /*specifici*/
+ul.sf-js-enabled div.content_menu {border:6px solid #fff;padding:10px;overflow:hidden;width:auto!important;width:100%;} /*megamenu*/
+
+
+/*** skin **/
+ul.sf-js-enabled li.opened span {font-weight:bold}
+ul.sf-js-enabled li.opened li#current span,
+ul.sf-js-enabled a, ul.sf-js-enabled a:link, ul.sf-js-enabled a:active, ul.sf-js-enabled a:hover, ul.sf-js-enabled a:visited {font-weight:normal;}
+ul.sf-js-enabled li li span.parent,
+ul.sf-js-enabled li li a, ul.sf-js-enabled li li a:link, ul.sf-js-enabled li li a:active, ul.sf-js-enabled li li a:hover, ul.sf-js-enabled li li a:visited {font-weight:bold;font-size:0.9em}
+ul.sf-js-enabled li li li span, ul.sf-js-enabled li li li a, ul.sf-js-enabled li li li a:link, ul.sf-js-enabled li li li a:active, ul.sf-js-enabled li li li a:hover, ul.sf-js-enabled li li li a:visited {font-weight:normal}
+ul.sf-js-enabled li li li span.parent {font-size:0.9em}
+
+ul.sf-js-enabled li.opened span,
+ul.sf-js-enabled li li#current span,
+ul.sf-js-enabled li a, ul.sf-js-enabled li a:link, ul.sf-js-enabled li a:active, ul.sf-js-enabled li a:visited, ul.sf-js-enabled li li a:hover {color:#000}
+ul.sf-js-enabled li.opened span,
+ul.sf-js-enabled li#current span,
+ul.sf-js-enabled li a:hover {color:#fff}
+
+ul.sf-js-enabled li {background-color:#F1F1F1}
+ul.sf-js-enabled li span.parent,
+ul.sf-js-enabled li li {background-color:#5F6C7C}
+ul.sf-js-enabled li li span.parent,
+ul.sf-js-enabled li li li,
+ul.sf-js-enabled div.content_menu {background-color: #CAD1D7}
+
+ul.sf-js-enabled li a:hover,
+ul.sf-js-enabled li#current  {background-color:#5F6C7C;}
+
+ul.sf-js-enabled li li a:hover, 
+ul.sf-js-enabled li li#current {background-color:#CAD1D7;font-size:0.9em}
+
+ul.sf-js-enabled li li li a:hover, 
+ul.sf-js-enabled li li li#current {background-color:#F1F1F3;}
+
+ul.sf-js-enabled li.home a,
+ul.sf-js-enabled li.home a:link,
+ul.sf-js-enabled li.home a:active,
+ul.sf-js-enabled li.home a:visited, 
+ul.sf-js-enabled li.home a:hover,
+ul.sf-js-enabled li#current.home span {background-image: url("/ris/resources/global_share/css/im/ico_tabs_home.gif");
+background-repeat:no-repeat;background-position: 4px 50%;}
+ul.sf-js-enabled li.home a:hover { background-image: url("/ris/resources/global_share/css/im/ico_tabs_home_hover.gif");}
+ul.sf-js-enabled li#current.home span {background-image: url("/ris/resources/global_share/css/im/ico_tabs_home_hover.gif");}
+
+ul.sf-js-enabled {border-bottom: 1px solid #fff;}
+
+ul.sf-js-enabled li {border-top: 1px solid #fff;}
+ul.sf-js-enabled li li {margin:0;color:}
+ul.sf-js-enabled li li li {border-top: 1px solid #fff;}
+
+ul.sf-js-enabled li#current span, ul.sf-js-enabled li span.parent, ul.sf-js-enabled li.opened span,
+ul.sf-js-enabled li a, ul.sf-js-enabled li a:link, ul.sf-js-enabled li a:active,
+ul.sf-js-enabled li a:visited, ul.sf-js-enabled li a:hover {border-right: 1px solid #fff}
+ul.sf-js-enabled li#current span, ul.sf-js-enabled li span.parent, ul.sf-js-enabled li.opened span,
+ul.sf-js-enabled li a, ul.sf-js-enabled li a:link, ul.sf-js-enabled li a:active, ul.sf-js-enabled li a:visited, ul.sf-js-enabled li a:hover {border-left: 1px solid #fff;}
+
+ul.sf-js-enabled li span.parent, ul.sf-js-enabled li li a, ul.sf-js-enabled li li a:link, ul.sf-js-enabled li li a:active,
+ul.sf-js-enabled li li a:visited {color:#fff}
+ul.sf-js-enabled li li a:hover {color:#000}
+ul.sf-js-enabled li li span.parent, ul.sf-js-enabled li li li a, ul.sf-js-enabled li li li a:link, ul.sf-js-enabled li li li a:active, ul.sf-js-enabled li li li a:visited {color:#000}
+
+
+/**** FINE menu.css ****/

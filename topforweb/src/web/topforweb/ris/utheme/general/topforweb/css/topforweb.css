@@ -1,0 +1,823 @@
+body {  font-size: 15px!important;}
+div#applicationHeader  {  background:#0153a9; }
+div#applicationHeader h1 { margin: 0; float:none;  background: url(/ris/utheme/global/themes/xstructureV2/css/im/logo_sp.jpg) 80px 50% no-repeat; }
+div#applicationHeader h2 { background: #427f22; padding: 20px 0 20px 90px; font-size: 28px; position:relative;}
+div.userData { padding:0 70px 0 0; position:relative;}	
+div.userData .user  {background: none !important; display: inline-block; padding: 8px 10px 0 40px; position:relative;}
+div.userData .user:before  {
+ position: absolute; color:#fff;
+    top: 4px;
+       left: 0;
+    font-family: "FontAwesome";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    font-size: 28px;
+    content: "\f2be";	
+}
+.aprihelp{ position: absolute; right: 30px;}
+.aprihelp:before  {
+ position: absolute; color:#fff;
+    top: 4px;
+    right: 0px;
+    font-family: "FontAwesome";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    font-size: 32px;
+    content: "\f059";	
+}
+
+.italia{ background: url(/ris/utheme/general/topforweb/css/im/italy-flag-icon.png) 50% 50% no-repeat;height: 23px;
+    width: 49px;
+    display: block;
+    position: absolute;
+    right: 150px;
+    top: 27px;border: 1px solid #fff;}
+.france{ background: url(/ris/utheme/general/topforweb/css/im/france-flag-icon.jpg) 50% 50% no-repeat;height: 23px;
+    width: 49px;
+    display: block;
+    position: absolute;
+    right: 80px;
+    top: 27px;border: 1px solid #fff;}
+div.userInfoPanel { top: 0px; padding:6px 0 0 0;height: 40px !important;}
+
+div.userInfoActions a:link, div.userInfoActions a:active, div.userInfoActions a:visited{ background:none; position:relative; padding:0 30px 0 10px;
+ border-left: 2px solid #fff; margin-left:5px; text-transform: capitalize; text-decoration: underline;}
+div.userInfoActions a:after {  position: absolute; color:#fff;
+    top: 3px;
+    right: 4px;
+    font-family: "FontAwesome";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    font-size: 18px;
+    content: "\f08b";
+	}	
+
+#contPath { display: none;}
+
+#centerPanel h4.fpLabel, #centerPanel h4.wpLabel {border-bottom: 0 !important;}
+.widgetsPanelBlock { border-bottom: 1px solid #a3a3a3;}
+.organization, .role{display:none;}
+
+#p_pInfoUtente{ min-height: 50px;}
+#centerPanel h3 { font-size: 25px;    margin: 0px 6px 10px 0px;}
+#centerPanel h4 {  font-size:22px; padding: 10px 50px 10px 0px; position:relative;}
+#centerPanel .wrapper { padding-left: 0px;}
+.widgetsPanelBlock {  border-radius: 0px; border:0; border-top: 1px solid #ddd; box-shadow:none;}
+#wpDurata{ padding-bottom:40px; margin:0;}
+#p_wpDurata{ margin-bottom:0;}
+
+
+#p_wpRicercaOperatoreForestaleGestore, #p_wpNuovaOperatoreForestaleGestore, #p_wpNuovaAzienda, #p_wpElencoAziende, #p_wpNuovaAziendaGestore, #p_wpRicercaAziendaGestore, #p_wpRiepilogoIntestazioneStato, #p_mpRiepilogoMessaggio { 
+border: 0; border-bottom: 0; margin: 0 15%;}
+#p_fpRicercaOperatoreForestaleGestoreBody #p_wpRicercaOperatoreForestaleGestore{margin: 0 0%;}
+select#widg_cbUnitaFormativa{max-width: 500px;}
+
+#p_fpLoginBody {   margin: 35px auto;   max-width: 600px;    border: 1px solid #ddd;padding: 30px;}
+#p_fpLoginBody .widgetsPanelBlock {  border: 0 !important;}
+
+#p_fpLoginBody #cmdpLogin{  text-align: right;}
+
+.widgetsPanelBlock:empty{ display:none;}
+#centerPanel h4.fpLabel, #centerPanel h4.wpLabel { background:none !important;}
+#centerPanel #p_wpPercorsiTrovati h4.wpLabel{padding: 4px 0 0 10px; font-size:18px; background:none;}
+#wpRiepilogoIntestazioneStato{ font-weight:bold;}
+
+
+input[type="password" i] {
+       font-size: 15px;
+    line-height: 32px;
+    height: 32px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    padding-left: 5px;
+}
+
+
+/*************** tooltip **********************/
+a.link_tooltip, a.link_tooltip:link, a.link_tooltip:active, a.link_tooltip:hover, a.link_tooltip:focus, a.link_tooltip:visited { cursor: default;  font-style: italic;}
+a.link_tooltip:hover { border: 0 none;}
+a.link_tooltip span, a.link_tooltip:visited span, a.link_tooltip:link span, a.link_tooltip:active span, a.link_tooltip:hover span, a.link_tooltip:focus span, a.link_focus span {background: #fff;  border: 1px solid #bbb;  color: #000;  font-weight: normal;}
+a.link_tooltip span, a.link_tooltip:visited span, a.link_tooltip:link span, a.link_focus span {  left: -10000px;  position: absolute;  top: -10000px;}
+a.link_tooltip:hover span, a.link_tooltip:active span, a.link_tooltip:focus span, a.link_focus span {cursor: auto; font-weight: normal; left: auto; padding: 2px 8px; top: auto; width: 150px;position:absolute; margin: 3px 0 0 -100px;}
+a.link_tooltip:hover span.nascosto, a.link_tooltip:focus span.nascosto, a.link_focus span.nascosto, a.link_tooltip:visited span.nascosto {clear: none; height: 0; left: -10000px;  overflow: hidden;  position: absolute;  top: -10000px;  width: 0;}
+a.help_tooltip span.nascosto { background: none repeat scroll 0 0 transparent !important;  border: 0 none !important;}
+a.help_tooltip, a.help_tooltip:link, a.help_tooltip:active, a.help_tooltip:hover, a.help_tooltip:focus, a.help_tooltip:visited { background: url("im/ico_tooltip.gif") no-repeat scroll 50% 50% transparent; cursor: default; font-style: italic; font-weight: normal; padding-bottom: 2px; padding-left: 13px; text-decoration: none;}
+td span.inputTooltip, td input.InputTooltip, td .text_tooltip {float: left;}
+
+
+.txtError {  padding: 0 !important; background:none !important; border:0 !important;  border-radius: 0 !important;  border-right: 0 !important;}
+table.formTable .txtError a.link_errore { position:relative; padding:0px 0px 0px 15px;   width: 100px;  background:#CC0C0C;  border: 0; }
+table.formTable .txtError a.link_errore:after {  position: absolute; color:#fff;
+    top: 3px;
+    right: 7px;
+    font-family: "FontAwesome";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    font-size: 15px;
+    content: "\f12a";}
+table.formTable .txtError img{ display:none}
+table.formTable th, table.dataTable th, table.formTable td, table.dataTable td { border: 0px ; }
+table.formTable td, table.dataTable td { position:relative;}
+
+table.dataTable tr.odd td a.elimina, table.dataTable tr.odd td a.elimina:link, table.dataTable tr.odd td a.elimina:visited, table.dataTable tr.odd td a.elimina:hover, table.dataTable tr.odd td a.elimina:active {
+    color: #E5E5E5;}
+table.dataTable tr.even td a.elimina, table.dataTable tr.even td a.elimina:link, table.dataTable tr.even td a.elimina:visited, table.dataTable tr.even td a.elimina:hover, table.dataTable tr.even td a.elimina:active {
+    color: #fff;}
+table.dataTable th{ background: #0153a9; color: #fff; padding: 15px 10px;}
+a.elimina{padding:0 4px 0 12px; } 
+a.elimina:before {
+    color: #000;
+    position: absolute;
+    top: 25%;
+    right: 40%;
+    font-family: "FontAwesome";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    font-size: 25px;
+    content: "\f1f8";
+}
+
+div.export {
+    margin-bottom: 10px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+div.export a, div.export a:link, div.export a:active, div.export a:visited{
+color: #000;
+    font-size: 18px;
+    padding: 5px 12px 4px 14px;
+    border: 1px solid #0053A8;
+    background: #fff;
+    -moz-box-shadow: 0px;
+    -webkit-box-shadow: 0px;
+    box-shadow: 0px;
+    border-radius: 5px;
+    text-transform: lowercase;
+}
+div.export a span.xls, div.export a:link span.xls, div.export a:hover span.xls, div.export a:active span.xls, div.export a:visited span.xls {
+    background: transparent url(im/excel-box.png) 0 0% no-repeat;
+}
+div.export a span.pdf, div.export a:link span.pdf, div.export a:hover span.pdf, div.export a:active span.pdf, div.export a:visited span.pdf {
+    background: transparent url(im/ico_pdf.png) 0 0 no-repeat;
+}
+table a span.pdf, table a:link span.pdf, table a:active span.pdf, table a:visited span.pdf{
+	width: 30px;    color:#000;background:none;
+	    margin-top: 6px;
+	-webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+	font-weight: 900;
+   }
+table a span.pdf:before { 
+	font-family: "FontAwesome";
+	font-size:22px;
+    content: "\f1c1";
+}
+
+
+
+.commandPanel .center {  margin: 0 auto;   text-align: center;    width: 100%;   float: none;}
+#p_fpDomandaBody, #p_fpRicercaAziendaGestoreBody, #wpRicercaAziendaGestoreDatiSocioEconomici, #p_fpInserimentoOperatoreBody{ margin:0 5%;}
+#p_wpTitoloDomanda{ border:0;}
+
+/*wizard*/
+#wzpDomanda{ margin: 0 9%;    text-align: center;}
+#wzpOperatore{ margin: 20px 9% 0 9%;    text-align: center;}
+div.wizardPanel li {  background: url(im/linea.png) repeat-x 0 14px;}
+div.wizardPanel li:after { display:none;}
+
+div.wizardPanel li a, div.wizardPanel li span {
+	color: #727373;
+    width: 100px;
+    display: inline-block;
+    text-align: center;
+	}
+div.wizardPanel li.active a, div.wizardPanel li.active span {color: #0153a9;}
+
+div#wzpDomanda li, #wzpOperatore li {vertical-align: top;
+    position: relative;
+    background-color: transparent;
+    color: #727373;
+    width: 50px;
+    text-align: center;
+    padding-top: 30px; min-width: 100px;
+}
+
+div#wzpDomanda li:before, #wzpOperatore li:before{
+	  color: #fff;
+	      border: 3px solid #cfcfcf;
+    border-radius: 100px;
+    position: absolute;
+    top: 0px;
+        left: 40%;
+    font-family: "FontAwesome";
+    font-style: normal;
+    font-weight: 400;
+line-height: 0.9em;
+    font-size: 30px;
+    content: "\f111";  
+	}
+
+div#wzpDomanda li.active, #wzpOperatore li.active { position: relative;
+    background-color: transparent;
+    color: #0153a9;
+       width: 50px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+div#wzpDomanda li.active:before, #wzpOperatore li.active:before{
+	  color: #0153a9;
+    position: absolute;
+    top: 0px;
+        left: 40%;
+    font-family: "FontAwesome";
+    font-style: normal;
+    font-weight: 400;
+line-height: 0.9em;
+    font-size: 35px;
+    content: "\f111"; border:0;
+	}
+
+div#wzpDomandaDatiAnagrafici ol, #wzpDomandaDatiSocioEconomici ol, div#wzpDomandaAttivita ol, #wzpDomandaAttrezzatture ol{-webkit-padding-start: 0px;    text-align: center;    -webkit-margin-before: 0;    -webkit-margin-after: 0;}  
+div#wzpDomandaDatiAnagrafici li, #wzpDomandaDatiSocioEconomici li, div#wzpDomandaAttivita li, #wzpDomandaAttrezzatture li { width: 40%; margin: 0 20px; border-radius:10px; text-align: center; border-top: 10px solid #727373; background:#fff; padding: 6px 0;    vertical-align: top; }
+div#wzpDomandaDatiAnagrafici li.active, #wzpDomandaDatiSocioEconomici li.active, div#wzpDomandaAttivita li.active, #wzpDomandaAttrezzatture li.active {border-top: 10px solid #0153a9; background:#fff; color:#0153a9;}
+div#wzpDomandaDatiAnagrafici li a, div#wzpDomandaDatiAnagrafici li span, #wzpDomandaDatiSocioEconomici li a, #wzpDomandaDatiSocioEconomici li span, div#wzpDomandaAttivita li a, div#wzpDomandaAttivita li span, #wzpDomandaAttrezzatture  li a, div#wzpDomandaAttrezzatture li span{  width: auto;}
+
+
+div#wzpDomandaAttivita li {    vertical-align: text-top; width: 20%; margin: 0 20px; border-radius:10px; text-align: center; border-top: 10px solid #727373; background:#fff; padding: 6px 0; }
+
+
+
+
+/*fine wizard*/
+/* titoli*/
+#centerPanel h4.logoAlbo1{background: url(im/regione_piemonte_s.png) 0px 50% no-repeat; padding: 20px 0 20px 80px;}
+#centerPanel h4.logoAlbo2{background: url(im/liguria_s.png) 0px 50% no-repeat; padding: 23px 0 23px 80px;}
+#centerPanel h4.logoAlbo3{background: url(im/valle_aosta_s.png) 0px 50% no-repeat; padding: 28px 0 28px 80px;}
+#centerPanel h4.logoAlbo4{background: url(im/rhone_alpes_s.png) 0px 50% no-repeat; padding: 20px 0 20px 100px;}
+#centerPanel h4.logoAlbo5{background: url(im/provence_s.png) 0px 50% no-repeat; padding: 20px 0 20px 100px;}
+/*input text*/
+#widg_tfDatiAnagraficiAnagrafeAziendaleEmail{ width:300px;}
+
+.widgetsPanelBlock h4 span.ytogglepanel_handle {position:relative;top:0;left:5px;width:auto}
+
+/*input[type="text"], select {height: 28px !important;}*/
+
+/*combo box ricca*/
+.custom-combobox{ min-width: 200px; display: block !important; }
+input.custom-combobox-input {  font-size: 15px !important; height: inherit !important; }
+.custom-combobox .ui-button-icon-only {  height: 1.80em !important;   margin-top: -3px !important;}
+
+@-moz-document url-prefix() {
+  input.custom-combobox-input {line-height: 2em !important;height: 30px !important;}
+  .custom-combobox .ui-button-icon-only {  height:2em !important; margin-top:-4px!important; }
+}
+
+/**/
+
+/*div.feedSearch{ margin-top:10px; margin-bottom:0;}*/
+
+/*tasti*/
+
+.functional input, .functional input:hover,
+.functional .back, .functional .back:hover, .functional .cancel, .functional .cancel:hover, .functional .deleteItem, .functional .deleteItem:hover, 
+table input.buttonWidget, table input.buttonWidget:hover{
+	color: #000;
+    font-size: 18px;
+    padding: 5px 12px 4px 14px;
+    border: 1px solid #0053A8;
+    background: #fff;
+    -moz-box-shadow: 0px;
+    -webkit-box-shadow: 0px;
+    box-shadow: 0px;
+    border-radius: 5px; text-transform:lowercase;
+}
+#widg_btnAddSedeOperativa{background: url(im/add.png) no-repeat 50% 50%; font-size:0; padding:20px; }
+
+.navigation .back, .navigation .cancel, .navigation .deleteItem, .navigation .back:hover {	margin-right: 0px !important; /*color: #000;  font-size: 18px;
+    padding: 9px 12px 7px 14px;  border: 1px solid #0053A8;  margin-top: 3px;  background: #fff;  -moz-box-shadow: 0px;  -webkit-box-shadow: 0px;
+    box-shadow: 0px;border-radius: 5px;  -moz-box-shadow: 0; -webkit-box-shadow: 0;  box-shadow: 0;*/ min-width:100px;}
+
+.navigation input, .navigation a:hover, .navigation input:hover, .navigation inputHover .navigation a, .navigation a:link, .navigation a:hover, .navigation a:active, .navigation a:visited {
+   /* color: #000; font-size: 18px; padding: 9px 12px 7px 14px; border: 1px solid #0053A8; margin-top: 3px; background: #fff;
+    -moz-box-shadow: 0px; -webkit-box-shadow: 0px; box-shadow: 0px; border-radius: 5px;*/	min-width:200px;}	
+
+.navigation #widg_btnWizardDomandaProsegui{color: #fff; font-size: 18px; padding: 9px 12px 7px 14px; border: 1px solid #0053A8;
+    margin-top: 3px;  background: #0053A8;  -moz-box-shadow: 0px;  -webkit-box-shadow: 0px;  box-shadow: 0px;border-radius: 5px; min-width:200px;}
+#widg_btnWizardDomandaBozza{ margin: 3px 30px 0 30px;}
+
+.toRight{ position:absolute; right:20px; top:6px;}
+
+.panel-heading .accordion-toggle span.titolodx { float: right; padding:0 2% 0 0;}
+.panel-heading .accordion-toggle:after { color: #000; position: absolute; top: 3px; right: 10px;
+ font-family: "FontAwesome"; font-style: normal; font-weight: 400; line-height: 1; font-size: 25px; content: "\f068";}
+.panel-heading .accordion-toggle.collapsed:after { content: "\f067";}
+
+span.right{ float: right; padding:0 1% 0 0;}
+
+.tabSetPanel { min-height: 28px;}
+div.tabSetPanel ul li { margin: 0;}
+div.tabSetPanel li a, div.tabSetPanel li a:active, div.tabSetPanel li a:visited, div.tabSetPanel li a:hover, div.tabSetPanel li a:link{background:#0053A8; color:#fff;}
+div.tabSetPanel ul li ul.subTab{ position: absolute;  left: 10px;  border:1px solid #ccc;    border-bottom: 0;}
+div.tabSetPanel li ul.subTab li a, div.tabSetPanel li ul.subTab li a:active, div.tabSetPanel li ul.subTab li a:visited,
+ div.tabSetPanel li ul.subTab li a:hover, div.tabSetPanel li ul.subTab li a:link { background: #f2f2f2; color: #000; font-weight:bold; border:1px solid #fff;padding: 0 10px;}
+div.tabSetPanel li ul.subTab li span.activeItem { background:#fff; border:1px solid #fff;}
+
+img.ui-datepicker-trigger{background: url("/ris/utheme/global/themes/xstructureV1/css/sisp7/im/ui-icons_calendar.gif") no-repeat scroll 0 0 transparent;
+    border: 0 none; cursor: pointer; padding-bottom: 5px; padding-left: 23px; padding-top: 5px; }
+
+	
+a.certificato, a.certificato:link, a.certificato:active, a.certificato:hover{
+    background: url(im/certificato.png) no-repeat scroll 50% 50%;
+	height:22px;
+    padding: 22px;
+}	
+	
+	
+/*menu*/
+#menuPanel {  height: auto !important;  border-bottom:10px solid transparent;  }
+#mainMenu{ justify-content: flex-start!important; vertical-align: middle!important; background:transparent;  box-shadow: 0 20px 20px -15px #CDCDCD; }
+
+.horizontal #mainMenu {  background:none; display:block; margin-top: 50px; text-align: center; }
+.horizontal #mainMenu ul li {display: inline !important;  line-height: 1.55;  padding-left: 1rem; padding-right: 1rem;  padding-bottom: 0 !important;
+  margin-right: 1em !important;  white-space: nowrap; position: relative;  font-weight: 700 !important;}
+.horizontal #mainMenu ul li a, .horizontal #mainMenu ul li a:link, .horizontal #mainMenu ul li a:visited,  .horizontal #mainMenu ul li a:active, .horizontal #mainMenu ul li a:hover, .horizontal #mainMenu ul li span {color: #fff;  border-bottom:1px solid #fff; padding:0 20px 0 20px;}
+.horizontal #mainMenu ul li.parent ul.sf-js-enabled { border: 1px solid #fff;}
+.horizontal #mainMenu ul li ul li a:active, .horizontal #mainMenu ul li ul li a:hover{ background:#F4F5F0; color:#333; }
+text-decoration:none;  background: #bf5229 url("im/1livello.gif") no-repeat scroll 10px 15px; color:#fff; }
+.horizontal #mainMenu ul li ul li.parent span{background: #F4F5F0; }
+.horizontal #mainMenu ul li ul li.parent ul li{ background:#E9EBEA; }
+.horizontal #mainMenu ul li ul li.parent ul li#current{ background:#F9E772; }
+.horizontal #mainMenu ul li ul li span{ background:#E9EBEA;}
+.horizontal #mainMenu ul li ul li.parent ul li.parent span{ background:none !important;}
+.horizontal #mainMenu ul li.parent span { padding-left:20px; background: #fff; color:#0153a9; padding: 0 20px 0 20px; line-height: 2em; cursor: pointer;}
+.horizontal #mainMenu ul li a,  .horizontal #mainMenu ul li a:link,  .horizontal #mainMenu ul li a:visited,
+ .horizontal #mainMenu ul li a:active, .horizontal #mainMenu ul li a:hover, .horizontal #mainMenu ul li span {display: inline-flex; font-weight: bold;
+    font-size: 20px; color: #000; border-bottom: 4px solid #fff;  padding: 10px 30px 5px 30px; text-decoration:none;}
+.horizontal #mainMenu ul li a:hover{color: #004FAB; border-bottom: 4px solid #004FAB;}
+	
+@media screen and (max-width: 769px){
+.horizontal #mainMenu ul {  position: relative; top:auto;}
+.horizontal #mainMenu ul li  { float:none!important; width:100%;}
+.horizontal #mainMenu ul li a, .horizontal #mainMenu ul li a:link, .horizontal #mainMenu ul li a:visited, .horizontal #mainMenu ul li a:active,.horizontal #mainMenu ul li a:hover, .horizontal #mainMenu ul li span{ width: 100%!important;  display: block!important;}
+}
+/*menu*/
+
+/*home*/
+#p_fpHomeBody{ padding: 0;}
+#p_wpNuovaAzienda{ padding-top:40px;}
+#p_wpElencoDomande{ margin:0; background:#fff; padding:30px 15%; border-top: 3px solid #ddd;}
+
+#wpNuovaAziendaTbl a, #wpNuovaAziendaGestoreTbl a.aprialbo, #wpNuovaOperatoreForestaleGestore .ricercaazienda{ font-size: 18px; background: url("im/nuova_azienda.png") no-repeat scroll 35px 50%; font-weight:bold;
+ padding: 40px 105px;display: block; position:relative; border-top: 2px solid #ccc; border-bottom: 2px solid #ccc;}
+ 
+a.ricercaazienda{ font-size: 18px; background: url("im/avvia_ricerca.png") no-repeat scroll 35px 50%; font-weight:bold;
+ padding: 40px 105px;display: block; position:relative; border-bottom: 2px solid #ccc;}
+ 
+
+#wpNuovaAziendaTbl a:after {  position: absolute; color:#005ca9; top: 45px; right: 40px; font-family: "FontAwesome";
+    font-style: normal; font-weight: 400; line-height: 1; font-size: 18px;  content: "\f054";}
+#wpElencoAziendeTbl ul.tree{ border-bottom: 2px solid #ccc; padding:0; margin:0 0 40px 0;}
+#wpElencoAziendeTbl li{position:relative; border-top: 2px solid #ccc;}
+#wpElencoAziendeTbl input{ width: 100%; font-weight: bold;  padding: 15px;  text-align: left; padding:20px 100px; background: url("im/modifica_azienda.png") no-repeat scroll 5% 50%;}			
+#wpElencoAziendeTbl li.treeDot a,
+ #wpElencoAziendeTbl li.treeDot a:link,
+ #wpElencoAziendeTbl li.treeDot a:active,
+ #wpElencoAziendeTbl li.treeDot a:visited,
+ #wpElencoAziendeTbl li.treeDot a:hover,
+ #wpElencoAziendeTbl li.treeDot span{ background:none; font-weight:bold; padding:20px 35px;}	
+	
+#wpElencoAziendeTbl li:after {  position: absolute; color:#005ca9; top: 25px; right: 40px; font-family: "FontAwesome"; font-style: normal;
+    font-weight: 400; line-height: 1; font-size: 18px; content: "\f054";}	
+
+#wpElencoDomande{ padding-bottom:26px;}
+#p_wpAlboDomanda{border-top: 0;}
+
+/* messaggi */
+
+
+div.feedSearch, div.warning, div.feedOk, div.feedKo, #applicationError, .dialogPanel .info, .dialogPanel .warning, .dialogPanel .error, .info, .error {
+    min-height: 30px;  height: auto!important; font-size: 1.1em; border-radius: 0; border-left:5px solid; padding: 22px 30px 30px 100px !important; position:relative;}
+
+div.feedOk:before, .info:before, .domanda-presentata:before, .domanda-cancellata:before, .dialogPanel div.feedOk:before, div.feedKo:before, .dialogPanel .warning:before , .dialogPanel .info:before, div.feedKo:before, .dialogPanel .error:before, #applicationError:before, div.warning:before, .error:before{ font-family: "FontAwesome"; color:#000;
+    position: absolute;font-size: 3em;  left: 20px;  top: 15px;	 }
+	
+.info{ background: #DAEEF6; border-left-color: #01B5EA;}
+.info:before{ content:"\f05a";}
+
+
+
+.domanda-cancellata{ background: #F1DDDE; min-height: 30px;  height: auto!important; font-size: 1.1em; border-radius: 0; 
+ padding: 22px 30px 30px 100px !important; position:relative;	border-left:5px solid #E2352E;}
+.domanda-cancellata:before{content:"\f00d";}
+
+.domanda-presentata{  min-height: 30px;  height: auto!important; font-size: 1.1em; border-radius: 0; 
+ padding: 22px 30px 30px 100px !important; position:relative;	border-left:5px solid #5CB875;}
+.domanda-presentata:before{content:"\f252";}
+
+div.feedOk, .domanda-presentata	{background-color: #DFF1D9; border-left-color: #5CB875;}
+div.feedOk:before, .dialogPanel div.feedOk:before {content: "\f00c";}
+	
+div.warning { background: #FDFAE7; border-left:5px solid #FFF057;}
+div.feedWarning:before, div.warning:before{content: "\f071";}
+
+div.feedKo, .dialogPanel .error, #applicationError, .error { background: #F1DDDE; border-left-color: #E2352E;}
+div.feedKo:before, .dialogPanel .error:before, #applicationError:before, .error:before{ content: "\f06a"; }
+
+
+.dialogPanel .info{ background: #DAEEF6;  border-left-color: #01B5EA;}
+.dialogPanel .info:before{ content: "\f05a";}
+
+
+#p_mpRiepilogoStatoDomanda{ margin: 0 9%;    text-align: left;}
+
+.msgWizard{
+	min-height: 30px;  height: auto!important; font-size: 1.1em; 
+	border-radius: 0; padding: 22px 30px;
+	position:relative;	}
+.msgWizard .wizardPanel{ text-align:center;}	
+.msgWizard li {  background: url(im/linea.png) repeat-x 0 14px;}
+.msgWizard li:after { display:none;}
+
+.msgWizard li a, .msgWizard li span {
+	color: #727373;
+    width: 100px;
+    display: inline-block;
+    text-align: center;
+	}
+.msgWizard li.active a, .msgWizard li.active span {color: #0153a9;}
+	
+	
+.msgWizard li {vertical-align: top;
+    position: relative;
+    background-color: transparent;
+    color: #727373;
+    width: 50px;
+    text-align: center;
+    padding-top: 30px; min-width: 100px;
+}	
+.msgWizard  iv.wizardPanel li a, .msgWizard div.wizardPanel li span {
+color: #000;}
+.msgWizard li:before{
+	  color: #fff;
+	      border: 0;
+    border-radius: 100px;
+    position: absolute;
+    top: 0px;
+        left: 40%;
+    font-family: "FontAwesome";
+    font-style: normal;
+    font-weight: 400;
+line-height: 0.9em;
+    font-size: 30px;
+    content: "\f111";  
+	}
+
+.msgWizard li:before {
+    color: #fff;
+    border: 3px solid #cfcfcf;
+    border-radius: 100px;
+    position: absolute;
+    top: 0px;
+    left: 40%;
+    font-family: "FontAwesome";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0.9em;
+    font-size: 30px;
+    content: "\f111";
+}
+
+.msgWizard li.verde { position: relative;
+    color: #339900;
+       width: 50px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.msgWizard li.verde:before {
+    color: #339900;
+	    border: 0;
+}
+.msgWizard li.giallo { position: relative;
+    color: #FFCC33;
+       width: 50px;
+    text-align: center;
+    padding-top: 30px;
+}
+.msgWizard li.giallo:before {
+    color: #FFCC33;
+	    border: 0;
+}
+
+
+div.wizardPanel li {padding: 6px 30px 7px 30px;}
+
+#applicationError { margin: 22px;}
+#applicationError_links{ margin:0 20px !important; width: auto;}
+#centerPanel h3{margin:0 20px;}
+/*dialog*/
+.ui-dialog .ui-widget-header { background:transparent !important;}
+.ui-widget-header { border: 0 !important;}
+.ui-dialog .ui-dialog-titlebar, .ui-dialog .ui-dialog-content {  padding: 0 !important;}
+div.dialogPanel {  background: #fff;  padding: 0 30px 0 30px !important;}
+
+ul.modal_tree {list-style:none;}
+ul.modal_tree li { position:relative; padding: 0; }
+ul.modal_tree li a { font-weight: bold; color: #004FAB; padding: 35px 35px 35px 110px; display: block;}
+ul.modal_tree li a.rp {background: url("im/regione_piemonte_s.png") no-repeat 0% 50%; }
+ul.modal_tree li a.rl {background: url("im/liguria_s.png") no-repeat 0% 50%; }
+ul.modal_tree li a.va {background: url("im/valle_aosta_s.png") no-repeat 0% 50%; }
+ul.modal_tree li a.ra {background: url("im/rhone_alpes_s.png") no-repeat 0% 50%; }
+ul.modal_tree li a.paca {background: url("im/provence_s.png") no-repeat 0% 50%; }
+
+ul.modal_tree li a:after {
+    position: absolute;
+    color: #005ca9;
+    top: 37px;
+    right: 35px;
+    font-family: "FontAwesome";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    font-size: 18px;
+    content: "\f054";
+}
+
+
+select.selectMultiple {overflow: hidden; padding:5px;}
+
+
+
+/*footer*/
+div#portalFooter{ display:none;}
+div#portalFooter1 a { color: #fff; font-weight: normal;}
+div#portalFooter1 .fa-chevron-circle-up { font-size:40px;}
+div#portalFooter1 a#back-top .fa-border {  border-radius: 1em;}
+div#portalFooter1{border: 0 none;
+    color:#fff;
+    font-size: 0.95em;
+    height: auto !important;
+    margin: 0 auto;
+    min-height: 0;
+    overflow: hidden !important;
+    padding: 0;
+    width: 100%;
+	background:#0d3068; text-align:center;
+}
+div#portalFooter1 .logo_csi a.apriesterno, div#portalFooter1 .logo_csi a.apriesterno:active, div#portalFooter1 .logo_csi a.apriesterno:link {
+    background: url(im/logo_csi.png) no-repeat scroll 100% 0;
+   margin-top: 20px; height: 60px;  min-height: 60px;text-align:right; display: block;}
+div#portalFooter1 .logo_csi span.logoCsi { display: none;}
+.col_right{text-align:right;  }
+.small{font-size:12px; margin-bottom:20px;}
+.xsmall{font-size:10px;}
+.text-center{ text-align:center;}
+.container{ padding:15px 6px; border-top: 2px solid #427f22;}
+.container p{ margin:10px 0 40px 0;}
+div#portalFooter1 .col_center { padding: 45px 0px; text-align: center;}
+div#portalFooter1 .col_one {  padding: 25px 0px; text-align:left;}
+div#portalFooter1 .col_one h5 { font-size:20px;}
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+	box-sizing: border-box;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+	position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.col-6 {
+    -ms-flex: 0 0 30%;
+    flex: 0 0 30%;
+    max-width: 30%;
+}
+/*footer*/
+
+#wpDatiAnagraficiRequisitiProfessionaliForestali .tableWidget, #wpDatiAnagraficiAltriRequisitiProfessionaliForestali .tableWidget{ width:50%; float:left;}
+#p_wpDatiAnagraficiTitolareRappresentanteLegaleAltroConducente{ clear:both;}
+
+
+.wizardPanel input {white-space: normal;
+color: #727373;
+}
+#wpNuovaAziendaGestore{ margin-top: 40px;}
+#wpNuovaAziendaGestore, #wpRicercaAziendaGestore{  padding: 0;}
+#wpNuovaAziendaGestore table.formTable td, #wpRicercaAziendaGestore  table.formTable td{padding: 0px 5px;}
+/*-@media screen and (max-width: 1680px){
+	#wpDatiAnagraficiSedeLegale {overflow-y: hidden;  overflow-x: auto; max-width:1270px; position: relative; visibility: visible; margin:0 0 8px 0;}
+}
+@media screen and (max-width: 1600px){
+	#wpDatiAnagraficiSedeLegale {overflow-y: hidden;  overflow-x: auto; width:1200px; position: relative; visibility: visible; margin:0 0 8px 0;}
+}
+@media screen and (max-width: 1440px){
+	#wpDatiAnagraficiSedeLegale {overflow-y: hidden;  overflow-x: auto; width:1092px; position: relative; visibility: visible; margin:0 0 8px 0;}
+}
+@media screen and (max-width: 1366px){
+	#wpDatiAnagraficiSedeLegale { overflow-y: hidden;  overflow-x: auto; width:1020px; position: relative; visibility: visible; margin:0 0 8px 0;}
+}
+@media screen and (max-width: 1280px){
+	#wpDatiAnagraficiSedeLegale { overflow-y: hidden;  overflow-x: auto; width:952px; position: relative; visibility: visible; margin:0 0 8px 0;}
+}*/
+
+.tableWidget table.dataTable {width: 100%;}
+
+@media screen and (max-width: 1025px){
+	
+	#wpDatiAnagraficiSedeLegale .tableWidget{ 
+	overflow-y: hidden;  overflow-x: auto; width:980px; position: relative; visibility: visible; margin:0 0 8px 0; }
+
+	#wpInserimentoElencoCorsiFinanziatiRegione .tableWidget{ 
+		overflow-y: hidden;  overflow-x: auto; width:980px; position: relative; visibility: visible; margin:0 0 8px 0; }
+
+}
+
+@media screen and (max-width: 990px){
+	#wpDatiAnagraficiSedeLegale .tableWidget, #p_wpInserimentoElencoCorsiFinanziatiRegione .tableWidget {
+		overflow-y: hidden;  overflow-x: auto; width:940px; position: relative; visibility: visible; margin:0 0 8px 0; }
+}
+@media screen and (max-width: 800px){
+	#wpDatiAnagraficiSedeLegale .tableWidget, #p_wpInserimentoElencoCorsiFinanziatiRegione .tableWidget {
+		overflow-y: hidden;  overflow-x: auto; width:765px; position: relative; visibility: visible; margin:0 0 8px 0; }
+}
+@media screen and (max-width: 778px){
+	#wpDatiAnagraficiSedeLegale .tableWidget, #p_wpInserimentoElencoCorsiFinanziatiRegione .tableWidget {
+		overflow-y: hidden;  overflow-x: auto; width:735px; position: relative; visibility: visible; margin:0 0 8px 0; }
+}
+@media screen and (max-width: 641px){
+	#wpDatiAnagraficiSedeLegale .tableWidget, #p_wpInserimentoElencoCorsiFinanziatiRegione .tableWidget {
+		overflow-y: hidden;  overflow-x: auto; width:600px; position: relative; visibility: visible; margin:0 0 8px 0; }
+}
+@media screen and (max-width: 480px){
+	#wpDatiAnagraficiSedeLegale .tableWidget, #p_wpInserimentoElencoCorsiFinanziatiRegione .tableWidget{
+		overflow-y: hidden;  overflow-x: auto; width:420px; position: relative; visibility: visible; margin:0 0 8px 0; }
+}
+
+
+@media screen and (max-width: 1361px){
+  #wzpDomanda, #p_fpDomandaBody {  margin: 0;}
+}
+
+@media screen and (max-width: 900px){
+
+   div#applicationHeader h1{   display: none;}  
+   div#applicationHeader h2{ line-height: 20px; font-size: 24px;  min-height: 20px; padding: 15px 0 15px 10px;}.aprihelp:before { top: -5px;}
+   #portalHeader .header {  padding: 2px 20px 2px 10px;  width: 100%;}
+   div.userInfoPanel {  min-height: 1.35em; height: 1.4em;  position: absolute; padding:0; top: 45px; width: 100%;     font-size: 14px;}
+   #centerPanel .wrapper { padding: 0 0px;}
+   .widgetsPanelBlock {   margin: 0 0;}
+   #p_wpElencoDomande { padding: 0 0;}
+   #p_wpNuovaAzienda, #p_wpElencoAziende {  margin: 0 ;}
+   
+   .italia{  top: 13px;}
+.france{ top:13px;}
+   
+
+}
+@media screen and (max-width: 720px){
+	.italia{  top: 50px;}
+.france{ top:50px;}
+}
+@media screen and (max-width: 598px){
+   #portalHeader .header {  padding: 2px 20px 2px 10px;  width: 100%;}
+   div#applicationHeader h2 { line-height: 35px; font-size: 16px;  min-height: 35px; padding: 5px 5px 5px 10px;}
+   div.userInfoPanel {  min-height: 1.35em; height: 1.4em;  position: absolute;background: #0153a9;  padding:0; top: 45px; width: 100%;     font-size: 14px;}
+   div.userInfoActions { margin-left: 0; /*padding:0px 19px 5px 0;*/}
+   .aprihelp {  right: 15px;}
+   div#portalFooter1 .logo_csi a.apriesterno, div#portalFooter1 .logo_csi a.apriesterno:active, div#portalFooter1 .logo_csi a.apriesterno:link {
+   background: url(im/logo_csi.png) no-repeat scroll 20% 0;}
+   .col_right{ padding:0;}
+   
+
+   
+}
+
+@media screen and (max-width: 481px){
+   .commandPanel .left, .commandPanel .center, .commandPanel .right {  min-height: 50px;  }
+   .navigation .back, .navigation .cancel, .navigation .deleteItem, .navigation .back:hover,
+   .navigation input, .navigation a:hover, .navigation input:hover, .navigation inputHover .navigation a, .navigation a:link, .navigation a:hover, .navigation a:active, .navigation a:visited{
+    display: block; text-align: center; width: 100% !important; }	
+}
+	
+@media screen and (max-width: 360px){
+
+}	
+
+/* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+      width: 25px;
+    height: 20px;
+}
+
+.popup:before {
+    color: #0153a9;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    font-family: "FontAwesome";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    font-size: 25px;
+    content:  "\f059";
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #0153a9;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+#cpRicercaOperatoreForestaleGestore, #p_cpElencoOperatore{
+    padding: 0 10px;
+}
+#cpElencoOperatore .center {
+    margin: 0 auto;
+    text-align: center;
+  /*  width: 33%;
+   float: left;*/
+}
+#cpElencoOperatore .center #widg_btnElencoOperatoreNuovaRicerca{
+    position: absolute;
+    right: 30px;
+}
+
+#cpElencoOperatore .center #widg_btnElencoOperatoreIndietro{ margin-right: 0px;}
+.wizardPanel input {
+color: #727373;    white-space: normal;
+}
+.wizardPanel input:hover {
+    text-decoration: underline;
+}
+
+table#wpDatiIdentificativiOperatoreTbl td, table#wpDatiIdentificativiOperatoreTbl th,
+table#wpSchedaOperatoreForestaleTbl td, table#wpSchedaOperatoreForestaleTbl th{
+    border: 1px solid #B6B6B6 !important;
+}

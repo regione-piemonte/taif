@@ -1,0 +1,24 @@
+#-------------------------------------------------------------------------------
+# Copyright CSI-Piemonte -2021
+# SPDX-License-Identifier: EUPL-1.2-or-later.
+#-------------------------------------------------------------------------------
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.JumpExtCommand" ,
+	"locationCode":"exportRicerca.do",
+	"runtimeUrlProviderAppData":"",
+	"staticUrl":"exportRicerca.do",
+	"binaryStream":false 
+}
+,
+{ "class": "it.csi.taif.topforweb.presentation.topforweb.action.JumpExtCommand" ,
+	"locationCode":"exportRicercaLibera.do",
+	"runtimeUrlProviderAppData":"",
+	"staticUrl":"exportRicercaLibera.do",
+	"binaryStream":false 
+}
+],
+	"esiti":["Normale","Ridotto"],
+	"nomeMetodo":"exportRicercaOperatori",
+	"appDataToStore":[]
+}

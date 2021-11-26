@@ -1,0 +1,11 @@
+-- BUILD.XML   
+  
+  -- FOOTER
+  footer.jsp  
+    	
+--  CLASSI MODIFICATE PER LA LOGIN --
+struts-global.xml
+it.csi.taif.taifweb.presentation.taifweb.filter.AppSessionGuardFilter
+it.csi.taif.taifweb.presentation.taifweb.filter.IrideIdAdapterFilter
+
+    	
