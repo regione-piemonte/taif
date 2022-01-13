@@ -110,6 +110,7 @@ localisation:
     - it
     - fr
   localisationReady: true
+logo: TAIF.png
 maintenance:
   contacts:
     - email: marisa.matta@csi.it
